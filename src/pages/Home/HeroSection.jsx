@@ -22,7 +22,7 @@ function HomeHeroSection() {
                 <div className="hero-actions">
                     <button className="hero-getstarted">
                         Get Started
-                        <ArrowRight size={20} />
+                        <ArrowRight size={20} className="Hero-Button"/>
                     </button>
                     <button className="hero-ourservices">
                         Our Services

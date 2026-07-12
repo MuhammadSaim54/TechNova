@@ -94,6 +94,14 @@
     border: 1px solid var(--Primary);
 }
 
+.Hero-Button {
+    transition: transform 0.3s ease;
+}
+
+.hero-actions .hero-getstarted:hover .Hero-Button {
+    transform: translateX(5px);
+}
+
 .hero-actions .hero-ourservices {
     border: 1px solid var(--Border);
     color: var(--Button-Text);
@@ -102,8 +110,8 @@
 }
 
 .hero-actions .hero-ourservices:hover {
-    box-shadow: 4px 3px 0px var(--Button-Text);
-    transition: box-shadow 1.5s ease;
+    box-shadow: 0 0 5px var(--Button-Text);
+    transition: box-shadow 0.5s ease;
 }
 
 .hero-stats {

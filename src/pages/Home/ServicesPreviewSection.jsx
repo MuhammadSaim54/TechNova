@@ -27,7 +27,7 @@ function ServicesPreviewSection() {
                                 <span>{Service.title}</span>
                                 <p>{Service.description}</p>
                                 <div className="action-btn">
-                                    <button>Learn More <ArrowRight size={16} color='#0051fb' /></button>
+                                    <button>Learn More <ArrowRight size={16} color='#0051fb' className='Services-arrow' /></button>
                                 </div>
                             </div>
 

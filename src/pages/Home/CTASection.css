@@ -1,0 +1,88 @@
+.Home-CTA-Section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 4rem;
+    padding: 1.5rem 2.5rem;
+    background-color: #0051fb12;
+    border: 1px solid var(--Text-Light);
+    border-radius: .75rem;
+
+    border-bottom: 1px solid var(--Section-line);
+}
+
+.CTA-Section-Badge span {
+    color: var(--Primary);
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    font-family: 'Manrope';
+}
+
+.CTA-Section-Heading h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.CTA-Section-Description p {
+    max-width: 29rem;
+    font-family: 'Manrope';
+    margin-top: .5rem;
+}
+
+.CTA-Section-Button button {
+    padding: .85rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    border: 1px solid var(--Primary);
+    border-radius: .5rem;
+    color: var(--Text);
+    background-color: var(--Primary);
+    cursor: pointer;
+}
+
+.CTA-Section-Button button:hover {
+    box-shadow: 0 0 14px var(--Primary);
+    transition: box-shadow 0.3s ease;
+}
+
+.CTA-Button {
+    transition: transform 0.3s ease;
+}
+
+.CTA-Section-Button button:hover .CTA-Button {
+    transform: translateX(5px);
+}
+
+/* 982px */
+@media (max-width:982px) {
+    .Home-CTA-Section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        border-radius: 0;
+        margin: 1.5rem 0;
+    }
+}
+
+/* 700px */
+@media (max-width:700px) {
+    .CTA-Section-Badge span {
+        font-size: .85rem;
+    }
+
+    .CTA-Section-Heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .CTA-Section-Description p {
+        max-width: 25rem;
+        font-size: .85rem;
+    }
+
+    .CTA-Section-Button button {
+        font-size: .95rem;
+    }
+}

@@ -102,8 +102,9 @@
 }
 
 .about-content .about-btn:hover {
-    box-shadow: 0 0 10px var(--Primary);
-    transition: box-shadow 1s ease;
+    background-color: var(--Primary);
+    color: var(--Text);
+    transition: background-color 2.2s ease;
 }
 
 /* ===========================

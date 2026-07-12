@@ -44,6 +44,14 @@
     padding: 1.25rem;
     border: 1px solid var(--Section-line);
     border-radius: .75rem;
+    cursor: pointer;
+}
+
+.Home-Services-Cards .card:hover {
+    border: 1px solid var(--Primary);
+    transform: translateY(-6px);
+    transition: transform 1.2s ease;
+    box-shadow: 0 0 10px var(--Glow);
 }
 
 .Home-Services-Cards .web-development {
@@ -100,8 +108,17 @@
 }
 
 .Home-Services-Viewall button:hover {
-    box-shadow: 0 0 10px var(--Primary);
-    transition: box-shadow 1s ease;
+    background-color: var(--Primary);
+    color: var(--Text);
+    transition: background-color 2.2s ease;
+}
+
+.Services-arrow {
+    transition: transform 0.3s ease;
+}
+
+.Home-Services-Cards .card .action-btn button:hover .Services-arrow {
+    transform: translateX(5px);
 }
 
 /* ===========================
