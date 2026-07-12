@@ -1,0 +1,225 @@
+.Home-Services {
+    /* layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: .5rem;
+
+    border-bottom: 1px solid var(--Section-line);
+}
+
+.Home-Services-Badge span {
+    /* Typography */
+    font-weight: 500;
+    color: var(--Primary);
+    font-family: 'Manrope';
+}
+
+.Home-Services-Title h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.Home-Services-Description p {
+    width: 33rem;
+    text-align: center;
+}
+
+.Home-Services-Cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    margin: 2rem 4rem 0 4rem;
+}
+
+.Home-Services-Cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .75rem;
+    padding: 1.25rem;
+    border: 1px solid var(--Section-line);
+    border-radius: .75rem;
+}
+
+.Home-Services-Cards .web-development {
+    background-color: var(--Primary);
+    padding: .5rem .5rem;
+    border-radius: .75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home-Services-Cards .ServiceIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.Home-Services-Cards .card span {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.Home-Services-Cards .card p {
+    font-size: 0.95rem;
+    color: var(--Text-Muted);
+    max-width: 15rem;
+}
+
+.Home-Services-Cards .card .action-btn button {
+    border: none;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+    margin-top: 1rem;
+    color: var(--Primary);
+    cursor: pointer;
+}
+
+.Home-Services-Viewall button {
+    padding: .75rem 2rem;
+    border: 1px solid var(--Primary);
+    border-radius: .5rem;
+    background: transparent;
+    color: var(--Primary);
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+/* ===========================
+   982px
+=========================== */
+
+@media (max-width:982px) {
+    .Home-Services-Cards {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ===========================
+   700px
+=========================== */
+
+@media (max-width:700px) {
+    .Home-Services-Title h1 {
+        font-size: 2.25rem;
+    }
+
+    .Home-Services-Description p {
+        font-size: .95rem;
+        width: 28rem;
+    }
+}
+
+
+/* ===========================
+   540px
+=========================== */
+
+@media (max-width:540px) {
+    .Home-Services-Title h1 {
+        font-size: 1.75rem;
+    }
+
+    .Home-Services-Description p {
+        font-size: .75rem;
+        width: 20rem;
+    }
+}
+
+/* ===========================
+   442px
+=========================== */
+
+@media (max-width:442px) {
+
+    .Home-Services-Cards {
+        margin: 2rem 2rem 0 2rem;
+    }
+
+    .Home-Services-Cards .card {
+        gap: .65rem;
+        padding: 1.15rem;
+    }
+
+    .Home-Services-Cards .ServiceIcon {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .Home-Services-Cards .card span {
+        font-size: 1.25rem;
+    }
+
+    .Home-Services-Cards .card p {
+        font-size: .85rem;
+    }
+
+    .Home-Services-Badge span {
+        font-size: .85rem;
+    }
+
+    .Home-Services-Title h1 {
+        font-size: 1.3rem;
+    }
+
+    .Home-Services-Description p {
+        font-size: .75rem;
+        width: 17rem;
+    }
+}
+
+/* ===========================
+   370px
+=========================== */
+
+@media (max-width:370px) {
+    .Home-Services-Cards {
+        margin: 2rem 1rem 0 1rem;
+    }
+
+    .Home-Services-Title h1 {
+        font-size: 1.25rem;
+    }
+
+    .Home-Services-Description p {
+        font-size: .75rem;
+        width: 16.5rem;
+    }
+
+    .Home-Services-Cards .ServiceIcon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .Home-Services-Cards .card span {
+        font-size: 1.15rem;
+    }
+
+    .Home-Services-Cards .card p {
+        font-size: .75rem;
+    }
+}
+
+/* ===========================
+   314px
+=========================== */
+
+@media (max-width:314px) {
+    .Home-Services-Title h1 {
+        font-size: 1.2rem;
+    }
+
+    .Home-Services-Description p {
+        font-size: .7rem;
+        width: 16rem;
+    }
+}
