@@ -1,8 +1,8 @@
-function Footer() {
+function NotFound() {
     return (
         <>
         </>
     )
 }
 
-export default Footer
+export default NotFound

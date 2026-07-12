@@ -1,8 +1,8 @@
-function Footer() {
+function Contact() {
     return (
         <>
         </>
     )
 }
 
-export default Footer
+export default Contact

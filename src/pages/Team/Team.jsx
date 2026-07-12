@@ -1,8 +1,8 @@
-function Footer() {
+function Team() {
     return (
         <>
         </>
     )
 }
 
-export default Footer
+export default Team

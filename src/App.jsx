@@ -3,14 +3,14 @@ import { Routes, Route } from 'react-router-dom'
 // Layout
 import MainLayout from './layouts/MainLayout.jsx'
 // Pages
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Portfolio from "./pages/Portfolio";
-import Team from "./pages/Team";
-import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+import Home from "./pages/Home/index.jsx";
+import About from "./pages/About/About.jsx";
+import Services from "./pages/Services/Services.jsx";
+import Portfolio from "./pages/Portfolio/Portfolio.jsx";
+import Team from "./pages/Team/Team.jsx";
+import Blog from "./pages/Blog/Blog.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
+import NotFound from "./pages/NotFound/NotFound.jsx";
 // CSS
 import './App.css'
 

@@ -1,8 +1,8 @@
-function Footer() {
+function Services() {
     return (
         <>
         </>
     )
 }
 
-export default Footer
+export default Services

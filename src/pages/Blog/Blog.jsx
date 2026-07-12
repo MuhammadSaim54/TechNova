@@ -1,8 +1,8 @@
-function Footer() {
+function Blog() {
     return (
         <>
         </>
     )
 }
 
-export default Footer
+export default Blog
