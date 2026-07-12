@@ -55,6 +55,12 @@
     align-items: center;
 }
 
+.Home-Services-Cards .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .Home-Services-Cards .ServiceIcon {
     width: 2.5rem;
     height: 2.5rem;
@@ -91,6 +97,11 @@
     color: var(--Primary);
     margin-top: 1rem;
     cursor: pointer;
+}
+
+.Home-Services-Viewall button:hover {
+    box-shadow: 0 0 10px var(--Primary);
+    transition: box-shadow 1s ease;
 }
 
 /* ===========================

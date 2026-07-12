@@ -1,0 +1,181 @@
+.Home-about-preview {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    gap: 4rem;
+    padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 5vw, 4rem);
+}
+
+.about-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: clamp(20rem, 50vw, 38rem);
+    height: auto;
+    border-radius: .75rem;
+    display: block;
+}
+
+.about-image .experience-card {
+    position: absolute;
+    bottom: 12px;
+    left: 8px;
+    background-color: var(--Primary);
+    border-radius: .75rem;
+    padding: 1rem;
+}
+
+.about-image .experience-card h2 {
+    font-size: 2.5rem;
+    color: var(--Text);
+    font-weight: 500;
+}
+
+.about-image .experience-card p {
+    color: var(--Text);
+    width: 5rem;
+    font-size: .85rem;
+}
+
+.about-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .75rem;
+}
+
+.about-content .about-badge span {
+    color: var(--Primary);
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Manrope';
+}
+
+.about-content .about-title h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    max-width: 26rem;
+}
+
+.about-content .about-description p {
+    font-size: 1rem;
+    max-width: 30rem;
+    color: var(--Text-Muted);
+}
+
+.about-content .about-features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-content .about-features .feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+
+.about-content .about-features .feature span {
+    width: 5rem;
+    font-size: 0.95rem;
+}
+
+.about-content .about-btn {
+    padding: .75rem 1.5rem;
+    margin-top: 1rem;
+    border: 1px solid var(--Primary);
+    background: transparent;
+    border-radius: .5rem;
+    color: var(--Primary);
+    cursor: pointer;
+}
+
+.about-content .about-btn:hover {
+    box-shadow: 0 0 10px var(--Primary);
+    transition: box-shadow 1s ease;
+}
+
+/* ===========================
+   1024px
+=========================== */
+
+@media (max-width:1024px) {
+    .Home-about-preview {
+        gap: 2rem;
+    }
+
+    .about-content .about-title h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-content .about-description p {
+        font-size: .85rem;
+    }
+
+    .about-content .about-features {
+        gap: 1.5rem;
+    }
+}
+
+
+/* ===========================
+   768px
+=========================== */
+
+@media (max-width:768px) {
+    .Home-about-preview {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-image img {
+        width: 100%;
+    }
+
+    .about-image .experience-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-image .experience-card p {
+        width: 3.75rem;
+        font-size: .75rem;
+    }
+
+    .about-content .about-features {
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+    .about-content .about-features .feature span {
+        width: 11rem;
+        font-size: 1rem;
+    }
+
+}
+
+/* ===========================
+   314px
+=========================== */
+
+@media (max-width:314px) {
+    .about-image .experience-card h2 {
+        font-size: 1rem;
+    }
+
+    .about-image .experience-card p {
+        width: 2.75rem;
+        font-size: .5rem;
+    }
+}
