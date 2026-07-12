@@ -10,7 +10,6 @@ function Home() {
     return (
         <>
             <HeroSection />
-            <hr />
             <TrustedBySection />
             <ServicesPreviewSection />
             <AboutPreviewSection />
