@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+
+  /* Backgrounds */
+  --Background: #0B1120;
+  --Surface: #111827;
+  --Card: #1A2332;
+  --Glass: rgba(22, 34, 53, 0.55);
+
+  /* Primary Accent */
+  --Primary: #6366F1;
+  --Primary-Light: #818CF8;
+  --Primary-Dark: #4F46E5;
+
+  /* Secondary Accent */
+  --Secondary: #06B6D4;
+  --Secondary-Light: #22D3EE;
+
+  /* Success / Warning / Danger */
+  --Success: #22C55E;
+  --Warning: #F59E0B;
+  --Danger: #EF4444;
+
+  /* Text */
+  --Text: #F8FAFC;
+  --Text-Light: #CBD5E1;
+  --Text-Muted: #94A3B8;
+
+  /* Borders */
+  --Border: rgba(148, 163, 184, .15);
+  --Border-Hover: rgba(99, 102, 241, .35);
+
+  /* Buttons */
+  --Button: var(--Primary);
+  --Button-Hover: var(--Primary-Light);
+  --Button-Text: #FFFFFF;
+
+  /* Shadows */
+  --Shadow: rgba(99, 102, 241, .25);
+  --Glow: rgba(99, 102, 241, .45);
+
+  /* Glass Effect */
+  --glass-backdrop-filter: blur(18px);
+  --glass-background: var(--Glass);
+  --glass-border: 1px solid var(--Border);
+
+  /* Buttons */
+  --button-background: linear-gradient(135deg, var(--Primary), var(--Primary-Light));
+  --button-box-shadow: 0 0 20px var(--Glow);
+
+  /* Card */
+  --card-background: var(--Card);
+  --card-border: 1px solid var(--Border);
+  --card-border-radius: 20px;
+
+  /* Heading */
+  --heading-color: var(--Text);
+  --heading-font-weight: 800;
+
+  /* Paragraph */
+  --paragraph-color: var(--Text-Light);
+
+  /* Small Text */
+  --small-color: var(--Text-Muted);
+
+  /* Fonts */
+  --heading-font: 'Poppins';
+  --paragraph-font: 'Manrope';
+
+  /* Gradients */
+  --hero-linear-gradient: (180deg,#111827, #0B1120);
+  --buttons-linear-gradient:(135deg, #6366F1, #818CF8);
+
+  /* Shadows */
+  --box-shadow: 0 15px 35px rgba(0,0,0,.35);
+  --glow: 0 0 25px rgba(99,102,241,.35);
+}
