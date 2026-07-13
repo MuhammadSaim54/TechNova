@@ -1,0 +1,48 @@
+.ServicesHeroSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    gap: .75rem;
+}
+
+.Services-Badge span {
+    font-weight: 700;
+    font-family: 'Manrope';
+    color: var(--Primary);
+}
+
+.Services-Heading h2 {
+    font-size: 2.75rem;
+    font-weight: 600;
+}
+
+.Services-Description p {
+    font-family: 'Manrope';
+    color: var(--Text-Muted);
+    max-width: 30rem;
+    text-align: center;
+}
+
+/* 768px */
+
+@media (max-width:768px) {
+    .ServicesHeroSection {
+        align-items: flex-start;
+    }
+
+    .Services-Badge span {
+        font-size: .85rem;
+    }
+
+
+    .Services-Heading h2 {
+        font-size: 2.25rem;
+    }
+
+    .Services-Description p {
+        font-size: .85rem;
+        text-align: left;
+    }
+}

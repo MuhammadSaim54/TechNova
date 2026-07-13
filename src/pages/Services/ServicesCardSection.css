@@ -1,0 +1,117 @@
+.ServicesCardSection {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 4rem 0 4rem;
+}
+
+.ServicesCardSection .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .75rem;
+    padding: 1.25rem;
+    border: 1px solid var(--Section-line);
+    border-radius: .75rem;
+    cursor: pointer;
+}
+
+.ServicesCardSection .card:hover {
+    border: 1px solid var(--Primary);
+    transform: translateY(-6px);
+    transition: transform 1.2s ease;
+    box-shadow: 0 0 10px var(--Glow);
+}
+
+.ServicesCardSection .web-development {
+    background-color: var(--Primary);
+    padding: .5rem .5rem;
+    border-radius: .75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ServicesCardSection .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ServicesCardSection .ServiceIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.ServicesCardSection .card span {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.ServicesCardSection .card p {
+    font-size: 0.95rem;
+    color: var(--Text-Muted);
+    max-width: 15rem;
+}
+
+.ServicesCardSection .card .action-btn button {
+    border: none;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+    margin-top: 1rem;
+    color: var(--Primary);
+    cursor: pointer;
+}
+
+.Services-arrow {
+    transition: transform 0.3s ease;
+}
+
+.ServicesCardSection .card .action-btn button:hover .Services-arrow {
+    transform: translateX(5px);
+}
+
+/* 768px */
+
+@media (max-width:768px) {
+    .ServicesCardSection {
+        margin: 2rem 2rem 0 2rem;
+    }
+
+    .ServicesCardSection .card {
+        gap: .65rem;
+        padding: 1.15rem;
+    }
+
+    .ServicesCardSection .ServiceIcon {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .ServicesCardSection .card span {
+        font-size: 1.25rem;
+    }
+
+    .ServicesCardSection .card p {
+        font-size: .85rem;
+    }
+
+    .Home-Services-Badge span {
+        font-size: .85rem;
+    }
+
+    .Home-Services-Title h1 {
+        font-size: 1.3rem;
+    }
+
+    .Home-Services-Description p {
+        font-size: .75rem;
+        width: 17rem;
+    }
+}
