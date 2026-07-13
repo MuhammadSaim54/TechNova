@@ -3,10 +3,10 @@ import { Routes, Route } from 'react-router-dom'
 // Layout
 import MainLayout from './layouts/MainLayout.jsx'
 // Pages
-import Home from "./pages/Home/index.jsx";
-import About from "./pages/About/About.jsx";
-import Services from "./pages/Services/Services.jsx";
-import Portfolio from "./pages/Portfolio/Portfolio.jsx";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services/Services";
+import Portfolio from "./pages/Portfolio/Portfolio";
 import Team from "./pages/Team/Team.jsx";
 import Blog from "./pages/Blog/Blog.jsx";
 import Contact from "./pages/Contact/Contact.jsx";

@@ -1,0 +1,176 @@
+.AboutHeroSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    padding: 1.5rem;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    border-bottom: 1px solid var(--Section-line);
+}
+
+.About-Hero-Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.About-Hero-Badge span {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Manrope';
+    color: var(--Primary);
+}
+
+.About-Hero-Heading h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.About-Hero-Description p {
+    width: 100%;
+    max-width: 28rem;
+    color: var(--Text-Muted);
+}
+
+.About-Hero-Action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.About-Hero-Action button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem 2rem;
+    border-radius: .75rem;
+    cursor: pointer;
+}
+
+.About-Hero-Action .getstarted {
+    background-color: var(--Primary);
+    border: 1px solid var(--Primary);
+    color: var(--Text);
+}
+
+.getstartedicon {
+    transition: transform 0.3s ease;
+}
+
+.About-Hero-Action .getstarted:hover .getstartedicon {
+    transform: translateX(5px);
+}
+
+.About-Hero-Action .ourservices {
+    background: transparent;
+    border: 1px solid var(--Border);
+}
+
+.About-Hero-Image img {
+    width: 100%;
+    max-width: 34rem;
+    display: block;
+    border-radius: .75rem;
+}
+
+/* 1024px */
+
+@media (max-width:1025px) {
+    .About-Hero-Heading h2 {
+        font-size: 2rem;
+    }
+
+    .About-Hero-Description p {
+        font-size: .95rem;
+    }
+
+    .About-Hero-Action {
+        gap: 1rem;
+    }
+
+    .About-Hero-Action button {
+        padding: .75rem 1.5rem;
+        font-size: .75rem;
+    }
+}
+
+/* 768px */
+
+@media (max-width:768px) {
+    .AboutHeroSection {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0 1.5rem;
+        gap: 2rem;
+    }
+
+    .AboutHeroSection img {
+        width: 100%;
+        display: block;
+        border-radius: .75rem;
+    }
+
+    .About-Hero-Heading h2 {
+        font-size: 2.75rem;
+    }
+
+    .About-Hero-Description p {
+        font-size: 1rem;
+    }
+
+    .About-Hero-Action {
+        gap: 1.5rem;
+    }
+
+    .About-Hero-Action button {
+        padding: 1rem 2rem;
+        font-size: .85rem;
+    }
+}
+
+/* 480px */
+
+@media (max-width:480px) {
+    .About-Hero-Action {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: .5rem;
+    }
+
+    .About-Hero-Heading h2 {
+        font-size: 2.25rem;
+    }
+
+    .About-Hero-Description p {
+        font-size: .85rem;
+    }
+}
+
+/* 314px */
+
+@media (max-width:314px) {
+    .About-Hero-Heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .About-Hero-Description p {
+        font-size: .75rem;
+    }
+
+    .About-Hero-Action {
+        gap: 1rem;
+    }
+
+    .About-Hero-Action button {
+        padding: .75rem 1.5rem;
+        font-size: .75rem;
+    }
+}
