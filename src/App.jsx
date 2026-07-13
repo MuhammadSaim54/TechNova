@@ -6,7 +6,7 @@ import MainLayout from './layouts/MainLayout.jsx'
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Portfolio from "./pages/Portfolio/Portfolio";
+import Portfolio from "./pages/Portfolio";
 import Team from "./pages/Team/Team.jsx";
 import Blog from "./pages/Blog/Blog.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
