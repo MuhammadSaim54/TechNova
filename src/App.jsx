@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
-import Team from "./pages/Team/Team.jsx";
+import Team from "./pages/Team";
 import Blog from "./pages/Blog/Blog.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
