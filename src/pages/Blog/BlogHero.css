@@ -1,0 +1,51 @@
+.BlogHeroSection {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+}
+
+.Blog-Badge span {
+    font-family: 'Manrope';
+    font-weight: 700;
+    color: var(--Primary);
+}
+
+.Blog-Heading h2 {
+    font-size: 2.75rem;
+    font-weight: 600;
+}
+
+.Blog-Description p {
+    font-family: 'Manrope';
+    color: var(--Text-Muted);
+    max-width: 30rem;
+    text-align: center;
+}
+
+/* 768px */
+
+@media (max-width:768px) {
+    .BlogHeroSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .Blog-Badge span {
+        font-size: .85rem;
+    }
+
+
+    .Blog-Heading h2 {
+        font-size: 2.25rem;
+    }
+
+    .Blog-Description p {
+        font-size: .85rem;
+        text-align: left;
+    }
+}
