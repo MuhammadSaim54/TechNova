@@ -1,0 +1,159 @@
+.NotFoundSection {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+}
+
+.NotFoundContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+/* ==========================
+        Typography
+========================== */
+
+.NotFoundContent h1 {
+    font-size: clamp(5rem, 10vw, 8rem);
+    font-weight: 800;
+
+    color: var(--Primary);
+
+    line-height: 1;
+}
+
+.NotFoundContent h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+
+    margin-top: .5rem;
+}
+
+.NotFoundContent p {
+    margin-top: 1rem;
+
+    max-width: 32rem;
+
+    color: var(--Text-Muted);
+
+    line-height: 1.7;
+}
+
+/* ==========================
+        Astronaut
+========================== */
+
+.NotFoundImage {
+    margin: 2.5rem 0;
+}
+
+.NotFoundImage img {
+    width: 100%;
+    max-width: 22rem;
+
+    display: block;
+
+    user-select: none;
+}
+
+/* ==========================
+        Button
+========================== */
+
+.HomeButton {
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+
+    padding: .9rem 1.8rem;
+
+    background: var(--Primary);
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: .75rem;
+
+    transition: .3s ease;
+}
+
+.HomeButton svg {
+    width: 18px;
+    height: 18px;
+}
+
+.HomeButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(37,99,235,.25);
+}
+
+/* ==========================
+      Bottom Wave
+========================== */
+
+.BackgroundWave {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.BackgroundWave img {
+    width: 100%;
+
+    display: block;
+}
+
+/* ==========================
+        Responsive
+========================== */
+
+@media (max-width:768px) {
+
+    .NotFoundSection {
+        padding: 1.5rem;
+    }
+
+    .NotFoundImage img {
+        max-width: 18rem;
+    }
+
+}
+
+@media (max-width:480px) {
+
+    .NotFoundContent p {
+        font-size: .95rem;
+    }
+
+    .HomeButton {
+        width: 100%;
+        max-width: 15rem;
+    }
+
+    .NotFoundImage img {
+        max-width: 15rem;
+    }
+
+}

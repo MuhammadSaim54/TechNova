@@ -5,13 +5,13 @@ function ContactHeroSection() {
         <>
             <section className="ContactHeroSection">
                 <div className="Contact-Badge">
-                    <span>OUR Contact</span>
+                    <span>OUR CONTACT</span>
                 </div>
                 <div className="Contact-Heading">
-                    <h2>Our Latest Work</h2>
+                    <h2>Let's Work Together</h2>
                 </div>
                 <div className="Contact-Description">
-                    <p>Here are some of the projects we've worked on, We build solutions that make an impact.</p>
+                    <p>Have a project in mind? Get in touch with us and let's create something amazing together.</p>
                 </div>
             </section>
         </>

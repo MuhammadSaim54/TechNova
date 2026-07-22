@@ -1,6 +1,9 @@
+import NotFoundSection from "./NotFoundSection"
+
 function NotFound() {
     return (
         <>
+            <NotFoundSection />
         </>
     )
 }

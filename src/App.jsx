@@ -10,7 +10,7 @@ import Portfolio from "./pages/Portfolio";
 import Team from "./pages/Team";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound/NotFound.jsx";
+import NotFound from "./pages/NotFound";
 // CSS
 import './App.css'
 
