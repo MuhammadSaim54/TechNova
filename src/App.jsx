@@ -9,7 +9,7 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Team from "./pages/Team";
 import Blog from "./pages/Blog";
-import Contact from "./pages/Contact/Contact.jsx";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound/NotFound.jsx";
 // CSS
 import './App.css'

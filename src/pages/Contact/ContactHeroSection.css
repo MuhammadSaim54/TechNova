@@ -1,0 +1,51 @@
+.ContactHeroSection {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+}
+
+.Contact-Badge span {
+    font-family: 'Manrope';
+    font-weight: 700;
+    color: var(--Primary);
+}
+
+.Contact-Heading h2 {
+    font-size: 2.75rem;
+    font-weight: 600;
+}
+
+.Contact-Description p {
+    font-family: 'Manrope';
+    color: var(--Text-Muted);
+    max-width: 30rem;
+    text-align: center;
+}
+
+/* 768px */
+
+@media (max-width:768px) {
+    .ContactHeroSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .Contact-Badge span {
+        font-size: .85rem;
+    }
+
+
+    .Contact-Heading h2 {
+        font-size: 2.25rem;
+    }
+
+    .Contact-Description p {
+        font-size: .85rem;
+        text-align: left;
+    }
+}
