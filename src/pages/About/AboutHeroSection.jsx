@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { NavLink } from "react-router-dom";
 import AboutImage from '../../assets/images/developer-team.png'
 
 import './AboutHeroSection.css';
@@ -18,8 +19,19 @@ function AboutHeroSection() {
                         <p>We are a team of passionate creators, developers and strategists helping brands grow in the digital world.</p>
                     </div>
                     <div className="About-Hero-Action">
-                        <button className="getstarted">Get Started <ArrowRight className='getstartedicon' size={16}/></button>
-                        <button className="ourservices">Our Services</button>
+                        <NavLink
+                            to="/contact"
+                            className="getstarted"
+                        >
+                            Get Started
+                            <ArrowRight size={18} className="getstartediccon" />
+                        </NavLink>
+                        <NavLink
+                            to="/services"
+                            className="ourservices"
+                        >
+                            Our Services
+                        </NavLink>
                     </div>
                 </div>
                 <div className="About-Hero-Image">

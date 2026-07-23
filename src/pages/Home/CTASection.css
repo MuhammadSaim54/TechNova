@@ -30,20 +30,20 @@
     margin-top: .5rem;
 }
 
-.CTA-Section-Button button {
+.CTA-Section-Button {
     padding: .85rem 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: .5rem;
     border: 1px solid var(--Primary);
-    border-radius: .5rem;
+    border-radius: .75rem;
     color: var(--Text);
     background-color: var(--Primary);
     cursor: pointer;
 }
 
-.CTA-Section-Button button:hover {
+.CTA-Section-Button:hover {
     box-shadow: 0 0 14px var(--Primary);
     transition: box-shadow 0.3s ease;
 }
@@ -52,7 +52,7 @@
     transition: transform 0.3s ease;
 }
 
-.CTA-Section-Button button:hover .CTA-Button {
+.CTA-Section-Button:hover .CTA-Button {
     transform: translateX(5px);
 }
 
@@ -82,7 +82,7 @@
         font-size: .85rem;
     }
 
-    .CTA-Section-Button button {
+    .CTA-Section-Button {
         font-size: .95rem;
     }
 }

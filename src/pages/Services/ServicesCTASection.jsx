@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react"
+import { NavLink } from "react-router-dom";
 
 import './ServicesCTASection.css'
 
@@ -18,7 +19,13 @@ function ServicesCTASection() {
                     </div>
                 </div>
                 <div className="CTA-Section-Button">
-                    <button>Get Started Now <ArrowRight size={18} className="CTA-Button" /></button>
+                    <NavLink
+                        to="/contact"
+                        className="CTA-Button"
+                    >
+                        Get Started
+                        <ArrowRight size={18} className="getstartediccon" />
+                    </NavLink>
                 </div>
             </section>
         </>

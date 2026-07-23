@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { FolderKanban } from "lucide-react";
 import { Users } from "lucide-react";
 import { Award } from "lucide-react";
+import { NavLink } from "react-router-dom";
 import HeroIllustration from "../../assets/images/hero-illustration.png";
 
 import './HeroSection.css';
@@ -20,13 +21,19 @@ function HomeHeroSection() {
                     <p>We are creative digital agency delivering modern web solutions that drive buisness growth.</p>
                 </div>
                 <div className="hero-actions">
-                    <button className="hero-getstarted">
+                    <NavLink
+                        to="/contact"
+                        className="hero-getstarted"
+                    >
                         Get Started
-                        <ArrowRight size={20} className="Hero-Button"/>
-                    </button>
-                    <button className="hero-ourservices">
+                        <ArrowRight size={20} className="Hero-Button" />
+                    </NavLink>
+                    <NavLink
+                        to="/services"
+                        className="hero-ourservices"
+                    >
                         Our Services
-                    </button>
+                    </NavLink>
                 </div>
                 <div className="hero-stats">
                     <div className="stat-card">

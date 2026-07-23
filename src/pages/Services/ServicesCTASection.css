@@ -28,14 +28,13 @@
     margin-top: .5rem;
 }
 
-.CTA-Section-Button button {
-    padding: .85rem 2rem;
+.CTA-Section-Button .CTA-Button {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: .5rem;
     border: 1px solid var(--Primary);
-    border-radius: .5rem;
+    border-radius: .75rem;
     color: var(--Text);
     background-color: var(--Primary);
     cursor: pointer;

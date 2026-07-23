@@ -26,6 +26,9 @@
 
   /* Border */
   --Border: #00000063;
+
+  /* Background */
+  --Background: #fff;
 }
 
 *{
@@ -33,4 +36,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins';
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

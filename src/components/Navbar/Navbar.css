@@ -1,0 +1,341 @@
+/* ==========================
+        Navbar
+========================== */
+
+.Navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    width: 100%;
+
+    background: var(--Background);
+
+    border-bottom: 1px solid var(--Section-line);
+}
+
+.NavbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 5.5rem;
+
+    padding: 1rem;
+}
+
+/* ==========================
+        Logo
+========================== */
+
+.NavbarLogo {
+    display: flex;
+    align-items: center;
+}
+
+.NavbarLogo img {
+    height: 11rem;
+    width: auto;
+}
+
+/* ==========================
+      Navigation
+========================== */
+
+.NavbarMenu {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.NavbarMenu a {
+    position: relative;
+
+    text-decoration: none;
+
+    color: var(--Text-Muted);
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    transition: .3s ease;
+}
+
+.NavbarMenu a:hover {
+    color: var(--Primary);
+}
+
+.NavbarMenu a.active {
+    color: var(--Primary);
+}
+
+.NavbarMenu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -1.2rem;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--Primary);
+
+    transition: .3s;
+}
+
+.NavbarMenu a:hover::after,
+.NavbarMenu a.active::after {
+
+    width: 100%;
+}
+
+/* ==========================
+        Button
+========================== */
+
+.NavbarButton {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: .5rem;
+
+    padding: 12px 24px;
+
+    background: var(--Primary);
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 14px;
+
+    transition: .3s ease;
+}
+
+.NavbarButton:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 30px rgba(37, 99, 235, .25);
+
+    color: #fff;
+}
+
+.NavbarButton svg {
+
+    width: 18px;
+    height: 18px;
+}
+
+/* ==========================
+      Menu Button
+========================== */
+
+.MenuButton {
+
+    display: none;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+.MenuButton svg {
+
+    width: 30px;
+    height: 30px;
+
+    color: var(--Button-Text);
+}
+
+/* ==========================
+      Mobile Header
+========================== */
+
+.MobileHeader {
+
+    display: none;
+}
+
+/* ==========================
+      Overlay
+========================== */
+
+.NavbarOverlay {
+
+    display: none;
+}
+
+/* ==========================
+      Mobile CTA
+========================== */
+
+.MobileButton {
+
+    display: none;
+}
+
+/* ==========================
+      Responsive
+========================== */
+
+@media(max-width:992px) {
+
+    .DesktopButton {
+        display: none;
+    }
+
+    .MenuButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .NavbarMenu {
+
+        position: fixed;
+
+        top: 0;
+        right: -100%;
+
+        width: 320px;
+        max-width: 100%;
+
+        height: 100vh;
+
+        background: #fff;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        justify-content: flex-start;
+
+        gap: 1.8rem;
+
+        padding: 2rem;
+
+        transition: .35s ease;
+
+        z-index: 1001;
+    }
+
+    .NavbarMenu.active {
+
+        right: 0;
+    }
+
+    .MobileHeader {
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 7.75rem;
+
+        margin-bottom: 2rem;
+    }
+
+    .MobileHeader img {
+        height: 7rem;
+    }
+
+    .CloseButton {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: none;
+        border: none;
+
+        cursor: pointer;
+    }
+
+    .CloseButton svg {
+
+        width: 28px;
+        height: 28px;
+    }
+
+    .NavbarMenu a {
+
+        font-size: 1.05rem;
+    }
+
+    .NavbarMenu a::after {
+
+        bottom: -8px;
+    }
+
+    .NavbarButton {
+        color: #fff !important;
+    }
+
+    .NavbarButton svg {
+        color: #fff !important;
+    }
+
+    .MobileButton {
+
+        display: flex;
+
+        width: 100%;
+
+        margin-top: 1rem;
+    }
+
+    .NavbarOverlay {
+
+        display: block;
+
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(0, 0, 0, .35);
+
+        backdrop-filter: blur(2px);
+
+        z-index: 1000;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .NavbarContainer {
+
+        height: 5rem;
+    }
+
+    .NavbarLogo img {
+
+        height: 7rem;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .Navbar {
+
+        padding-inline: .25rem;
+    }
+
+    .NavbarMenu {
+
+        width: 100%;
+    }
+
+}

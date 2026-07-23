@@ -43,7 +43,8 @@
     margin-top: 1rem;
 }
 
-.About-Hero-Action button {
+.About-Hero-Action .getstarted,
+.About-Hero-Action .ourservices {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,6 +71,7 @@
 .About-Hero-Action .ourservices {
     background: transparent;
     border: 1px solid var(--Border);
+    color: #000000;
 }
 
 .About-Hero-Image img {
@@ -94,7 +96,7 @@
         gap: 1rem;
     }
 
-    .About-Hero-Action button {
+    .About-Hero-Action {
         padding: .75rem 1.5rem;
         font-size: .75rem;
     }
@@ -128,7 +130,7 @@
         gap: 1.5rem;
     }
 
-    .About-Hero-Action button {
+    .About-Hero-Action {
         padding: 1rem 2rem;
         font-size: .85rem;
     }
@@ -168,7 +170,7 @@
         gap: 1rem;
     }
 
-    .About-Hero-Action button {
+    .About-Hero-Action {
         padding: .75rem 1.5rem;
         font-size: .75rem;
     }
