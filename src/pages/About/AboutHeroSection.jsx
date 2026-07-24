@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { NavLink } from "react-router-dom";
-import AboutImage from '../../assets/images/developer-team.png'
+import AboutImage from '../../assets/images/developer-team.webp'
 
 import './AboutHeroSection.css';
 
@@ -35,7 +35,7 @@ function AboutHeroSection() {
                     </div>
                 </div>
                 <div className="About-Hero-Image">
-                    <img src={AboutImage} alt="AboutImage" />
+                    <img src={AboutImage} alt="AboutImage" loading="lazy"/>
                 </div>
             </section>
         </>

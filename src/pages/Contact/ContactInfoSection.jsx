@@ -1,6 +1,6 @@
 import ContactInfoData from "./ContactInfoData";
 import "./ContactInfoSection.css";
-import ContactMap from "./ContactMap.png";
+import ContactMap from "./ContactMap.webp";
 
 function ContactInfoSection() {
     return (
@@ -50,6 +50,7 @@ function ContactInfoSection() {
                     <img
                         src={ContactMap}
                         alt="Office Location"
+                        loading="lazy"
                     />
                 </div>
             </div>

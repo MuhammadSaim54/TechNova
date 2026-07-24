@@ -1,9 +1,9 @@
-import SaaS from '../../assets/images/SaaS.png'
-import Ecommerce from '../../assets/images/Ecommerce.png'
-import Fintech from '../../assets/images/Fintech.png'
-import Travel from '../../assets/images/Travel.png'
-import Identity from '../../assets/images/Identity.png'
-import Analytics from '../../assets/images/Analytics.png'
+import SaaS from '../../assets/images/SaaS.webp'
+import Ecommerce from '../../assets/images/Ecommerce.webp'
+import Fintech from '../../assets/images/Fintech.webp'
+import Travel from '../../assets/images/Travel.webp'
+import Identity from '../../assets/images/Identity.webp'
+import Analytics from '../../assets/images/Analytics.webp'
 
 let Portfoliodata = [
     {

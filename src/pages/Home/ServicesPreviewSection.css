@@ -97,7 +97,7 @@
     cursor: pointer;
 }
 
-.Home-Services-Viewall button {
+.Home-Services-Viewall {
     padding: .75rem 2rem;
     border: 1px solid var(--Primary);
     border-radius: .5rem;
@@ -107,7 +107,7 @@
     cursor: pointer;
 }
 
-.Home-Services-Viewall button:hover {
+.Home-Services-Viewall:hover {
     background-color: var(--Primary);
     color: var(--Text);
     transition: background-color 2.2s ease;

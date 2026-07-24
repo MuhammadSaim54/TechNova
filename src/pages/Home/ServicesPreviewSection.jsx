@@ -1,5 +1,6 @@
 import ServicesData from './ServicesData.js';
 import { ArrowRight } from "lucide-react";
+import { NavLink } from 'react-router-dom';
 
 import './ServicesPreviewSection.css';
 
@@ -34,9 +35,12 @@ function ServicesPreviewSection() {
                         )
                     })}
                 </div>
-                <div className="Home-Services-Viewall">
-                    <button>View All Services</button>
-                </div>
+                <NavLink
+                    to="/services"
+                    className="Home-Services-Viewall"
+                >
+                    View All Services
+                </NavLink>
             </section>
         </>
     )

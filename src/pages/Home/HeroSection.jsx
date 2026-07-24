@@ -3,11 +3,12 @@ import { FolderKanban } from "lucide-react";
 import { Users } from "lucide-react";
 import { Award } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import HeroIllustration from "../../assets/images/hero-illustration.png";
+import HeroIllustration from "../../assets/images/hero-illustration.webp";
 
 import './HeroSection.css';
 
 function HomeHeroSection() {
+
     return (
         <section className="hero">
             <div className="hero-content">
@@ -66,7 +67,7 @@ function HomeHeroSection() {
                 </div>
             </div>
             <div className="hero-img">
-                <img src={HeroIllustration} alt="hero-illustration" />
+                <img src={HeroIllustration} alt="hero-illustration"/>
             </div>
         </section>
     )

@@ -1,6 +1,6 @@
-import Ali from './images/Ali-Hassan.png'
-import Sarah from './images/Sarah-Khan.png'
-import Ahmed from './images/Ahmed-Raza.png'
+import Ali from './images/Ali-Hassan.webp'
+import Sarah from './images/Sarah-Khan.webp'
+import Ahmed from './images/Ahmed-Raza.webp'
 
 let teamdata = [
     {

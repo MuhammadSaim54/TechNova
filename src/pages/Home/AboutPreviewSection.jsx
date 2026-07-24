@@ -1,5 +1,6 @@
 import { Brain, Users, ShieldCheck, HeartHandshakeIcon } from "lucide-react";
-import AboutImage from "../../assets/images/developer-team.png";
+import AboutImage from "../../assets/images/developer-team.webp";
+import { NavLink } from "react-router-dom";
 
 import './AboutPreviewSection.css';
 
@@ -8,7 +9,7 @@ function AboutPreviewSection() {
         <>
             <section className="Home-about-preview">
                 <div className="about-image">
-                    <img src={AboutImage} alt="Our Team" />
+                    <img src={AboutImage} alt="Our Team" loading="lazy"/>
                     <div className="experience-card">
                         <h2>10+</h2>
                         <p>Years of Experience</p>
@@ -38,9 +39,12 @@ function AboutPreviewSection() {
                             <span>Client First Mindset</span>
                         </div>
                     </div>
-                    <button className="about-btn">
-                        Learn More About Us
-                    </button>
+                    <NavLink
+                    to="/about"
+                    className="about-btn"
+                >
+                    Learn More About Us
+                </NavLink>
                 </div>
             </section>
         </>

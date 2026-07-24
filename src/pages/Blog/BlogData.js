@@ -1,9 +1,9 @@
-import SaaS from './images/SaaS.png'
-import Trends from './images/Trends.png'
-import SEO from './images/SEO.png'
-import Branding from './images/Branding.png'
-import Cloud from './images/Cloud.png'
-import Marketing from './images/Marketing.png'
+import SaaS from './images/SaaS.webp'
+import Trends from './images/Trends.webp'
+import SEO from './images/SEO.webp'
+import Branding from './images/Branding.webp'
+import Cloud from './images/Cloud.webp'
+import Marketing from './images/Marketing.webp'
 
 let Blogdata = [
     {

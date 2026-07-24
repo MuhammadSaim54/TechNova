@@ -10,7 +10,7 @@ function BlogCards() {
                 {BlogData.map((data) => {
                     return (
                         <div className={data.className} key={data.id}>
-                            <img src={data.img} alt="Blog-image" />
+                            <img src={data.img} alt="Blog-image" loading="lazy"/>
                             <div className="Cards-detail">
                                 <h3>{data.title}</h3>
                                 <p>{data.description}</p>

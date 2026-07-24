@@ -1,16 +1,150 @@
-# React + Vite
+# 🚀 TechNova – Modern Digital Agency Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TechNova is a modern, responsive multi-page digital agency website built with **React** and **React Router**. The project focuses on clean UI, responsive layouts, reusable components, SEO optimization, and modern frontend development practices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Live Demo
 
-## React Compiler
+🔗 https://your-vercel-link.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+> _(Update this after deployment.)_
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📸 Preview
+
+![TechNova Preview](./public/preview.png)
+
+---
+
+## ✨ Features
+
+- 🎨 Modern & Clean UI Design
+- 📱 Fully Responsive Layout
+- ⚛️ Built with React
+- 🧭 Multi-page Navigation using React Router
+- 🔍 SEO Optimized
+- ⚡ Optimized Images (WebP)
+- 📂 Reusable Components
+- 🎯 Lighthouse Optimizations
+- 📞 Contact Section
+- 📰 Blog Section
+- 👨‍💻 Team Section
+- 💼 Portfolio Showcase
+- 🚀 Fast Build with Vite
+
+---
+
+## 🛠 Tech Stack
+
+- React
+- React Router DOM
+- Vite
+- CSS3
+- Lucide React
+- HTML5
+
+---
+
+## 📂 Project Structure
+
+```
+TechNova/
+│
+├── public/
+│   ├── preview.png
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── favicon.svg
+│
+├── src/
+│   ├── assets/
+│   ├── Components/
+│   ├── Pages/
+│   ├── Router/
+│   ├── Data/
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── package.json
+└── vite.config.js
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/yourusername/TechNova.git
+```
+
+Go to project directory
+
+```bash
+cd TechNova
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run development server
+
+```bash
+npm run dev
+```
+
+Create production build
+
+```bash
+npm run build
+```
+
+---
+
+## 📈 Lighthouse Score
+
+| Category | Score |
+|----------|------:|
+| 🚀 Performance | 54 |
+| ♿ Accessibility | 87 |
+| ✅ Best Practices | 100 |
+| 🔍 SEO | 100 |
+
+---
+
+## 🎯 Learning Objectives
+
+This project was built while learning:
+
+- React Fundamentals
+- Component-Based Architecture
+- React Router
+- Responsive Design
+- SEO Basics
+- Image Optimization
+- Git & GitHub Workflow
+- Project Structure
+- Performance Optimization
+
+---
+
+## 📄 License
+
+This project is created for learning and portfolio purposes.
+
+---
+
+## 👨‍💻 Author
+
+**Muhammad Saim**
+
+Frontend Developer | React Developer | UI Enthusiast
+
+GitHub:
+https://github.com/yourusername

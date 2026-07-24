@@ -9,7 +9,7 @@ function PortfolioCardsSection() {
                 {PortfolioData.map((data) => {
                     return (
                         <div className={data.className} key={data.id}>
-                            <img src={data.img} alt="portfolio-image" />
+                            <img src={data.img} alt="portfolio-image" loading="lazy"/>
                             <div className="Cards-detail">
                                 <h3>{data.title}</h3>
                                 <p>{data.description}</p>

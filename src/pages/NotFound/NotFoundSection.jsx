@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Astronaut from "./Astronaut.png";
-import BackgroundWave from "./BackgroundWave.png";
+import BackgroundWave from "./BackgroundWave.webp";
 import "./NotFoundSection.css";
 
 function NotFoundSection() {
@@ -19,6 +19,7 @@ function NotFoundSection() {
                     <img
                         src={Astronaut}
                         alt="Astronaut"
+                        loading="lazy"
                     />
                 </div>
                 <Link to="/" className="HomeButton">
@@ -30,6 +31,7 @@ function NotFoundSection() {
                 <img
                     src={BackgroundWave}
                     alt="Background Wave"
+                    loading="lazy"
                 />
             </div>
         </section>

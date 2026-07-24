@@ -5,7 +5,7 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import "./Navbar.css";
 import NavLinks from "./NavLinks";
 
-import Logo from "./TechNova-Logo.png";
+import Logo from "./TechNova-Logo.webp";
 
 function Navbar() {
 
