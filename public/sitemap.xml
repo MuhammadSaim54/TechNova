@@ -4,37 +4,37 @@
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://technova.vercel.app/</loc>
+    <loc>https://tech-nova-roan.vercel.app/</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://technova.vercel.app/about</loc>
+    <loc>https://tech-nova-roan.vercel.app/about</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://technova.vercel.app/services</loc>
+    <loc>https://tech-nova-roan.vercel.app/services</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://technova.vercel.app/portfolio</loc>
+    <loc>https://tech-nova-roan.vercel.app/portfolio</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://technova.vercel.app/team</loc>
+    <loc>https://tech-nova-roan.vercel.app/team</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://technova.vercel.app/blog</loc>
+    <loc>https://tech-nova-roan.vercel.app/blog</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://technova.vercel.app/contact</loc>
+    <loc>https://tech-nova-roan.vercel.app/contact</loc>
     <priority>0.8</priority>
   </url>
 

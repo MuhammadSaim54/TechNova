@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://technova.vercel.app/sitemap.xml
+Sitemap: https://tech-nova-roan.vercel.app/sitemap.xml
