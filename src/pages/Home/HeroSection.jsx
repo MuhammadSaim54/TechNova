@@ -67,7 +67,7 @@ function HomeHeroSection() {
                 </div>
             </div>
             <div className="hero-img">
-                <img src={HeroIllustration} alt="hero-illustration"/>
+                <img src={HeroIllustration} alt="hero-illustration" />
             </div>
         </section>
     )
