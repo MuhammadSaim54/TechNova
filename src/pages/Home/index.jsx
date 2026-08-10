@@ -4,8 +4,6 @@ import ServicesPreviewSection from "./ServicesPreviewSection";
 import AboutPreviewSection from "./AboutPreviewSection";
 import CTASection from "./CTASection";
 
-import "./Home.css"
-
 function Home() {
     return (
         <>
