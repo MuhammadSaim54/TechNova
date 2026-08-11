@@ -8,8 +8,6 @@ TechNova is a modern, responsive multi-page digital agency website built with **
 
 🔗 https://tech-nova-roan.vercel.app
 
-> _(Update this after deployment.)_
-
 ---
 
 ## 📸 Preview
