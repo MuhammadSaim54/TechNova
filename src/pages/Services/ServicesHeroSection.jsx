@@ -56,7 +56,7 @@ function ServicesHeroSection() {
                         font-['Manrope']
                         text-(--Text-Muted)
 
-                        max-w-[30rem]
+                        max-w-120
 
                         text-center
 
