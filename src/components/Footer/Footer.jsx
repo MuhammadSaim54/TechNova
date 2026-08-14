@@ -313,13 +313,13 @@ function Footer() {
                         flex-row
 
                         items-center
-                        justify-center
+                        justify-between
 
                         px-4
 
                         
                         max-[768px]:flex-col
-                        max-[768px]:justify-between
+                        max-[768px]:justify-center
                         max-[768px]:gap-6
                         max-[768px]:text-center
 
