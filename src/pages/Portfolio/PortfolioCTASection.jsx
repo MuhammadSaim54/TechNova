@@ -73,12 +73,12 @@ function PortfolioCTASection() {
                 <div>
                     <p
                         className="
-                            max-w-[29rem]
+                            max-w-116
                             mt-2
 
                             font-['Manrope']
 
-                            max-[700px]:max-w-[25rem]
+                            max-[700px]:max-w-100
                             max-[700px]:text-[0.85rem]
                         "
                     >

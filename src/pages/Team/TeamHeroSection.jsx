@@ -53,7 +53,7 @@ function TeamHeroSection() {
                 <p
                     className="
                         w-full
-                        max-w-[30rem]
+                        max-w-120
 
                         text-center
 
