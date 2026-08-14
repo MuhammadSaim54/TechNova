@@ -1,13 +1,11 @@
 import Data from "./StorySectionData.js";
 
-
 function AboutStorySection() {
     return (
         <section
             className="
                 grid
                 grid-cols-2
-
                 items-center
 
                 gap-20
@@ -38,16 +36,16 @@ function AboutStorySection() {
                 <div
                     className="
                         mt-4
-                        max-w-152
+                        w-full
+                        max-w-[38rem]
+
                         text-(--Text-Muted)
 
-                        max-[480px]:
-                            max-w-120
-                            text-[0.95rem]
+                        max-[480px]:max-w-[30rem]
+                        max-[480px]:text-[0.95rem]
 
-                        max-[314px]:
-                            max-w-[30rem]
-                            text-[0.75rem]
+                        max-[314px]:max-w-[30rem]
+                        max-[314px]:text-[0.75rem]
                     "
                 >
                     <p>
@@ -66,13 +64,14 @@ function AboutStorySection() {
                 className="
                     grid
                     grid-cols-2
+
                     gap-3
 
                     items-stretch
                     justify-center
 
                     max-[768px]:grid-cols-1
-            "
+                "
             >
 
                 {Data.map((card) => {
@@ -87,6 +86,8 @@ function AboutStorySection() {
                                 justify-center
                                 items-center
 
+                                w-full
+
                                 gap-2
 
                                 py-11
@@ -96,26 +97,25 @@ function AboutStorySection() {
 
                                 rounded-xl
 
-                                max-[768px]:
-                                    justify-start
-                                    items-center
-
-                                ${card.id === "2"
-                                    ? `
+                                ${
+                                    card.id === "2"
+                                        ? `
                                             col-start-2
                                             row-span-2
 
-                                            max-[768px]:
-                                                col-start-1
-                                                row-start-1
-                                                row-span-1
+                                            max-[768px]:col-start-1
+                                            max-[768px]:row-start-auto
+                                            max-[768px]:row-span-1
                                         `
-                                    : ""
+                                        : ""
                                 }
+
+                                max-[768px]:justify-start
+                                max-[768px]:items-center
                             `}
                         >
 
-                            {/* Icon */}
+                            {/* ================= Icon ================= */}
 
                             <div className="shrink-0">
                                 <Icon
@@ -125,15 +125,13 @@ function AboutStorySection() {
                             </div>
 
 
-                            {/* Details */}
+                            {/* ================= Details ================= */}
 
                             <div>
                                 <span
                                     className="
                                         text-2xl
                                         font-semibold
-
-                                        max-[768px]:text-2xl
                                     "
                                 >
                                     {card.title}

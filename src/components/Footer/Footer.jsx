@@ -74,12 +74,12 @@ function Footer() {
                                 text-(--Text-Muted)
                                 leading-[1.8]
 
-                                max-[768px]:
-                                    max-w-[28rem]
+                                
+                                max-[768px]:max-w-[28rem]
 
-                                max-[576px]:
-                                    text-[0.95rem]
-                                    leading-[1.7]
+                                
+                                max-[576px]:text-[0.95rem]
+                                max-[576px]:leading-[1.7]
                             "
                         >
                             We build innovative digital products that help
@@ -107,9 +107,9 @@ function Footer() {
                                 font-semibold
                                 text-(--Button-Text)
 
-                                max-[576px]:
-                                    mb-4
-                                    text-[1.05rem]
+                                
+                                max-[576px]:mb-4
+                                max-[576px]:text-[1.05rem]
                             "
                         >
                             Quick Links
@@ -167,9 +167,9 @@ function Footer() {
                                 font-semibold
                                 text-(--Button-Text)
 
-                                max-[576px]:
-                                    mb-4
-                                    text-[1.05rem]
+                                
+                                max-[576px]:mb-4
+                                max-[576px]:text-[1.05rem]
                             "
                         >
                             Services
@@ -225,9 +225,9 @@ function Footer() {
                                 font-semibold
                                 text-(--Button-Text)
 
-                                max-[576px]:
-                                    mb-4
-                                    text-[1.05rem]
+                                
+                                max-[576px]:mb-4
+                                max-[576px]:text-[1.05rem]
                             "
                         >
                             Contact
@@ -296,9 +296,9 @@ function Footer() {
 
                         bg-(--Section-line)
 
-                        max-[576px]:
-                            mt-10
-                            mb-6
+                        max-[576px]:mt-10
+                            
+                        max-[576px]:mb-6
                     "
                 />
 
@@ -310,21 +310,20 @@ function Footer() {
                 <div
                     className="
                         flex
-                        flex-wrap
+                        flex-row
 
-                        justify-center
                         items-center
+                        justify-center
 
                         px-4
 
-                        max-[768px]:
-                            flex-nowrap
-                            justify-between
-                            gap-6
-                            text-center
+                        
+                        max-[768px]:flex-col
+                        max-[768px]:justify-between
+                        max-[768px]:gap-6
+                        max-[768px]:text-center
 
-                        max-[576px]:
-                            px-6
+                        max-[576px]:px-6
                     "
                 >
 
@@ -390,9 +389,8 @@ function Footer() {
                                         hover:text-white
                                         hover:-translate-y-1
 
-                                        max-[576px]:
-                                            w-[38px]
-                                            h-[38px]
+                                        max-[576px]:w-[38px]
+                                        max-[576px]:h-[38px]
                                     "
                                 >
                                     <Icon
@@ -400,9 +398,9 @@ function Footer() {
                                             w-[18px]
                                             h-[18px]
 
-                                            max-[576px]:
-                                                w-4
-                                                h-4
+                                            
+                                            max-[576px]:w-4
+                                            max-[576px]:h-4
                                         "
                                     />
                                 </a>

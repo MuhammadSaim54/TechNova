@@ -103,22 +103,20 @@ function AboutHeroSection() {
                 <div
                     className="
                     flex
-                    flex-row
-                    justify-start
-                    items-center
+        justify-center
+        items-center
 
-                    gap-6
-                    mt-4
+        gap-6
+        mt-4
 
-                    max-[1025px]:gap-4
+        max-[1025px]:gap-4
 
-                    max-[480px]:
-                    flex-col
-                    items-stretch
-                    w-full
-                    gap-2
+        max-[480px]:flex-col
+        max-[480px]:items-stretch
+        max-[480px]:w-full
+        max-[480px]:gap-2
 
-                    max-[314px]:gap-4
+        max-[314px]:gap-4
                     "
                 >
 
@@ -241,6 +239,8 @@ function AboutHeroSection() {
 
             <div
                 className="
+                w-full
+                flex-1
                     flex
                     justify-center
                     items-center
@@ -254,6 +254,7 @@ function AboutHeroSection() {
                     className="
                         block
                         w-full
+                        h-auto
                         max-w-136
 
                         rounded-xl
