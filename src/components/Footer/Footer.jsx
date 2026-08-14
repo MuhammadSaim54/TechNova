@@ -1,126 +1,420 @@
 import { NavLink } from "react-router-dom";
-import "./Footer.css";
 import FooterData from "./FooterData";
 
-// Logo
-import Logo from "./TechNova-Logo2.png";
+import Logo from "./TechNova-Logo.png";
 
 function Footer() {
-
     return (
+        <footer
+            className="
+                w-full
+                bg-(--Background)
+                border-t
+                border-(--Section-line)
 
-        <footer className="Footer">
-            <div className="Container">
+                pt-20
+                pb-8
 
-                {/* ================= Footer Top ================= */}
+                max-[768px]:pt-16
+                max-[576px]:pt-12
+                max-[576px]:pb-6
+            "
+        >
+            <div className="w-full">
 
-                <div className="FooterTop">
+                {/* =====================================================
+                    FOOTER TOP
+                ===================================================== */}
 
-                    {/* Logo + Description */}
+                <div
+                    className="
+                        grid
+                        grid-cols-1
 
-                    <div className="FooterColumn FooterBrand">
-                        <NavLink to="/" className="FooterLogo">
+                        gap-10
+                        px-6
+
+                        md:grid-cols-[1.5fr_1fr_1fr_1fr]
+                        md:gap-12
+                        md:px-4
+                    "
+                >
+
+                    {/* ================= BRAND ================= */}
+
+                    <div
+                        className="
+                            flex
+                            flex-col
+                            items-start
+                            justify-start
+
+                            text-left
+                        "
+                    >
+                        <NavLink
+                            to="/"
+                            className="inline-flex mb-5"
+                        >
                             <img
                                 src={Logo}
                                 alt="TechNova Logo"
+                                className="
+                                    block
+                                    h-10
+                                    w-auto
+                                "
                             />
                         </NavLink>
-                        <p>
+
+                        <p
+                            className="
+                                max-w-[24rem]
+
+                                text-(--Text-Muted)
+                                leading-[1.8]
+
+                                max-[768px]:
+                                    max-w-[28rem]
+
+                                max-[576px]:
+                                    text-[0.95rem]
+                                    leading-[1.7]
+                            "
+                        >
                             We build innovative digital products that help
                             businesses grow, scale, and succeed in the modern
                             digital world.
                         </p>
                     </div>
 
-                    {/* Quick Links */}
 
-                    <div className="FooterColumn">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            {
-                                FooterData.quickLinks.map((link) => (
-                                    <li key={link.id}>
-                                        <NavLink to={link.path}>
-                                            {link.title}
-                                        </NavLink>
-                                    </li>
-                                ))
-                            }
+                    {/* ================= QUICK LINKS ================= */}
+
+                    <div
+                        className="
+                            flex
+                            flex-col
+                            items-start
+                            text-left
+                        "
+                    >
+                        <h3
+                            className="
+                                mb-6
+
+                                text-[1.15rem]
+                                font-semibold
+                                text-(--Button-Text)
+
+                                max-[576px]:
+                                    mb-4
+                                    text-[1.05rem]
+                            "
+                        >
+                            Quick Links
+                        </h3>
+
+                        <ul
+                            className="
+                                m-0
+                                p-0
+                                list-none
+
+                                space-y-3
+                            "
+                        >
+                            {FooterData.quickLinks.map((link) => (
+                                <li key={link.id}>
+                                    <NavLink
+                                        to={link.path}
+                                        className="
+                                            block
+                                            no-underline
+
+                                            text-(--Text-Muted)
+                                            text-[0.95rem]
+
+                                            transition-colors
+                                            duration-300
+
+                                            hover:text-(--Primary)
+                                        "
+                                    >
+                                        {link.title}
+                                    </NavLink>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    {/* Services */}
 
-                    <div className="FooterColumn">
-                        <h3>Services</h3>
-                        <ul>
-                            {
-                                FooterData.services.map((service) => (
-                                    <li key={service.id}>
-                                        {service.title}
-                                    </li>
-                                ))
-                            }
+                    {/* ================= SERVICES ================= */}
+
+                    <div
+                        className="
+                            flex
+                            flex-col
+                            items-start
+                            text-left
+                        "
+                    >
+                        <h3
+                            className="
+                                mb-6
+
+                                text-[1.15rem]
+                                font-semibold
+                                text-(--Button-Text)
+
+                                max-[576px]:
+                                    mb-4
+                                    text-[1.05rem]
+                            "
+                        >
+                            Services
+                        </h3>
+
+                        <ul
+                            className="
+                                m-0
+                                p-0
+                                list-none
+
+                                space-y-3
+                            "
+                        >
+                            {FooterData.services.map((service) => (
+                                <li
+                                    key={service.id}
+                                    className="
+                                        block
+                                        cursor-pointer
+
+                                        text-(--Text-Muted)
+                                        text-[0.95rem]
+
+                                        transition-colors
+                                        duration-300
+
+                                        hover:text-(--Primary)
+                                    "
+                                >
+                                    {service.title}
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    {/* Contact */}
 
-                    <div className="FooterColumn">
-                        <h3>Contact</h3>
-                        <ul>
-                            {
-                                FooterData.contact.map((item) => (
-                                    <li key={item.id}>
-                                        <strong>{item.title}</strong>
-                                        <span>{item.value}</span>
-                                    </li>
-                                ))
-                            }
+                    {/* ================= CONTACT ================= */}
+
+                    <div
+                        className="
+                            flex
+                            flex-col
+                            items-start
+                            text-left
+                        "
+                    >
+                        <h3
+                            className="
+                                mb-6
+
+                                text-[1.15rem]
+                                font-semibold
+                                text-(--Button-Text)
+
+                                max-[576px]:
+                                    mb-4
+                                    text-[1.05rem]
+                            "
+                        >
+                            Contact
+                        </h3>
+
+                        <ul
+                            className="
+                                m-0
+                                p-0
+                                list-none
+
+                                space-y-4
+                            "
+                        >
+                            {FooterData.contact.map((item) => (
+                                <li
+                                    key={item.id}
+                                    className="
+                                        block
+                                        text-left
+                                        text-(--Text-Muted)
+                                        text-[0.95rem]
+                                    "
+                                >
+                                    <strong
+                                        className="
+                                            block
+                                            mb-1
+
+                                            font-semibold
+                                            text-(--Button-Text)
+                                        "
+                                    >
+                                        {item.title}
+                                    </strong>
+
+                                    <span
+                                        className="
+                                            block
+
+                                            text-(--Text-Muted)
+                                            leading-[1.6]
+                                        "
+                                    >
+                                        {item.value}
+                                    </span>
+                                </li>
+                            ))}
                         </ul>
                     </div>
+
                 </div>
 
-                {/* ================= Footer Divider ================= */}
 
-                <div className="FooterDivider"></div>
+                {/* =====================================================
+                    DIVIDER
+                ===================================================== */}
 
-                {/* ================= Footer Bottom ================= */}
+                <div
+                    className="
+                        w-full
+                        h-px
 
-                <div className="FooterBottom">
+                        mt-12
+                        mb-8
+
+                        bg-(--Section-line)
+
+                        max-[576px]:
+                            mt-10
+                            mb-6
+                    "
+                />
+
+
+                {/* =====================================================
+                    FOOTER BOTTOM
+                ===================================================== */}
+
+                <div
+                    className="
+                        flex
+                        flex-wrap
+
+                        justify-center
+                        items-center
+
+                        px-4
+
+                        max-[768px]:
+                            flex-nowrap
+                            justify-between
+                            gap-6
+                            text-center
+
+                        max-[576px]:
+                            px-6
+                    "
+                >
 
                     {/* Copyright */}
 
-                    <p>
+                    <p
+                        className="
+                            text-(--Text-Muted)
+                            text-[0.95rem]
+
+                            max-[576px]:text-[0.9rem]
+                        "
+                    >
                         © {new Date().getFullYear()} TechNova.
                         All Rights Reserved.
                     </p>
 
+
                     {/* Social Icons */}
 
-                    <div className="FooterSocial">
-                        {
-                            FooterData.socialLinks.map((social) => {
-                                const Icon = social.icon;
-                                return (
-                                    <a
-                                        key={social.id}
-                                        href={social.url}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        <Icon />
-                                    </a>
-                                );
-                            })
-                        }
+                    <div
+                        className="
+                            flex
+                            items-center
+                            gap-3
+
+                            max-[576px]:gap-[0.6rem]
+                        "
+                    >
+                        {FooterData.socialLinks.map((social) => {
+                            const Icon = social.icon;
+
+                            return (
+                                <a
+                                    key={social.id}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label={
+                                        social.title || "Social media"
+                                    }
+                                    className="
+                                        flex
+                                        justify-center
+                                        items-center
+
+                                        w-[42px]
+                                        h-[42px]
+
+                                        border
+                                        border-(--Section-line)
+
+                                        rounded-full
+
+                                        text-(--Button-Text)
+
+                                        transition-all
+                                        duration-300
+                                        ease-out
+
+                                        hover:bg-(--Primary)
+                                        hover:border-(--Primary)
+                                        hover:text-white
+                                        hover:-translate-y-1
+
+                                        max-[576px]:
+                                            w-[38px]
+                                            h-[38px]
+                                    "
+                                >
+                                    <Icon
+                                        className="
+                                            w-[18px]
+                                            h-[18px]
+
+                                            max-[576px]:
+                                                w-4
+                                                h-4
+                                        "
+                                    />
+                                </a>
+                            );
+                        })}
                     </div>
+
                 </div>
+
             </div>
         </footer>
-
     );
-
 }
 
 export default Footer;
