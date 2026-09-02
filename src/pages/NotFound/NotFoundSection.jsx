@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Astronaut from "./Astronaut.png";
 import BackgroundWave from "./BackgroundWave.webp";
+import { Button } from "@/src/components/ui/button.jsx";
 import "./NotFoundSection.css";
 
 function NotFoundSection() {

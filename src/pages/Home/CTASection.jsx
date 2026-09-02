@@ -22,7 +22,7 @@ function CTASection() {
                 rounded-xl
 
                 border
-                border-(--Text-Light)
+                border-(--Section-line)
 
                 bg-[#0051fb12]
 

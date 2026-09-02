@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
+
+import { useTheme } from "../../context/ThemeContext";
 
 import NavLinks from "./NavLinks";
 import Logo from "./TechNova-Logo.webp";
 
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <header
@@ -42,12 +45,14 @@ function Navbar() {
                     <img
                         src={Logo}
                         alt="TechNova Logo"
-                        className="
+                        className={`
                             h-44
                             w-auto
 
                             max-[768px]:h-28
-                        "
+
+                            ${theme === "dark" ? "brightness-0 invert" : ""}
+                        `}
                     />
                 </NavLink>
 
@@ -73,7 +78,7 @@ function Navbar() {
                             max-[992px]:gap-[1.8rem]
                             max-[992px]:p-8
                         
-                            max-[992px]:bg-white
+                            max-[992px]:bg-background
                         
                             max-[992px]:transition-[right]
                             max-[992px]:duration-300
@@ -103,7 +108,7 @@ function Navbar() {
                         <img
                             src={Logo}
                             alt="TechNova Logo"
-                            className="h-28"
+                            className={`h-28 ${theme === "dark" ? "brightness-0 invert" : ""}`}
                         />
 
                         <button
@@ -180,6 +185,49 @@ function Navbar() {
                         </NavLink>
                     ))}
 
+                    {/* ================= Mobile Theme Toggle ================= */}
+
+                    <button
+                        type="button"
+                        onClick={toggleTheme}
+                        className="
+        hidden
+
+        max-[992px]:flex
+        items-center
+        justify-between
+
+        w-full
+        mt-2
+        px-4
+        py-3
+
+        rounded-[14px]
+
+        bg-secondary
+        text-foreground
+
+        border
+        border-border
+
+        cursor-pointer
+    "
+                    >
+                        <span className="flex items-center gap-3">
+                            {theme === "light" ? (
+                                <Moon className="w-5 h-5" />
+                            ) : (
+                                <Sun className="w-5 h-5" />
+                            )}
+
+                            {theme === "light" ? "Dark Mode" : "Light Mode"}
+                        </span>
+
+                        <span className="text-sm text-muted-foreground">
+                            {theme === "light" ? "🌙" : "☀️"}
+                        </span>
+                    </button>
+
 
                     {/* ================= Mobile CTA ================= */}
 
@@ -224,6 +272,47 @@ function Navbar() {
                     </NavLink>
 
                 </nav>
+
+                {/* ================= Theme Toggle ================= */}
+
+                <button
+                    type="button"
+                    onClick={toggleTheme}
+                    className="
+        flex
+        items-center
+        justify-center
+
+        w-11
+        h-11
+
+        rounded-full
+
+        bg-secondary
+        text-foreground
+
+        border
+        border-border
+
+        cursor-pointer
+
+        transition-all
+        duration-300
+        ease-in-out
+
+        hover:-translate-y-0.5
+        hover:bg-accent
+
+        max-[992px]:hidden
+    "
+                    aria-label="Toggle theme"
+                >
+                    {theme === "light" ? (
+                        <Moon className="w-5 h-5" />
+                    ) : (
+                        <Sun className="w-5 h-5" />
+                    )}
+                </button>
 
 
                 {/* ================= Desktop CTA ================= */}

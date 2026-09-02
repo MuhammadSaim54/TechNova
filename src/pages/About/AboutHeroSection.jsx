@@ -3,8 +3,10 @@ import { NavLink } from "react-router-dom";
 
 import AboutImage from "../../assets/images/developer-team.webp";
 
+import { useTheme } from "../../context/ThemeContext";
 
 function AboutHeroSection() {
+    const { theme } = useTheme();
     return (
         <section
             className="
@@ -15,9 +17,9 @@ function AboutHeroSection() {
                     items-start
                     md:items-center
 
-                    justify-between
+                    md:justify-between
 
-                    gap-8
+                    gap-12
                     lg:gap-20
 
                     p-6
@@ -184,7 +186,7 @@ function AboutHeroSection() {
 
                     <NavLink
                         to="/services"
-                        className="
+                        className={`
                             group
 
                             flex
@@ -201,7 +203,7 @@ function AboutHeroSection() {
                             border-(--Border)
 
                             bg-transparent
-                         text-black
+                            ${theme === "dark" ? "text-white" : "text-black"}
 
                             no-underline
 
@@ -225,7 +227,7 @@ function AboutHeroSection() {
 
                             max-[314px]:px-6
                             max-[314px]:py-3
-                        "
+                        `}
                     >
                         Our Services
                     </NavLink>

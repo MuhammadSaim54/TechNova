@@ -19,7 +19,7 @@ function ServicesCTASection() {
                 bg-[#0051fb12]
 
                 border
-                border-(--Text-Light)
+                border-(--Section-line)
 
                 rounded-xl
 

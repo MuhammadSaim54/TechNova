@@ -1,9 +1,12 @@
 import { ArrowRight, FolderKanban, Users, Award } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
-import HeroIllustration from "../../assets/images/hero-illustration.webp";
+import HeroIllustration from "../../assets/images/hero-illustration.png";
+
+import { useTheme } from "../../context/ThemeContext";
 
 function HomeHeroSection() {
+    const { theme } = useTheme();
     return (
         <section
             className="
@@ -396,12 +399,12 @@ function HomeHeroSection() {
                 <img
                     src={HeroIllustration}
                     alt="TechNova digital solutions"
-                    className="
-                        w-full
-                        max-w-176
-                        h-auto
-                        block
-                    "
+                    className={`
+                         w-full
+                         max-w-176
+                         h-auto
+                         block
+                     `}
                 />
             </div>
 

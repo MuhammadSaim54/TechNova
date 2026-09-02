@@ -1,5 +1,6 @@
 import ContactInfoData from "./ContactInfoData";
 import ContactMap from "./ContactMap.webp";
+import { Button } from "@/src/components/ui/button.jsx";
 
 
 function ContactInfoSection() {
@@ -265,36 +266,45 @@ function ContactInfoSection() {
                                 focus:border-(--Primary)
                             "
                         />
-
-                        <button
+                        <Button
                             type="submit"
-
                             className="
-                                w-fit
+                        h-auto
+                        w-fit
 
-                                py-[0.9rem]
-                                px-[1.8rem]
+                        px-[1.8rem]
+                        py-[0.9rem]
 
-                                border-0
-                                rounded-xl
+                        rounded-xl
 
-                                bg-(--Primary)
-                                text-white
+                        border
+                        border-(--Primary)
 
-                                cursor-pointer
+                        bg-(--Primary)
+                        text-white
 
-                                transition-all
-                                duration-300
-                                ease-out
+                        text-[0.95rem]
+                        font-medium
 
-                                hover:-translate-y-0.5
-                                hover:shadow-[0_10px_25px_rgba(37,99,235,0.25)]
+                        hover:bg-(--Primary)
+                        hover:-translate-y-0.5
+                        hover:shadow-[0_10px_25px_rgba(37,99,235,0.25)]
 
-                                max-[480px]:w-full
-                            "
+                        active:translate-y-0
+                        active:scale-[0.98]
+
+                        transition-all
+                        duration-300
+                        ease-out
+
+                        cursor-pointer
+
+                        max-[480px]:w-full
+
+                        "
                         >
                             Send Message
-                        </button>
+                        </Button>
 
                     </form>
 
@@ -336,7 +346,7 @@ function ContactInfoSection() {
 
             </div>
 
-        </section>
+        </section >
     );
 }
 

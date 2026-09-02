@@ -3,7 +3,11 @@ import FooterData from "./FooterData";
 
 import Logo from "./TechNova-Logo.png";
 
+import { useTheme } from "../../context/ThemeContext";
+
 function Footer() {
+    const { theme, toggleTheme } = useTheme();
+
     return (
         <footer
             className="
@@ -59,11 +63,13 @@ function Footer() {
                             <img
                                 src={Logo}
                                 alt="TechNova Logo"
-                                className="
+                                className={`
                                     block
                                     h-10
                                     w-auto
-                                "
+
+                                    ${theme === "dark" ? "brightness-0 invert" : ""}
+                                `}
                             />
                         </NavLink>
 

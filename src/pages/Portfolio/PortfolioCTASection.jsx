@@ -19,10 +19,7 @@ function PortfolioCTASection() {
                 bg-[#0051fb12]
 
                 border
-                border-(--Text-Light)
-
-                border-b
-                border-b-(--Section-line)
+                border-(--Section-line)
 
                 rounded-xl
 
