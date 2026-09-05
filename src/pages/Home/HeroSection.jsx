@@ -2,6 +2,7 @@ import { ArrowRight, FolderKanban, Users, Award } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 import HeroIllustration from "../../assets/images/hero-illustration.png";
+import { Button, buttonVariants } from "@/src/components/ui/button";
 
 import { useTheme } from "../../context/ThemeContext";
 
@@ -137,45 +138,22 @@ function HomeHeroSection() {
 
                     <NavLink
                         to="/contact"
-                        className="
-                            group 
-                            flex
-                            justify-center
-                            items-center
-
-                            gap-2
-
-                            py-3
-                            px-6
-
-                            text-(--Text)
-                            bg-(--Primary)
-
-                            border
-                            border-(--Primary)
-
-                            text-base
-
-                            cursor-pointer
-
-                            rounded-[0.65rem]
-
-                            no-underline
-
-                            max-[1024px]:px-4
-                        "
+                        className={buttonVariants({
+                            variant: "default",
+                            size: "lg",
+                            className: "group",
+                        })}
                     >
                         Get Started
 
                         <ArrowRight
-                            size={20}
                             className="
                                 transition-transform
                                 duration-300
                                 ease-in-out
 
                                 group-hover:translate-x-1.25
-                            "
+                         "
                         />
                     </NavLink>
 
@@ -184,45 +162,10 @@ function HomeHeroSection() {
 
                     <NavLink
                         to="/services"
-                        className="
-                            flex
-                            justify-center
-                            items-center
-
-                            gap-2
-
-                            py-3
-                            px-6
-
-                            text-base
-
-                            cursor-pointer
-
-                            rounded-[0.65rem]
-
-                            no-underline
-
-                            border
-                            border-(--Border)
-
-                            text-(--Button-Text)
-
-                            bg-transparent
-
-                            transition-shadow
-                            duration-500
-                            ease-in-out
-
-                            hover:shadow-[0_0_5px_var(--Button-Text)]
-
-                            max-[1024px]:px-4
-
-                            max-[480px]:hover:shadow-none
-                            max-[480px]:hover:transition-none
-
-                            max-[314px]:hover:shadow-none
-                            max-[314px]:hover:transition-none
-                        "
+                        className={buttonVariants({
+                            variant: "outline",
+                            size: "lg",
+                        })}
                     >
                         Our Services
                     </NavLink>
