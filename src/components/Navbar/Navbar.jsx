@@ -77,6 +77,7 @@ function Navbar() {
                         
                             max-[992px]:gap-[1.8rem]
                             max-[992px]:p-8
+                            max-[992px]:mr-0
                         
                             max-[992px]:bg-background
                         
@@ -104,17 +105,17 @@ function Navbar() {
                             max-[992px]:mb-8
                         "
                     >
+                        <div className="flex items-center justify-between w-full">
+                            <img
+                                src={Logo}
+                                alt="TechNova Logo"
+                                className={`h-28 ${theme === "dark" ? "brightness-0 invert" : ""}`}
+                            />
 
-                        <img
-                            src={Logo}
-                            alt="TechNova Logo"
-                            className={`h-28 ${theme === "dark" ? "brightness-0 invert" : ""}`}
-                        />
-
-                        <button
-                            type="button"
-                            onClick={() => setMenuOpen(false)}
-                            className="
+                            <button
+                                type="button"
+                                onClick={() => setMenuOpen(false)}
+                                className="
                                 flex
                                 items-center
                                 justify-center
@@ -122,9 +123,10 @@ function Navbar() {
                                 border-0
                                 cursor-pointer
                             "
-                        >
-                            <X className="w-7 h-7" />
-                        </button>
+                            >
+                                <X className="w-7 h-7" />
+                            </button>
+                        </div>
 
                     </div>
 
@@ -191,27 +193,27 @@ function Navbar() {
                         type="button"
                         onClick={toggleTheme}
                         className="
-        hidden
+                            hidden
 
-        max-[992px]:flex
-        items-center
-        justify-between
+                            max-[992px]:flex
+                            items-center
+                            justify-between
 
-        w-full
-        mt-2
-        px-4
-        py-3
+                            w-full
+                            mt-2
+                            px-4
+                            py-3
 
-        rounded-[14px]
+                            rounded-[14px]
 
-        bg-secondary
-        text-foreground
+                            bg-secondary
+                            text-foreground
 
-        border
-        border-border
+                            border
+                            border-border
 
-        cursor-pointer
-    "
+                            cursor-pointer
+                        "
                     >
                         <span className="flex items-center gap-3">
                             {theme === "light" ? (
