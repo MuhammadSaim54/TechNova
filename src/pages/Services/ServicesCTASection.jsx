@@ -84,10 +84,10 @@ function ServicesCTASection() {
                             mt-2
 
                             font-['Manrope']
+                            text-(--Text-Muted)
 
-                            max-[700px]:
-                                max-w-[25rem]
-                                text-[0.85rem]
+                            max-[700px]:max-w-[25rem]    
+                            max-[700px]:text-[0.85rem]
                         "
                     >
                         Let's build something amazing together.

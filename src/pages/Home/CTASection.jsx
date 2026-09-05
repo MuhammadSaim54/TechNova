@@ -6,38 +6,31 @@ function CTASection() {
     return (
         <section
             className="
-                relative
-                overflow-hidden
-
                 flex
                 justify-between
                 items-center
 
                 mx-16
-                my-6
+                my-10
 
-                px-8
-                py-5
+                p-6
+                px-10
 
-                rounded-xl
+                bg-[#0051fb12]
 
                 border
                 border-(--Section-line)
 
-                bg-[#0051fb12]
+                rounded-xl
 
-                shadow-sm
+                max-[982px]:flex-col
+                max-[982px]:items-start
+                max-[982px]:gap-6
+                max-[982px]:mx-0
+                max-[982px]:my-6
+                max-[982px]:rounded-none
 
-                max-[982px]:
-                mx-6
-                gap-6
-
-                max-[700px]:
-                mx-4
-                flex-col
-                items-start
-                px-5
-                py-5
+                max-[700px]:px-5
             "
         >
 
@@ -51,12 +44,11 @@ function CTASection() {
                     <span
                         className="
                             text-(--Primary)
-                            text-xs
                             font-semibold
-
                             tracking-[1.1px]
-
                             font-['Manrope']
+
+                            max-[700px]:text-[0.85rem]
                         "
                     >
                         LET'S WORK TOGETHER
@@ -69,18 +61,15 @@ function CTASection() {
                 <div>
                     <h2
                         className="
-                            mt-2
+                            mt-4
 
-                            max-w-[24rem]
-
-                            text-[1.75rem]
-                            leading-tight
+                            text-[2rem]
                             font-medium
 
                             max-[700px]:text-2xl
                         "
                     >
-                        Have a Project in Mind?
+                        Have a project in mind?
                     </h2>
                 </div>
 
@@ -90,19 +79,19 @@ function CTASection() {
                 <div>
                     <p
                         className="
+                            max-w-[29rem]
+
                             mt-2
-
-                            max-w-[27rem]
-
-                            text-sm
-                            leading-relaxed
 
                             font-['Manrope']
                             text-(--Text-Muted)
+
+                            
+                            max-[700px]:max-w-[25rem]
+                            max-[700px]:text-[0.85rem]
                         "
                     >
-                        Let's turn your ideas into reality. Our team is ready
-                        to help you build something amazing.
+                        Let's turn your ideas into reality. Our team is ready to help you achieve your goals.
                     </p>
                 </div>
 
@@ -111,59 +100,56 @@ function CTASection() {
 
             {/* ================= CTA Button ================= */}
 
-            <NavLink
-                to="/contact"
-
-                className="
+            <div>
+                <NavLink
+                    to="/contact"
+                    className="
                         group
 
-                        relative
-                        z-10
-
                         flex
-                        shrink-0
                         justify-center
                         items-center
 
                         gap-2
 
-                        px-6
                         py-3
-
-                        rounded-lg
+                        px-6
 
                         border
                         border-(--Primary)
 
-                        bg-(--Primary)
+                        rounded-xl
+
                         text-(--Text)
 
-                        no-underline
+                        bg-(--Primary)
 
-                        text-sm
+                        cursor-pointer
+                        no-underline
 
                         transition-all
                         duration-300
+                        ease-out
 
                         hover:shadow-[0_0_14px_var(--Primary)]
 
-                        max-[700px]:w-full
-                "
-            >
-                Get Started
-
-                <ArrowRight
-                    size={18}
-                    className="
-                        transition-transform
-                        duration-300
-                        ease-in-out
-
-                        group-hover:translate-x-1.25
+                        max-[700px]:text-[0.95rem]
                     "
-                />
+                >
+                    Get Started
 
-            </NavLink>
+                    <ArrowRight
+                        size={18}
+                        className="
+                            transition-transform
+                            duration-300
+                            ease-out
+
+                            group-hover:translate-x-1
+                        "
+                    />
+                </NavLink>
+            </div>
 
         </section>
     );

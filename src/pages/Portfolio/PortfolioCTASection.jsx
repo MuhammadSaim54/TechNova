@@ -74,6 +74,7 @@ function PortfolioCTASection() {
                             mt-2
 
                             font-['Manrope']
+                            text-(--Text-Muted)
 
                             max-[700px]:max-w-100
                             max-[700px]:text-[0.85rem]
