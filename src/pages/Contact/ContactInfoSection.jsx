@@ -1,7 +1,8 @@
 import ContactInfoData from "./ContactInfoData";
 import ContactMap from "./ContactMap.webp";
 import { Button } from "@/src/components/ui/button.jsx";
-
+import { Input } from "@/src/components/ui/input.jsx";
+import { Textarea } from "@/src/components/ui/textarea.jsx";
 
 function ContactInfoSection() {
     return (
@@ -143,128 +144,32 @@ function ContactInfoSection() {
                         "
                     >
 
-                        <input
+                        <Input
                             type="text"
                             placeholder="Your Name"
-
-                            className="
-                                w-full
-
-                                py-4
-                                px-[1.2rem]
-
-                                border
-                                border-(--Section-line)
-
-                                rounded-xl
-
-                                bg-transparent
-
-                                text-(--Text-Muted)
-                                text-[0.95rem]
-
-                                outline-none
-
-                                transition-all
-                                duration-300
-                                ease-out
-
-                                focus:border-(--Primary)
-                            "
+                            variant="default"
+                            size="lg"
                         />
 
-                        <input
+                        <Input
                             type="email"
                             placeholder="Your Email"
-
-                            className="
-                                w-full
-
-                                py-4
-                                px-[1.2rem]
-
-                                border
-                                border-(--Section-line)
-
-                                rounded-xl
-
-                                bg-transparent
-
-                                text-(--Text-Muted)
-                                text-[0.95rem]
-
-                                outline-none
-
-                                transition-all
-                                duration-300
-                                ease-out
-
-                                focus:border-(--Primary)
-                            "
+                            variant="default"
+                            size="lg"
                         />
 
-                        <input
+                        <Input
                             type="text"
                             placeholder="Subject"
-
-                            className="
-                                w-full
-
-                                py-4
-                                px-[1.2rem]
-
-                                border
-                                border-(--Section-line)
-
-                                rounded-xl
-
-                                bg-transparent
-
-                                text-(--Text-Muted)
-                                text-[0.95rem]
-
-                                outline-none
-
-                                transition-all
-                                duration-300
-                                ease-out
-
-                                focus:border-(--Primary)
-                            "
+                            variant="default"
+                            size="lg"
                         />
 
-                        <textarea
+                        <Textarea
                             rows="6"
                             placeholder="Your Message"
-
-                            className="
-                                w-full
-
-                                min-h-40
-
-                                py-4
-                                px-[1.2rem]
-
-                                border
-                                border-(--Section-line)
-
-                                rounded-xl
-
-                                bg-transparent
-
-                                text-(--Text-Muted)
-                                text-[0.95rem]
-
-                                outline-none
-
-                                resize-y
-
-                                transition-all
-                                duration-300
-                                ease-out
-
-                                focus:border-(--Primary)
-                            "
+                            variant="default"
+                            size="lg"
                         />
                         <Button
                             type="submit"
