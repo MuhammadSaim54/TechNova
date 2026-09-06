@@ -1,13 +1,16 @@
 import { ArrowRight } from "lucide-react";
-import { NavLink } from "react-router-dom";
 
 import AboutImage from "../../assets/images/developer-team.webp";
 import { buttonVariants } from "@/src/components/ui/button";
+import GetStartedDialog from "@/src/components/auth/GetStartedDialog.jsx";
 
-import { useTheme } from "../../context/ThemeContext";
+import ServicesDialog from "@/src/components/auth/ServicesDialog.jsx";
+
+import { useState } from "react";
 
 function AboutHeroSection() {
-    const { theme } = useTheme();
+    const [dialogOpen, setDialogOpen] = useState(false);
+    const [servicesDialogOpen, setServicesDialogOpen] = useState(false);
     return (
         <section
             className="
@@ -105,28 +108,25 @@ function AboutHeroSection() {
 
                 <div
                     className="
-                    flex
-        justify-center
-        items-center
-
-        gap-6
-        mt-4
-
-        max-[1025px]:gap-4
-
-        max-[480px]:flex-col
-        max-[480px]:items-stretch
-        max-[480px]:w-full
-        max-[480px]:gap-2
-
-        max-[314px]:gap-4
-                    "
+                                        flex
+                                        justify-start
+                                        items-center
+                                        gap-6
+                
+                                        mt-4
+                
+                                        max-[1024px]:gap-4
+                
+                                        max-[480px]:flex-col
+                                        max-[480px]:items-stretch
+                                    "
                 >
 
                     {/* Get Started */}
 
-                    <NavLink
-                        to="/contact"
+                    <button
+                        type="button"
+                        onClick={() => setDialogOpen(true)}
                         className={buttonVariants({
                             variant: "default",
                             size: "lg",
@@ -137,27 +137,28 @@ function AboutHeroSection() {
 
                         <ArrowRight
                             className="
-                                transition-transform
-                                duration-300
-                                ease-in-out
-
-                                group-hover:translate-x-1.25
-                         "
+                                                transition-transform
+                                                duration-300
+                                                ease-in-out
+                
+                                                group-hover:translate-x-1.25
+                                            "
                         />
-                    </NavLink>
+                    </button>
 
 
                     {/* Our Services */}
 
-                    <NavLink
-                        to="/services"
+                    <button
+                        type="button"
+                        onClick={() => setServicesDialogOpen(true)}
                         className={buttonVariants({
                             variant: "outline",
                             size: "lg",
                         })}
                     >
                         Our Services
-                    </NavLink>
+                    </button>
 
                 </div>
 
@@ -192,6 +193,16 @@ function AboutHeroSection() {
                     "
                 />
             </div>
+
+            <GetStartedDialog
+                open={dialogOpen}
+                onOpenChange={setDialogOpen}
+            />
+
+            <ServicesDialog
+                open={servicesDialogOpen}
+                onOpenChange={setServicesDialogOpen}
+            />
 
         </section>
     );

@@ -7,10 +7,15 @@ import { useTheme } from "../../context/ThemeContext";
 import NavLinks from "./NavLinks";
 import Logo from "./TechNova-Logo.webp";
 
+import GetStartedDialog from "../auth/GetStartedDialog.jsx";
+
 import { buttonVariants } from "@/src/components/ui/button";
+
 
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [dialogOpen, setDialogOpen] = useState(false);
+
     const { theme, toggleTheme } = useTheme();
 
     return (
@@ -63,36 +68,38 @@ function Navbar() {
 
                 <nav
                     className={`
-                            flex items-center gap-10
-                        
-                            max-[992px]:fixed
-                            max-[992px]:top-0
-                            max-[992px]:z-1001
-                        
-                            max-[992px]:flex-col
-                            max-[992px]:items-start
-                            max-[992px]:justify-start
-                        
-                            max-[992px]:w-[320px]
-                            max-[992px]:max-w-full
-                            max-[992px]:h-screen
-                        
-                            max-[992px]:gap-[1.8rem]
-                            max-[992px]:p-8
-                            max-[992px]:mr-0
-                        
-                            max-[992px]:bg-background
-                        
-                            max-[992px]:transition-[right]
-                            max-[992px]:duration-300
-                            max-[992px]:ease-in-out
-                        
-                            ${menuOpen
-                            ? "max-[992px]:right-0"
-                            : "max-[992px]:-right-full"
+                        flex items-center gap-10
+
+                        max-[992px]:fixed
+                        max-[992px]:top-0
+                        max-[992px]:z-1001
+
+                        max-[992px]:flex-col
+                        max-[992px]:items-start
+                        max-[992px]:justify-start
+
+                        max-[992px]:w-[320px]
+                        max-[992px]:max-w-full
+                        max-[992px]:h-screen
+
+                        max-[992px]:gap-[1.8rem]
+                        max-[992px]:p-8
+                        max-[992px]:mr-0
+
+                        max-[992px]:bg-background
+
+                        max-[992px]:transition-[right]
+                        max-[992px]:duration-300
+                        max-[992px]:ease-in-out
+
+                        ${
+                            menuOpen
+                                ? "max-[992px]:right-0"
+                                : "max-[992px]:-right-full"
                         }
-                        `}
+                    `}
                 >
+
                     {/* ================= Mobile Header ================= */}
 
                     <div
@@ -107,27 +114,39 @@ function Navbar() {
                             max-[992px]:mb-8
                         "
                     >
+
                         <div className="flex items-center justify-between w-full">
+
                             <img
                                 src={Logo}
                                 alt="TechNova Logo"
-                                className={`h-28 ${theme === "dark" ? "brightness-0 invert" : ""}`}
+                                className={`
+                                    h-28
+
+                                    ${theme === "dark"
+                                        ? "brightness-0 invert"
+                                        : ""
+                                    }
+                                `}
                             />
 
                             <button
                                 type="button"
                                 onClick={() => setMenuOpen(false)}
                                 className="
-                                flex
-                                items-center
-                                justify-center
-                                bg-transparent
-                                border-0
-                                cursor-pointer
-                            "
+                                    flex
+                                    items-center
+                                    justify-center
+
+                                    bg-transparent
+                                    border-0
+
+                                    cursor-pointer
+                                "
                             >
                                 <X className="w-7 h-7" />
                             </button>
+
                         </div>
 
                     </div>
@@ -163,6 +182,7 @@ function Navbar() {
                                     {link.title}
 
                                     {/* Active / Hover underline */}
+
                                     <span
                                         className={`
                                             absolute
@@ -178,9 +198,10 @@ function Navbar() {
 
                                             max-[992px]:-bottom-2
 
-                                            ${isActive
-                                                ? "w-full"
-                                                : "w-0 group-hover:w-full"
+                                            ${
+                                                isActive
+                                                    ? "w-full"
+                                                    : "w-0 group-hover:w-full"
                                             }
                                         `}
                                     />
@@ -188,6 +209,7 @@ function Navbar() {
                             )}
                         </NavLink>
                     ))}
+
 
                     {/* ================= Mobile Theme Toggle ================= */}
 
@@ -217,27 +239,38 @@ function Navbar() {
                             cursor-pointer
                         "
                     >
+
                         <span className="flex items-center gap-3">
+
                             {theme === "light" ? (
                                 <Moon className="w-5 h-5" />
                             ) : (
                                 <Sun className="w-5 h-5" />
                             )}
 
-                            {theme === "light" ? "Dark Mode" : "Light Mode"}
+                            {theme === "light"
+                                ? "Dark Mode"
+                                : "Light Mode"
+                            }
+
                         </span>
+
 
                         <span className="text-sm text-muted-foreground">
                             {theme === "light" ? "🌙" : "☀️"}
                         </span>
+
                     </button>
 
 
                     {/* ================= Mobile CTA ================= */}
 
-                    <NavLink
-                        to="/contact"
-                        onClick={() => setMenuOpen(false)}
+                    <button
+                        type="button"
+                        onClick={() => {
+                            setMenuOpen(false);
+                            setDialogOpen(true);
+                        }}
                         className={buttonVariants({
                             variant: "default",
                             size: "lg",
@@ -277,9 +310,10 @@ function Navbar() {
                                 group-hover:translate-x-1.25
                             "
                         />
-                    </NavLink>
+                    </button>
 
                 </nav>
+
 
                 {/* ================= Theme Toggle ================= */}
 
@@ -287,46 +321,49 @@ function Navbar() {
                     type="button"
                     onClick={toggleTheme}
                     className="
-        flex
-        items-center
-        justify-center
+                        flex
+                        items-center
+                        justify-center
 
-        w-11
-        h-11
+                        w-11
+                        h-11
 
-        rounded-full
+                        rounded-full
 
-        bg-secondary
-        text-foreground
+                        bg-secondary
+                        text-foreground
 
-        border
-        border-border
+                        border
+                        border-border
 
-        cursor-pointer
+                        cursor-pointer
 
-        transition-all
-        duration-300
-        ease-in-out
+                        transition-all
+                        duration-300
+                        ease-in-out
 
-        hover:-translate-y-0.5
-        hover:bg-accent
+                        hover:-translate-y-0.5
+                        hover:bg-accent
 
-        max-[992px]:hidden
-    "
+                        max-[992px]:hidden
+                    "
                     aria-label="Toggle theme"
                 >
+
                     {theme === "light" ? (
                         <Moon className="w-5 h-5" />
                     ) : (
                         <Sun className="w-5 h-5" />
                     )}
+
                 </button>
 
 
                 {/* ================= Desktop CTA ================= */}
 
-                <NavLink
-                    to="/contact"
+                <button
+                    type="button"
+                    onClick={() => setDialogOpen(true)}
                     className={buttonVariants({
                         variant: "default",
                         size: "lg",
@@ -342,7 +379,7 @@ function Navbar() {
                             ease-in-out
 
                             hover:-translate-y-0.5
-                            hover:shadow-[0_12px_30px_rgba(37,99,235,0.25)]
+                            hover:shadow-[0_12px_30px_rgba(37,99,251,0.25)]
 
                             group
                         `,
@@ -362,7 +399,7 @@ function Navbar() {
                             group-hover:translate-x-1.25
                         "
                     />
-                </NavLink>
+                </button>
 
 
                 {/* ================= Hamburger ================= */}
@@ -371,25 +408,36 @@ function Navbar() {
                     type="button"
                     onClick={() => setMenuOpen(true)}
                     className="
-                    hidden
-                    max-[992px]:flex
-                    items-center
-                    justify-center
-                    bg-transparent
-                    border-0
-                    cursor-pointer
-                "
+                        hidden
+                        max-[992px]:flex
+                        items-center
+                        justify-center
+
+                        bg-transparent
+                        border-0
+
+                        cursor-pointer
+                    "
                 >
                     <Menu
                         className="
-                        w-7.5
-                        h-7.5
-                        text-(--Button-Text)
-                    "
+                            w-7.5
+                            h-7.5
+
+                            text-(--Button-Text)
+                        "
                     />
                 </button>
 
             </div>
+
+
+            {/* ================= Get Started Dialog ================= */}
+
+            <GetStartedDialog
+                open={dialogOpen}
+                onOpenChange={setDialogOpen}
+            />
 
 
             {/* ================= Overlay ================= */}
@@ -398,12 +446,13 @@ function Navbar() {
                 <div
                     onClick={() => setMenuOpen(false)}
                     className="
-                    fixed
-                    inset-0
-                    z-1000
-                  bg-black/35
-                    backdrop-blur-[2px]
-                "
+                        fixed
+                        inset-0
+                        z-1000
+
+                        bg-black/35
+                        backdrop-blur-[2px]
+                    "
                 />
             )}
 

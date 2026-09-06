@@ -6,7 +6,16 @@ import { buttonVariants } from "@/src/components/ui/button";
 
 import { useTheme } from "../../context/ThemeContext";
 
+import { useState } from "react";
+
+import GetStartedDialog from "@/src/components/auth/GetStartedDialog.jsx";
+
+import ServicesDialog from "@/src/components/auth/ServicesDialog.jsx";
+
 function HomeHeroSection() {
+    const [dialogOpen, setDialogOpen] = useState(false);
+    const [servicesDialogOpen, setServicesDialogOpen] = useState(false);
+
     const { theme } = useTheme();
     return (
         <section
@@ -136,8 +145,9 @@ function HomeHeroSection() {
 
                     {/* Get Started */}
 
-                    <NavLink
-                        to="/contact"
+                    <button
+                        type="button"
+                        onClick={() => setDialogOpen(true)}
                         className={buttonVariants({
                             variant: "default",
                             size: "lg",
@@ -153,22 +163,23 @@ function HomeHeroSection() {
                                 ease-in-out
 
                                 group-hover:translate-x-1.25
-                         "
+                            "
                         />
-                    </NavLink>
+                    </button>
 
 
                     {/* Our Services */}
 
-                    <NavLink
-                        to="/services"
+                    <button
+                        type="button"
+                        onClick={() => setServicesDialogOpen(true)}
                         className={buttonVariants({
                             variant: "outline",
                             size: "lg",
                         })}
                     >
                         Our Services
-                    </NavLink>
+                    </button>
 
                 </div>
 
@@ -350,6 +361,16 @@ function HomeHeroSection() {
                      `}
                 />
             </div>
+
+            <GetStartedDialog
+                open={dialogOpen}
+                onOpenChange={setDialogOpen}
+            />
+
+            <ServicesDialog
+                open={servicesDialogOpen}
+                onOpenChange={setServicesDialogOpen}
+            />
 
         </section>
     );
