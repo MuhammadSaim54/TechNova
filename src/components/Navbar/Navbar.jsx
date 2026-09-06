@@ -7,6 +7,8 @@ import { useTheme } from "../../context/ThemeContext";
 import NavLinks from "./NavLinks";
 import Logo from "./TechNova-Logo.webp";
 
+import { buttonVariants } from "@/src/components/ui/button";
+
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const { theme, toggleTheme } = useTheme();
@@ -236,40 +238,44 @@ function Navbar() {
                     <NavLink
                         to="/contact"
                         onClick={() => setMenuOpen(false)}
-                        className="
-                            hidden
+                        className={buttonVariants({
+                            variant: "default",
+                            size: "lg",
+                            className: `
+                                !hidden
+                                max-[992px]:!flex
 
-                            max-[992px]:flex
+                                w-full
 
-                            w-full
+                                mt-4
 
-                            items-center
-                            justify-center
+                                gap-2
 
-                            gap-2
-                            mt-4
+                                rounded-[14px]
 
-                            py-3
-                            px-6
+                                transition-all
+                                duration-300
 
-                            bg-(--Primary)
-                            text-white
+                                hover:-translate-y-0.5
+                                hover:shadow-[0_12px_30px_rgba(37,99,235,0.25)]
 
-                            no-underline
-
-                            rounded-[14px]
-
-                            transition-all
-                            duration-300
-
-                            hover:-translate-y-0.5
-                            hover:shadow-[0_12px_30px_rgba(37,99,235,0.25)]
-                        "
+                                group
+                            `,
+                        })}
                     >
                         Get Started
 
                         <ArrowRight
-                            className="w-4.5 h-4.5"
+                            className="
+                                w-4.5
+                                h-4.5
+
+                                transition-transform
+                                duration-300
+                                ease-in-out
+
+                                group-hover:translate-x-1.25
+                            "
                         />
                     </NavLink>
 
@@ -321,38 +327,40 @@ function Navbar() {
 
                 <NavLink
                     to="/contact"
-                    className="
-                        flex
-                        items-center
-                        justify-center
+                    className={buttonVariants({
+                        variant: "default",
+                        size: "lg",
+                        className: `
+                            max-[992px]:hidden
 
-                        gap-2
+                            gap-2
 
-                        py-3
-                        px-6
+                            rounded-[14px]
 
-                        bg-(--Primary)
-                        text-white
+                            transition-all
+                            duration-300
+                            ease-in-out
 
-                        no-underline
+                            hover:-translate-y-0.5
+                            hover:shadow-[0_12px_30px_rgba(37,99,235,0.25)]
 
-                        rounded-[14px]
-
-                        transition-all
-                        duration-300
-                        ease-in-out
-
-                        hover:-translate-y-0.5
-
-                        hover:shadow-[0_12px_30px_rgba(37,99,235,0.25)]
-
-                        max-[992px]:hidden
-                    "
+                            group
+                        `,
+                    })}
                 >
                     Get Started
 
                     <ArrowRight
-                        className="w-4.5 h-4.5"
+                        className="
+                            w-4.5
+                            h-4.5
+
+                            transition-transform
+                            duration-300
+                            ease-in-out
+
+                            group-hover:translate-x-1.25
+                        "
                     />
                 </NavLink>
 

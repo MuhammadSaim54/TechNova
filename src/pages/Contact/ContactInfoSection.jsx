@@ -268,40 +268,35 @@ function ContactInfoSection() {
                         />
                         <Button
                             type="submit"
+                            variant="default"
+                            size="lg"
                             className="
-                        h-auto
-                        w-fit
+                                h-auto
+                                w-fit
 
-                        px-[1.8rem]
-                        py-[0.9rem]
+                                px-[1.8rem]
+                                py-[0.9rem]
 
-                        rounded-xl
+                                rounded-xl
 
-                        border
-                        border-(--Primary)
+                                border-(--Primary)
 
-                        bg-(--Primary)
-                        text-white
+                                text-[0.95rem]
+                                font-medium
 
-                        text-[0.95rem]
-                        font-medium
+                                hover:bg-primary/80
 
-                        hover:bg-(--Primary)
-                        hover:-translate-y-0.5
-                        hover:shadow-[0_10px_25px_rgba(37,99,235,0.25)]
+                                active:translate-y-0
+                                active:scale-[0.98]
 
-                        active:translate-y-0
-                        active:scale-[0.98]
+                                transition-all
+                                duration-300
+                                ease-out
 
-                        transition-all
-                        duration-300
-                        ease-out
+                                cursor-pointer
 
-                        cursor-pointer
-
-                        max-[480px]:w-full
-
-                        "
+                                max-[480px]:w-full
+                            "
                         >
                             Send Message
                         </Button>

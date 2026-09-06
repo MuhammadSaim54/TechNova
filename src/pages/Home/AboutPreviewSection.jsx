@@ -7,6 +7,8 @@ import {
 import AboutImage from "../../assets/images/developer-team.webp";
 import { NavLink } from "react-router-dom";
 
+import { buttonVariants } from "@/src/components/ui/button";
+
 
 function AboutPreviewSection() {
     return (
@@ -315,36 +317,15 @@ function AboutPreviewSection() {
                 {/* ================= CTA ================= */}
 
                 <NavLink
-                    to="/about"
-
-                    className="
-                        py-3
-                        px-6
-
-                        mt-4
-
-                        border
-                        border-(--Primary)
-
-                        bg-transparent
-
-                        rounded-lg
-
-                        text-(--Primary)
-
-                        cursor-pointer
-                        no-underline
-
-                        transition-all
-                        duration-300
-                        ease-in-out
-
-                        hover:bg-(--Primary)
-                        hover:text-(--Text)
-                    "
-                >
-                    Learn More About Us
-                </NavLink>
+                to="/about"
+                className={buttonVariants({
+                    variant: "brandOutline",
+                    size: "lg",
+                    className: "mt-4 px-8",
+                })}
+            >
+                Learn More About Us
+            </NavLink>
 
             </div>
 

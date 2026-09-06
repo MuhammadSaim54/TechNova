@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
+import { buttonVariants } from "@/src/components/ui/button";
 
 function ServicesCTASection() {
     return (
@@ -102,50 +103,22 @@ function ServicesCTASection() {
             <div>
                 <NavLink
                     to="/contact"
-                    className="
-                        group
-
-                        flex
-                        justify-center
-                        items-center
-
-                        gap-2
-
-                        py-3
-                        px-6
-
-                        border
-                        border-(--Primary)
-
-                        rounded-xl
-
-                        text-(--Text)
-
-                        bg-(--Primary)
-
-                        cursor-pointer
-                        no-underline
-
-                        transition-all
-                        duration-300
-                        ease-out
-
-                        hover:shadow-[0_0_14px_var(--Primary)]
-
-                        max-[700px]:text-[0.95rem]
-                    "
+                    className={buttonVariants({
+                        variant: "default",
+                        size: "lg",
+                        className: "group",
+                    })}
                 >
                     Get Started
 
                     <ArrowRight
-                        size={18}
                         className="
-                            transition-transform
-                            duration-300
-                            ease-out
+                                transition-transform
+                                duration-300
+                                ease-in-out
 
-                            group-hover:translate-x-1
-                        "
+                                group-hover:translate-x-1.25
+                         "
                     />
                 </NavLink>
             </div>

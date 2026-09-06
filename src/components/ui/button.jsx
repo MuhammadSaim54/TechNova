@@ -15,6 +15,9 @@ const buttonVariants = cva(
                 outline:
                     "border !border-[var(--Border)] bg-transparent text-[var(--Button-Text)] transition-all duration-300 ease-out hover:border-[var(--Primary)] hover:bg-[rgba(0,81,251,0.06)] hover:shadow-[0_0_0_1px_rgba(0,81,251,0.15),0_4px_20px_rgba(0,81,251,0.18)] max-[480px]:hover:translate-y-0 max-[480px]:hover:shadow-none max-[480px]:hover:transition-none max-[314px]:hover:translate-y-0 max-[314px]:hover:shadow-none max-[314px]:hover:transition-none",
 
+                brandOutline:
+                    "border !border-[var(--Primary)] bg-transparent text-[var(--Primary)] duration-300 ease-in-out hover:bg-[var(--Primary)] hover:text-[var(--Text)]",
+
                 secondary:
                     "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
 

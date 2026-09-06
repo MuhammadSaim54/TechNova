@@ -2,7 +2,7 @@ import { ArrowRight, FolderKanban, Users, Award } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 import HeroIllustration from "../../assets/images/hero-illustration.png";
-import { Button, buttonVariants } from "@/src/components/ui/button";
+import { buttonVariants } from "@/src/components/ui/button";
 
 import { useTheme } from "../../context/ThemeContext";
 

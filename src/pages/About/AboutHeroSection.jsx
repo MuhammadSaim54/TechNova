@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 import AboutImage from "../../assets/images/developer-team.webp";
+import { buttonVariants } from "@/src/components/ui/button";
 
 import { useTheme } from "../../context/ThemeContext";
 
@@ -126,58 +127,22 @@ function AboutHeroSection() {
 
                     <NavLink
                         to="/contact"
-                        className="
-                                group
-
-                                flex
-                                justify-center
-                                items-center
-                                gap-2
-
-                                px-8
-                                py-4
-
-                                rounded-xl
-
-                                border
-                                border-(--Primary)
-
-                                bg-(--Primary)
-                                text-(--Text)
-
-                                no-underline
-
-                                transition-all
-                                duration-300
-                                ease-out
-
-                                hover:-translate-y-0.5
-                                hover:shadow-[0_8px_30px_rgba(0,81,251,0.25)]
-
-                                active:translate-y-0
-                                active:scale-[0.98]
-
-                                max-[1025px]:px-6
-                                max-[1025px]:py-3
-
-                                max-[768px]:px-8
-                                max-[768px]:py-4
-
-                                max-[314px]:px-6
-                                max-[314px]:py-3
-                        "
+                        className={buttonVariants({
+                            variant: "default",
+                            size: "lg",
+                            className: "group",
+                        })}
                     >
                         Get Started
 
                         <ArrowRight
-                            size={18}
                             className="
                                 transition-transform
                                 duration-300
-                                ease-out
+                                ease-in-out
 
-                                group-hover:translate-x-1
-                            "
+                                group-hover:translate-x-1.25
+                         "
                         />
                     </NavLink>
 
@@ -186,48 +151,10 @@ function AboutHeroSection() {
 
                     <NavLink
                         to="/services"
-                        className={`
-                            group
-
-                            flex
-                            justify-center
-                            items-center
-                            gap-2
-
-                            px-8
-                            py-4
-
-                            rounded-xl
-
-                            border
-                            border-(--Border)
-
-                            bg-transparent
-                            ${theme === "dark" ? "text-white" : "text-black"}
-
-                            no-underline
-
-                            transition-all
-                            duration-300
-                            ease-out
-
-                            hover:-translate-y-0.5
-                            hover:border-(--Primary)
-                            hover:bg-(--Primary)/5
-                            hover:shadow-[0_8px_25px_rgba(0,81,251,0.08)]
-
-                            active:translate-y-0
-                            active:scale-[0.98]
-
-                            max-[1025px]:px-6
-                            max-[1025px]:py-3
-
-                            max-[768px]:px-8
-                            max-[768px]:py-4
-
-                            max-[314px]:px-6
-                            max-[314px]:py-3
-                        `}
+                        className={buttonVariants({
+                            variant: "outline",
+                            size: "lg",
+                        })}
                     >
                         Our Services
                     </NavLink>

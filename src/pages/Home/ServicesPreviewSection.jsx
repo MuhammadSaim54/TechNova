@@ -1,5 +1,7 @@
 import ServicesData from "./ServicesData.js";
 
+import { buttonVariants } from "@/src/components/ui/button";
+
 import { ArrowRight } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
@@ -266,32 +268,11 @@ function ServicesPreviewSection() {
 
             <NavLink
                 to="/services"
-                className="
-                    py-3
-                    px-8
-
-                    border
-                    border-(--Primary)
-
-                    rounded-lg
-
-                    bg-transparent
-
-                    text-(--Primary)
-
-                    mt-4
-
-                    cursor-pointer
-
-                    no-underline
-
-                    transition-all
-                    duration-300
-                    ease-in-out
-
-                    hover:bg-(--Primary)
-                    hover:text-(--Text)
-                "
+                className={buttonVariants({
+                    variant: "brandOutline",
+                    size: "lg",
+                    className: "mt-4 px-8",
+                })}
             >
                 View All Services
             </NavLink>
