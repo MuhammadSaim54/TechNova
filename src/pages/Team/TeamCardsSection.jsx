@@ -6,6 +6,10 @@ import {
 
 import teamdata from "./teamdata.js";
 
+import {
+    Card,
+} from "@/src/components/ui/card.jsx";
+
 
 function TeamCardsSection() {
     return (
@@ -31,8 +35,10 @@ function TeamCardsSection() {
         >
 
             {teamdata.map((data) => (
-                <div
+                <Card
                     key={data.id}
+                    variant="default"
+                    size="default"
                     className="
                         flex
                         flex-col
@@ -77,7 +83,7 @@ function TeamCardsSection() {
                         loading="lazy"
 
                         className="
-                           block
+                            block
                             w-full
                             h-auto
                         "
@@ -106,6 +112,7 @@ function TeamCardsSection() {
                         <h3 className="font-semibold">
                             {data.name}
                         </h3>
+
 
                         <p
                             className="
@@ -146,23 +153,23 @@ function TeamCardsSection() {
                                     w-9.5
                                     h-9.5
 
-                                    bg-white
+                                    bg-transparent
 
                                     border
-                                    border-[#e5e7eb]
+                                    border-(--Section-line)
 
                                     rounded-full
 
-                                    text-[#2563eb]
-
-                                    shadow-[0_2px_10px_rgba(0,0,0,0.06)]
+                                    text-(--Button-Text)
 
                                     transition-all
                                     duration-300
                                     ease-in-out
 
-                                    hover:bg-[#2563eb]
+                                    hover:bg-(--Primary)
+                                    hover:border-(--Primary)
                                     hover:text-white
+                                    hover:shadow-[0_0_10px_var(--Glow)]
                                 "
                             >
                                 <FaFacebook className="w-4.5 h-4.5" />
@@ -180,23 +187,23 @@ function TeamCardsSection() {
                                     w-9.5
                                     h-9.5
 
-                                    bg-white
+                                    bg-transparent
 
                                     border
-                                    border-[#e5e7eb]
+                                    border-(--Section-line)
 
                                     rounded-full
 
-                                    text-[#2563eb]
-
-                                    shadow-[0_2px_10px_rgba(0,0,0,0.06)]
+                                    text-(--Button-Text)
 
                                     transition-all
                                     duration-300
                                     ease-in-out
 
-                                    hover:bg-[#2563eb]
+                                    hover:bg-(--Primary)
+                                    hover:border-(--Primary)
                                     hover:text-white
+                                    hover:shadow-[0_0_10px_var(--Glow)]
                                 "
                             >
                                 <FaGithub className="w-4.5 h-4.5" />
@@ -214,23 +221,23 @@ function TeamCardsSection() {
                                     w-9.5
                                     h-9.5
 
-                                    bg-white
+                                    bg-transparent
 
                                     border
-                                    border-[#e5e7eb]
+                                    border-(--Section-line)
 
                                     rounded-full
 
-                                    text-[#2563eb]
-
-                                    shadow-[0_2px_10px_rgba(0,0,0,0.06)]
+                                    text-(--Button-Text)
 
                                     transition-all
                                     duration-300
                                     ease-in-out
 
-                                    hover:bg-[#2563eb]
+                                    hover:bg-(--Primary)
+                                    hover:border-(--Primary)
                                     hover:text-white
+                                    hover:shadow-[0_0_10px_var(--Glow)]
                                 "
                             >
                                 <FaXTwitter className="w-4.5 h-4.5" />
@@ -240,7 +247,7 @@ function TeamCardsSection() {
 
                     </div>
 
-                </div>
+                </Card>
             ))}
         </section>
     );
