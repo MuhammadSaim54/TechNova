@@ -1,5 +1,9 @@
 import PortfolioData from "./portfoliodata.js";
 
+import {
+    Card,
+} from "@/src/components/ui/card.jsx";
+
 
 function PortfolioCardsSection() {
     return (
@@ -16,25 +20,27 @@ function PortfolioCardsSection() {
         >
 
             {PortfolioData.map((data) => (
-                <div
+                <Card
                     key={data.id}
+                    variant="default"
+                    size="default"
                     className={`
                         ${data.className}
 
-                            border
-                            border-(--Section-line)
-                            rounded-xl
-                            overflow-hidden
+                        border
+                        border-(--Section-line)
+                        rounded-xl
+                        overflow-hidden
 
-                            transition-all
-                            duration-300
-                            ease-out
+                        transition-all
+                        duration-300
+                        ease-out
 
-                            cursor-pointer
+                        cursor-pointer
 
-                            hover:-translate-y-1
-                            hover:border-(--Primary)
-                            hover:shadow-[0_8px_25px_rgba(0,81,251,0.12)]
+                        hover:-translate-y-1
+                        hover:border-(--Primary)
+                        hover:shadow-[0_8px_25px_rgba(0,81,251,0.12)]
                     `}
                 >
 
@@ -83,7 +89,7 @@ function PortfolioCardsSection() {
 
                     </div>
 
-                </div>
+                </Card>
             ))}
 
         </section>
