@@ -1,6 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import ServicesData from "./ServicesData.js";
 
+import {
+    Card,
+    CardContent,
+    CardFooter,
+} from "@/src/components/ui/card.jsx";
+
 
 function ServicesCardSection() {
     return (
@@ -22,8 +28,10 @@ function ServicesCardSection() {
 
             {ServicesData.map((Service) => {
                 return (
-                    <div
+                    <Card
                         key={Service.id}
+                        variant="default"
+                        size="default"
                         className="
                             flex
                             flex-col
@@ -87,39 +95,47 @@ function ServicesCardSection() {
                         </div>
 
 
-                        {/* ================= Title ================= */}
+                        {/* ================= Content ================= */}
 
-                        <span
-                            className="
-                                text-2xl
-                                font-medium
+                        <CardContent className="p-0">
 
-                                max-[768px]:text-xl
-                            "
-                        >
-                            {Service.title}
-                        </span>
+                            {/* Title */}
+
+                            <span
+                                className="
+                                    text-2xl
+                                    font-medium
+
+                                    max-[768px]:text-xl
+                                "
+                            >
+                                {Service.title}
+                            </span>
 
 
-                        {/* ================= Description ================= */}
+                            {/* Description */}
 
-                        <p
-                            className="
-                                text-[0.95rem]
-                                text-(--Text-Muted)
+                            <p
+                                className="
+                                    mt-3
 
-                                max-w-[15rem]
+                                    text-[0.95rem]
+                                    text-(--Text-Muted)
 
-                                max-[768px]:text-[0.85rem]
-                            "
-                        >
-                            {Service.description}
-                        </p>
+                                    max-w-[15rem]
+
+                                    max-[768px]:text-[0.85rem]
+                                "
+                            >
+                                {Service.description}
+                            </p>
+
+                        </CardContent>
 
 
                         {/* ================= Action ================= */}
 
-                        <div className="mt-4">
+                        <CardFooter className="p-0 mt-4">
 
                             <button
                                 type="button"
@@ -155,9 +171,9 @@ function ServicesCardSection() {
                                 />
                             </button>
 
-                        </div>
+                        </CardFooter>
 
-                    </div>
+                    </Card>
                 );
             })}
 
