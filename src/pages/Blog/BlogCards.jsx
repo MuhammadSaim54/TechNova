@@ -1,6 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import BlogData from "./BlogData.js";
 
+import {
+    Card,
+} from "@/src/components/ui/card.jsx";
+
+
 function BlogCards() {
     return (
         <section
@@ -15,8 +20,10 @@ function BlogCards() {
             "
         >
             {BlogData.map((data) => (
-                <article
+                <Card
                     key={data.id}
+                    variant="default"
+                    size="default"
                     className="
                         border
                         border-(--Section-line)
@@ -36,6 +43,7 @@ function BlogCards() {
                     "
                 >
                     {/* Image */}
+
                     <img
                         src={data.img}
                         alt={`${data.title} blog`}
@@ -49,8 +57,11 @@ function BlogCards() {
                         "
                     />
 
+
                     {/* Details */}
+
                     <div className="p-4">
+
                         <h3
                             className="
                                 font-semibold
@@ -60,6 +71,7 @@ function BlogCards() {
                         >
                             {data.title}
                         </h3>
+
 
                         <p
                             className="
@@ -75,8 +87,11 @@ function BlogCards() {
                             {data.description}
                         </p>
 
+
                         {/* Learn More */}
+
                         <div className="mt-4">
+
                             <button
                                 type="button"
                                 className="
@@ -110,9 +125,12 @@ function BlogCards() {
                                     "
                                 />
                             </button>
+
                         </div>
+
                     </div>
-                </article>
+
+                </Card>
             ))}
         </section>
     );
