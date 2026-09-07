@@ -1,10 +1,50 @@
+import { useState } from "react";
+import { toast } from "sonner";
+
 import ContactInfoData from "./ContactInfoData";
 import ContactMap from "./ContactMap.webp";
+
 import { Button } from "@/src/components/ui/button.jsx";
 import { Input } from "@/src/components/ui/input.jsx";
 import { Textarea } from "@/src/components/ui/textarea.jsx";
 
 function ContactInfoSection() {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const { name, email, subject, message } = formData;
+
+        if (!name || !email || !subject || !message) {
+            toast.error("Please fill in all fields.");
+            return;
+        }
+
+        toast.success("Message sent successfully!");
+
+        setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+        });
+    };
+
     return (
         <section
             className="
@@ -136,6 +176,7 @@ function ContactInfoSection() {
                 <div className="flex-1">
 
                     <form
+                        onSubmit={handleSubmit}
                         className="
                             flex
                             flex-col
@@ -146,31 +187,44 @@ function ContactInfoSection() {
 
                         <Input
                             type="text"
+                            name="name"
                             placeholder="Your Name"
                             variant="default"
                             size="lg"
+                            value={formData.name}
+                            onChange={handleChange}
                         />
 
                         <Input
                             type="email"
+                            name="email"
                             placeholder="Your Email"
                             variant="default"
                             size="lg"
+                            value={formData.email}
+                            onChange={handleChange}
                         />
 
                         <Input
                             type="text"
+                            name="subject"
                             placeholder="Subject"
                             variant="default"
                             size="lg"
+                            value={formData.subject}
+                            onChange={handleChange}
                         />
 
                         <Textarea
+                            name="message"
                             rows="6"
                             placeholder="Your Message"
                             variant="default"
                             size="lg"
+                            value={formData.message}
+                            onChange={handleChange}
                         />
+
                         <Button
                             type="submit"
                             variant="default"
@@ -246,7 +300,7 @@ function ContactInfoSection() {
 
             </div>
 
-        </section >
+        </section>
     );
 }
 

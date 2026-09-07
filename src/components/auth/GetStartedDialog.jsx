@@ -24,129 +24,142 @@ function GetStartedDialog({ open, onOpenChange }) {
             <DialogContent
                 showCloseButton={true}
                 className="
-        w-[calc(100%-2rem)]
-        max-w-sm
+                    w-[calc(100%-2rem)]
+                    max-w-sm
 
-        max-h-[90vh]
-        overflow-y-auto
+                    max-h-[90vh]
+                    overflow-y-auto
 
-        gap-0
-        p-0
+                    gap-0
+                    p-0
 
-        border
-        border-(--Section-line)
+                    border
+                    border-(--Section-line)
 
-        rounded-2xl
+                    rounded-2xl
 
-        bg-(--Background)
-    "
+                    bg-(--Background)
+                "
             >
-                {/* Header */}
+
+                {/* ================= Header ================= */}
+
                 <DialogHeader
                     className="
-            flex
-            flex-col
-            items-center
+                        flex
+                        flex-col
+                        items-center
 
-            px-6
-            pt-6
-            pb-4
+                        px-6
+                        pt-6
+                        pb-4
 
-            text-center
-        "
+                        text-center
+                    "
                 >
+
+                    {/* Logo */}
                     <div
                         className="
-                flex
-                justify-center
-                items-center
+                            flex
+                            justify-center
+                            items-center
 
-                w-10
-                h-10
+                            w-10
+                            h-10
 
-                mb-3
+                            mb-3
 
-                rounded-xl
+                            rounded-xl
 
-                bg-(--Primary)
+                            bg-(--Primary)
 
-                text-white
-                font-bold
-                text-lg
+                            text-white
+                            font-bold
+                            text-lg
 
-                shadow-[0_0_20px_var(--Glow)]
-            "
+                            shadow-[0_0_20px_var(--Glow)]
+                        "
                     >
                         T
                     </div>
 
+
+                    {/* Title */}
                     <DialogTitle
                         className="
-                text-xl
-                font-semibold
+                            text-xl
+                            font-semibold
 
-                text-(--Text)
-            "
+                            text-foreground
+                        "
                     >
                         Welcome to TechNova
                     </DialogTitle>
 
+
+                    {/* Description */}
                     <DialogDescription
                         className="
-                mt-1.5
+                            mt-1.5
 
-                max-w-xs
+                            max-w-xs
 
-                text-xs
-                leading-relaxed
-                text-(--Text-Muted)
-            "
+                            text-xs
+                            leading-relaxed
+
+                            text-muted-foreground
+                        "
                     >
                         Choose an option below to continue
                         to your TechNova account.
                     </DialogDescription>
+
                 </DialogHeader>
 
 
-                {/* Authentication Options */}
+                {/* ================= Authentication Options ================= */}
 
                 <div
                     className="
-            flex
-            flex-col
+                        flex
+                        flex-col
 
-            gap-2.5
+                        gap-2.5
 
-            px-6
-            pb-5
-        "
+                        px-6
+                        pb-5
+                    "
                 >
 
-                    {/* Google */}
+                    {/* ================= Google ================= */}
 
                     <Button
                         type="button"
                         variant="outline"
                         size="lg"
                         className="
-                w-full
+                            w-full
 
-                justify-center
+                            justify-center
 
-                gap-3
+                            gap-3
 
-                border-(--Section-line)
+                            border-(--Section-line)
 
-                bg-transparent
+                            bg-transparent
 
-                cursor-pointer
+                            cursor-pointer
 
-                text-(--Text)
+                            text-foreground
 
-                hover:border-(--Primary)
-                hover:bg-(--Primary)
-                hover:text-white
-            "
+                            transition-all
+                            duration-300
+
+                            hover:border-(--Primary)
+                            hover:bg-(--Primary)
+                            hover:text-primary-foreground
+                        "
                     >
                         <FaGoogle className="w-4 h-4" />
 
@@ -154,32 +167,34 @@ function GetStartedDialog({ open, onOpenChange }) {
                     </Button>
 
 
-                    {/* Apple */}
+                    {/* ================= Apple ================= */}
 
                     <Button
                         type="button"
                         variant="outline"
                         size="lg"
                         className="
-                w-full
+                            w-full
 
-                justify-center
+                            justify-center
 
-                gap-3
+                            gap-3
 
-                border-(--Section-line)
+                            border-(--Section-line)
 
-                
-                bg-transparent
+                            bg-transparent
 
-                cursor-pointer
+                            cursor-pointer
 
-                text-(--Text)
+                            text-foreground
 
-                hover:border-(--Primary)
-                hover:bg-(--Primary)
-                hover:text-white
-            "
+                            transition-all
+                            duration-300
+
+                            hover:border-(--Primary)
+                            hover:bg-(--Primary)
+                            hover:text-primary-foreground
+                        "
                     >
                         <FaApple className="w-4 h-4" />
 
@@ -187,31 +202,34 @@ function GetStartedDialog({ open, onOpenChange }) {
                     </Button>
 
 
-                    {/* Microsoft */}
+                    {/* ================= Microsoft ================= */}
 
                     <Button
                         type="button"
                         variant="outline"
                         size="lg"
                         className="
-                w-full
+                            w-full
 
-                justify-center
+                            justify-center
 
-                gap-3
+                            gap-3
 
-                border-(--Section-line)
+                            border-(--Section-line)
 
-                bg-transparent
+                            bg-transparent
 
-                text-(--Text)
+                            cursor-pointer
 
-                cursor-pointer
+                            text-foreground
 
-                hover:border-(--Primary)
-                hover:bg-(--Primary)
-                hover:text-white
-            "
+                            transition-all
+                            duration-300
+
+                            hover:border-(--Primary)
+                            hover:bg-(--Primary)
+                            hover:text-primary-foreground
+                        "
                     >
                         <FaMicrosoft className="w-4 h-4" />
 
@@ -219,62 +237,65 @@ function GetStartedDialog({ open, onOpenChange }) {
                     </Button>
 
 
-                    {/* Divider */}
+                    {/* ================= Divider ================= */}
 
                     <div
                         className="
-                flex
-                items-center
+                            flex
+                            items-center
 
-                gap-3
+                            gap-3
 
-                my-1
-            "
+                            my-1
+                        "
                     >
+
                         <span
                             className="
-                    flex-1
-                    h-px
+                                flex-1
+                                h-px
 
-                    bg-(--Section-line)
-                "
+                                bg-(--Section-line)
+                            "
                         />
 
                         <span
                             className="
-                    text-[0.7rem]
-                    text-(--Text-Muted)
-                "
+                                text-[0.7rem]
+
+                                text-muted-foreground
+                            "
                         >
                             OR
                         </span>
 
                         <span
                             className="
-                    flex-1
-                    h-px
+                                flex-1
+                                h-px
 
-                    bg-(--Section-line)
-                "
+                                bg-(--Section-line)
+                            "
                         />
+
                     </div>
 
 
-                    {/* Email */}
+                    {/* ================= Email ================= */}
 
                     <Button
                         type="button"
                         variant="default"
                         size="lg"
                         className="
-                w-full
+                            w-full
 
-                justify-center
+                            justify-center
 
-                gap-3
+                            gap-3
 
-                cursor-pointer
-            "
+                            cursor-pointer
+                        "
                     >
                         Continue with Email
                     </Button>
@@ -282,22 +303,23 @@ function GetStartedDialog({ open, onOpenChange }) {
                 </div>
 
 
-                {/* Terms */}
+                {/* ================= Terms ================= */}
 
                 <div
                     className="
-            px-6
-            pb-5
+                        px-6
+                        pb-5
 
-            text-center
-        "
+                        text-center
+                    "
                 >
                     <p
                         className="
-                text-[0.7rem]
-                leading-relaxed
-                text-(--Text-Muted)
-            "
+                            text-[0.7rem]
+                            leading-relaxed
+
+                            text-muted-foreground
+                        "
                     >
                         By continuing, you agree to our Terms
                         of Service and Privacy Policy.

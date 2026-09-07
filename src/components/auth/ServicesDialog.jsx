@@ -19,6 +19,7 @@ import {
 
 import { NavLink } from "react-router-dom";
 
+
 const services = [
     {
         number: "01",
@@ -67,7 +68,10 @@ const services = [
 
 function ServicesDialog({ open, onOpenChange }) {
     return (
-        <Dialog open={open} onOpenChange={onOpenChange}>
+        <Dialog
+            open={open}
+            onOpenChange={onOpenChange}
+        >
 
             <DialogContent
                 className="
@@ -78,7 +82,6 @@ function ServicesDialog({ open, onOpenChange }) {
                     overflow-y-auto
 
                     p-0
-
                     gap-0
 
                     rounded-2xl
@@ -152,7 +155,7 @@ function ServicesDialog({ open, onOpenChange }) {
                             font-semibold
                             tracking-tight
 
-                            text-(--Text)
+                            text-foreground
 
                             max-[640px]:text-2xl
                         "
@@ -175,7 +178,7 @@ function ServicesDialog({ open, onOpenChange }) {
                             text-sm
                             leading-7
 
-                            text-(--Text-Muted)
+                            text-muted-foreground
                         "
                     >
                         From strategy and design to development and
@@ -216,16 +219,18 @@ function ServicesDialog({ open, onOpenChange }) {
                                     duration-300
                                     ease-out
 
-                                    hover:bg-(--Secondary)
+                                    hover:bg-secondary
 
-                                    ${index % 2 === 0
-                                        ? "border-r"
-                                        : ""
+                                    ${
+                                        index % 2 === 0
+                                            ? "border-r"
+                                            : ""
                                     }
 
-                                    ${index < 4
-                                        ? "border-b"
-                                        : ""
+                                    ${
+                                        index < 4
+                                            ? "border-b"
+                                            : ""
                                     }
 
                                     max-[640px]:border-r-0
@@ -258,7 +263,7 @@ function ServicesDialog({ open, onOpenChange }) {
 
                                             rounded-xl
 
-                                            bg-(--Secondary)
+                                            bg-secondary
 
                                             border
                                             border-(--Section-line)
@@ -280,7 +285,7 @@ function ServicesDialog({ open, onOpenChange }) {
                                                 transition-colors
                                                 duration-300
 
-                                                group-hover:text-white
+                                                group-hover:text-primary-foreground
                                             "
                                         />
                                     </div>
@@ -295,7 +300,7 @@ function ServicesDialog({ open, onOpenChange }) {
 
                                             tracking-wider
 
-                                            text-(--Text-Muted)
+                                            text-muted-foreground
 
                                             opacity-60
                                         "
@@ -315,7 +320,7 @@ function ServicesDialog({ open, onOpenChange }) {
                                             text-lg
                                             font-semibold
 
-                                            text-(--Text)
+                                            text-foreground
 
                                             transition-colors
                                             duration-300
@@ -334,7 +339,7 @@ function ServicesDialog({ open, onOpenChange }) {
                                             text-sm
                                             leading-6
 
-                                            text-(--Text-Muted)
+                                            text-muted-foreground
                                         "
                                     >
                                         {service.description}
@@ -371,7 +376,7 @@ function ServicesDialog({ open, onOpenChange }) {
                                         group-hover:translate-y-0
 
                                         bg-(--Primary)
-                                        text-white
+                                        text-primary-foreground
                                     "
                                 >
                                     <ArrowUpRight
@@ -400,7 +405,7 @@ function ServicesDialog({ open, onOpenChange }) {
 
                         p-6
 
-                        bg-(--Secondary)
+                        bg-secondary
 
                         max-[640px]:flex-col
                         max-[640px]:items-start
@@ -414,7 +419,7 @@ function ServicesDialog({ open, onOpenChange }) {
                                 text-sm
                                 font-semibold
 
-                                text-(--Text)
+                                text-foreground
                             "
                         >
                             Have a project in mind?
@@ -426,7 +431,7 @@ function ServicesDialog({ open, onOpenChange }) {
 
                                 text-xs
 
-                                text-(--Text-Muted)
+                                text-muted-foreground
                             "
                         >
                             Let&apos;s build something impactful together.
@@ -439,35 +444,35 @@ function ServicesDialog({ open, onOpenChange }) {
                         to="/services"
                         onClick={() => onOpenChange(false)}
                         className="
-                                flex
-                                items-center
-                                gap-2
+                            flex
+                            items-center
+                            gap-2
 
-                                px-5
-                                py-2.5
+                            px-5
+                            py-2.5
 
-                                rounded-xl
+                            rounded-xl
 
-                                bg-(--Primary)
-                             text-white
+                            bg-(--Primary)
+                            text-primary-foreground
 
-                                text-sm
-                                font-semibold
+                            text-sm
+                            font-semibold
 
-                                border
-                                border-(--Primary)
+                            border
+                            border-(--Primary)
 
-                                no-underline
+                            no-underline
 
-                                transition-all
-                                duration-300
+                            transition-all
+                            duration-300
 
-                                hover:-translate-y-0.5
-                                hover:shadow-[0_10px_25px_rgba(37,99,235,0.25)]
+                            hover:-translate-y-0.5
+                            hover:shadow-[0_10px_25px_rgba(37,99,235,0.25)]
 
-                                max-[640px]:w-full
-                                max-[640px]:justify-center
-                            "
+                            max-[640px]:w-full
+                            max-[640px]:justify-center
+                        "
                     >
                         View
 

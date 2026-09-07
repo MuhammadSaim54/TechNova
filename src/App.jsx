@@ -11,6 +11,7 @@ import Team from "./pages/Team";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { Toaster } from "./components/ui/sonner.jsx";
 // CSS
 import './App.css'
 
@@ -18,15 +19,16 @@ function App() {
 
   return (
     <>
+      <Toaster />
       <Routes>
-        <Route element={<MainLayout/>}>
+        <Route element={<MainLayout />}>
           <Route path='/' element={<Home />}></Route>
           <Route path='/about' element={<About />}></Route>
           <Route path='/blog' element={<Blog />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
           <Route path='/portfolio' element={<Portfolio />}></Route>
           <Route path='/services' element={<Services />}></Route>
-          <Route path='/team' element={<Team/>}></Route>
+          <Route path='/team' element={<Team />}></Route>
         </Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
