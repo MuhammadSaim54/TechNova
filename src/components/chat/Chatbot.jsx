@@ -63,7 +63,10 @@ export default function Chatbot({ isOpen, setIsOpen }) {
   };
 
   return (
-    <aside aria-label="Support Chat" className="fixed bottom-5 right-5 z-[9999]">
+    <aside
+      aria-label="Support Chat"
+      className="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-40"
+    >
       {/* Floating Trigger Button: TechNova Brand Primary */}
       {!isOpen && (
         <button
@@ -122,11 +125,10 @@ export default function Chatbot({ isOpen, setIsOpen }) {
                   className={`flex flex-col ${isUser ? "items-end" : "items-start"}`}
                 >
                   <div
-                    className={`max-w-[82%] px-4 py-2.5 text-sm leading-relaxed ${
-                      isUser
+                    className={`max-w-[82%] px-4 py-2.5 text-sm leading-relaxed ${isUser
                         ? "bg-primary text-primary-foreground rounded-2xl rounded-br-xs font-medium shadow-xs"
                         : "bg-muted text-foreground rounded-2xl rounded-bl-xs border border-border/40"
-                    }`}
+                      }`}
                   >
                     {msg.text}
                   </div>
