@@ -28,7 +28,7 @@ function Navbar() {
     return (
         <header
             className="
-                sticky top-0 z-999
+                sticky top-0 z-50
                 w-full
                 bg-(--Background)
                 border-b border-(--Section-line)
@@ -72,7 +72,6 @@ function Navbar() {
                         flex
                         items-center
                         gap-10
-
                         max-[992px]:hidden
                     "
                 >
@@ -106,7 +105,6 @@ function Navbar() {
                                             bg-(--Primary)
                                             transition-all
                                             duration-300
-
                                             ${
                                                 isActive
                                                     ? "w-full"
@@ -295,7 +293,7 @@ function Navbar() {
                                 flex-1
                                 gap-7
                                 px-8
-                                pb-8
+                                pb-16
                             "
                         >
                             {/* Navigation Links */}
@@ -310,9 +308,7 @@ function Navbar() {
                                     <NavLink
                                         key={link.id}
                                         to={link.path}
-                                        onClick={() =>
-                                            setMenuOpen(false)
-                                        }
+                                        onClick={() => setMenuOpen(false)}
                                         className={({ isActive }) => `
                                             group
                                             relative
@@ -363,6 +359,7 @@ function Navbar() {
                                     flex-col
                                     gap-4
                                     mt-auto
+                                    mb-4
                                 "
                             >
                                 {/* Mobile Theme Toggle */}
@@ -406,9 +403,7 @@ function Navbar() {
                                     </span>
 
                                     <span className="text-sm text-muted-foreground">
-                                        {theme === "light"
-                                            ? "🌙"
-                                            : "☀️"}
+                                        {theme === "light" ? "🌙" : "☀️"}
                                     </span>
                                 </button>
 
