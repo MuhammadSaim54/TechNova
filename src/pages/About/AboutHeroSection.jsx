@@ -108,18 +108,19 @@ function AboutHeroSection() {
 
                 <div
                     className="
-                                        flex
-                                        justify-start
-                                        items-center
-                                        gap-6
-                
-                                        mt-4
-                
-                                        max-[1024px]:gap-4
-                
-                                        max-[480px]:flex-col
-                                        max-[480px]:items-stretch
-                                    "
+                         flex
+                         justify-start
+                         items-center
+                         gap-6
+ 
+                         mt-4
+                         w-full
+ 
+                         max-[1024px]:gap-4
+ 
+                         max-[480px]:flex-col
+                         max-[480px]:items-stretch
+                     "
                 >
 
                     {/* Get Started */}
@@ -137,12 +138,12 @@ function AboutHeroSection() {
 
                         <ArrowRight
                             className="
-                                                transition-transform
-                                                duration-300
-                                                ease-in-out
-                
-                                                group-hover:translate-x-1.25
-                                            "
+                                 transition-transform
+                                 duration-300
+                                 ease-in-out
+ 
+                                 group-hover:translate-x-1.25
+                             "
                         />
                     </button>
 
@@ -161,6 +162,7 @@ function AboutHeroSection() {
                     </button>
 
                 </div>
+
 
             </div>
 

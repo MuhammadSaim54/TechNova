@@ -93,7 +93,7 @@ function AboutStorySection() {
                                 py-11
                                 px-6
 
-                                shadow-[0_0_6px_#6060609c]
+                                shadow-[0_0_6px_#0051fb]
 
                                 rounded-xl
 
