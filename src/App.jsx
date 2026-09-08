@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import { Toaster } from "./components/ui/sonner.jsx";
+import ScrollToTop from "./utils/ScrollToTop";
 // CSS
 import './App.css'
 
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
       <Toaster />
+      <ScrollToTop /> {/* Resets scroll on every navigation */}
       <Routes>
         <Route element={<MainLayout />}>
           <Route path='/' element={<Home />}></Route>
