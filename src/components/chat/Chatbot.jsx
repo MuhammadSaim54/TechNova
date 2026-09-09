@@ -65,7 +65,7 @@ export default function Chatbot({ isOpen, setIsOpen }) {
   return (
     <aside
       aria-label="Support Chat"
-      className=" right-4 fixed bottom-5 z-30"
+      className=" right-4 fixed bottom-5 z-1000"
     >
       {/* Floating Trigger Button: TechNova Brand Primary */}
       {!isOpen && (
