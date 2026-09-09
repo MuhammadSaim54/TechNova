@@ -1,379 +1,114 @@
+import { useState } from "react";
 import { ArrowRight, FolderKanban, Users, Award } from "lucide-react";
-import { NavLink } from "react-router-dom";
-
 import HeroIllustration from "../../assets/images/hero-illustration.png";
 import { buttonVariants } from "@/src/components/ui/button";
-
-import { useTheme } from "../../context/ThemeContext";
-
-import { useState } from "react";
-
+import { Section } from "@/src/components/layout/Section";
 import GetStartedDialog from "@/src/components/auth/GetStartedDialog.jsx";
-
 import ServicesDialog from "@/src/components/auth/ServicesDialog.jsx";
 
+const STATS = [
+  { icon: FolderKanban, value: "120+", label: "Projects Completed" },
+  { icon: Users, value: "98%", label: "Client Satisfaction" },
+  { icon: Award, value: "10+", label: "Years Experience" },
+];
+
 function HomeHeroSection() {
-    const [dialogOpen, setDialogOpen] = useState(false);
-    const [servicesDialogOpen, setServicesDialogOpen] = useState(false);
-
-    const { theme } = useTheme();
-    return (
-        <section
-            className="
-                flex
-                justify-between
-                items-center
-                gap-16
-
-                min-h-137.5
-                w-full
-                p-6
-
-                border-b
-                border-(--Section-line)
-
-                max-[1280px]:gap-8
-
-                max-[1024px]:gap-8
-
-                max-[768px]:flex-col
-                max-[768px]:items-start
-
-                max-[480px]:p-6
-
-                max-[314px]:p-4
-            "
-        >
-
-            {/* ================= Hero Content ================= */}
-
-            <div
-                className="
-                    flex-[1.1]
-                    flex
-                    flex-col
-                    justify-center
-                    gap-4
-                "
-            >
-
-                {/* ================= Badge ================= */}
-
-                <div>
-                    <span
-                        className="
-                            text-(--Primary)
-                            font-semibold
-                            text-sm
-                            tracking-[0.08em]
-                            uppercase
-                        "
-                    >
-                        WELCOME TO TECHNOVA
-                    </span>
-                </div>
-
-
-                {/* ================= Title ================= */}
-
-                <div>
-                    <h1
-                        className="
-                            text-5xl
-                            max-w-140
-
-                            font-semibold
-                            leading-tight
-
-                            max-[1024px]:text-[2.5rem]
-
-                            max-[768px]:text-5xl
-
-                            max-[480px]:text-[2.25rem]
-
-                            max-[314px]:text-[2rem]
-                        "
-                    >
-                        We Build Digital Solutions That{" "}
-                        <span className="text-(--Primary)">
-                            Inspire
-                        </span>
-                    </h1>
-                </div>
-
-
-                {/* ================= Description ================= */}
-
-                <div>
-                    <p
-                        className="
-                            max-w-108
-
-                            text-(--Text-Muted)
-                            font-medium
-
-                            mt-2
-
-                            leading-[1.65]
-
-                            font-['Manrope']
-                        "
-                    >
-                        We are creative digital agency delivering modern
-                        web solutions that drive buisness growth.
-                    </p>
-                </div>
-
-
-                {/* ================= Actions ================= */}
-
-                <div
-                    className="
-                        flex
-                        justify-start
-                        items-center
-                        gap-6
-
-                        mt-4
-
-                        max-[1024px]:gap-4
-
-                        max-[480px]:flex-col
-                        max-[480px]:items-stretch
-                    "
-                >
-
-                    {/* Get Started */}
-
-                    <button
-                        type="button"
-                        onClick={() => setDialogOpen(true)}
-                        className={buttonVariants({
-                            variant: "glow",
-                            size: "lg",
-                            className: "group",
-                        })}
-                    >
-                        Get Started
-
-                        <ArrowRight
-                            className="
-                                transition-transform
-                                duration-300
-                                ease-in-out
-
-                                group-hover:translate-x-1.25
-                            "
-                        />
-                    </button>
-
-
-                    {/* Our Services */}
-
-                    <button
-                        type="button"
-                        onClick={() => setServicesDialogOpen(true)}
-                        className={buttonVariants({
-                            variant: "outline",
-                            size: "lg",
-                        })}
-                    >
-                        Our Services
-                    </button>
-
-                </div>
-
-
-                {/* ================= Statistics ================= */}
-
-                <div
-                    className="
-                        flex
-                        items-center
-                        gap-8
-
-                        mt-8
-
-                        max-[1024px]:gap-4
-
-                        max-[768px]:hidden
-                    "
-                >
-
-                    {/* Projects */}
-
-                    <div
-                        className="
-                            flex
-                            justify-center
-                            items-start
-
-                            gap-3
-
-                            font-['Manrope']
-                        "
-                    >
-                        <div className="flex items-center">
-                            <FolderKanban
-                                size={26}
-                                className="text-(--Primary)"
-                            />
-                        </div>
-
-                        <div>
-                            <h3
-                                className="
-                                    font-semibold
-                                    text-xl
-
-                                    max-[1024px]:text-base
-                                "
-                            >
-                                120+
-                            </h3>
-
-                            <p
-                                className="
-                                    text-(--Text-Muted)
-
-                                    max-[1024px]:text-xs
-                                "
-                            >
-                                Projects Completed
-                            </p>
-                        </div>
-                    </div>
-
-
-                    {/* Client Satisfaction */}
-
-                    <div
-                        className="
-                            flex
-                            justify-center
-                            items-start
-
-                            gap-3
-
-                            font-['Manrope']
-                        "
-                    >
-                        <div className="flex items-center">
-                            <Users
-                                size={26}
-                                className="text-(--Primary)"
-                            />
-                        </div>
-
-                        <div>
-                            <h3
-                                className="
-                                    font-semibold
-                                    text-xl
-
-                                    max-[1024px]:text-base
-                                "
-                            >
-                                98%
-                            </h3>
-
-                            <p
-                                className="
-                                    text-(--Text-Muted)
-
-                                    max-[1024px]:text-xs
-                                "
-                            >
-                                Client Satisfaction
-                            </p>
-                        </div>
-                    </div>
-
-
-                    {/* Experience */}
-
-                    <div
-                        className="
-                            flex
-                            justify-center
-                            items-start
-
-                            gap-3
-
-                            font-['Manrope']
-                        "
-                    >
-                        <div className="flex items-center">
-                            <Award
-                                size={26}
-                                className="text-(--Primary)"
-                            />
-                        </div>
-
-                        <div>
-                            <h3
-                                className="
-                                    font-semibold
-                                    text-xl
-
-                                    max-[1024px]:text-base
-                                "
-                            >
-                                10+
-                            </h3>
-
-                            <p
-                                className="
-                                    text-(--Text-Muted)
-
-                                    max-[1024px]:text-xs
-                                "
-                            >
-                                Years of Experience
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [servicesDialogOpen, setServicesDialogOpen] = useState(false);
+
+  return (
+    <Section 
+      id="hero" 
+      className="border-b border-border py-8 md:py-12 lg:py-16"
+    >
+      <div className="w-full flex flex-col gap-10 md:gap-12">
+        
+        {/* Main Grid: Switches to 2 columns at md (768px) */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 lg:gap-12 items-center">
+          
+          {/* Left Column */}
+          <div className="md:col-span-7 flex flex-col justify-center text-left">
+            <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-primary">
+              Welcome to TechNova
+            </span>
+
+            <h1 className="mt-3 text-3xl sm:text-4xl md:text-3xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-foreground leading-[1.15]">
+              We Build Digital Solutions That{" "}
+              <span className="text-primary">Inspire</span>
+            </h1>
+
+            <p className="mt-4 text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl">
+              We are a creative digital agency delivering modern web solutions
+              engineered to accelerate business growth.
+            </p>
+
+            <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+              <button
+                type="button"
+                onClick={() => setDialogOpen(true)}
+                className={buttonVariants({
+                  variant: "glow",
+                  size: "lg",
+                  className: "group justify-center",
+                })}
+              >
+                Get Started
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setServicesDialogOpen(true)}
+                className={buttonVariants({
+                  variant: "outline",
+                  size: "lg",
+                  className: "justify-center",
+                })}
+              >
+                Our Services
+              </button>
             </div>
+          </div>
 
+          {/* Right Column */}
+          <div className="md:col-span-5 flex justify-center items-center">
+            <img
+              src={HeroIllustration}
+              alt="TechNova digital solutions illustration"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-none h-auto object-contain drop-shadow-md"
+              loading="eager"
+            />
+          </div>
+        </div>
 
-            {/* ================= Hero Image ================= */}
-
-            <div
-                className="
-                    flex-1
-
-                    flex
-                    justify-center
-                    items-center
-                "
-            >
-                <img
-                    src={HeroIllustration}
-                    alt="TechNova digital solutions"
-                    className={`
-                         w-full
-                         max-w-176
-                         h-auto
-                         block
-                     `}
-                />
+        {/* Bottom Metrics Bar */}
+        <div className="hidden sm:grid pt-6 border-t border-border/40 grid-cols-3 gap-4 sm:gap-6">
+          {STATS.map(({ icon: Icon, value, label }) => (
+            <div key={label} className="flex items-center sm:items-start gap-2 sm:gap-3">
+              <div className="p-2 rounded-lg bg-primary/10 text-primary shrink-0 hidden md:flex">
+                <Icon className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-foreground">
+                  {value}
+                </h3>
+                <p className="text-[11px] sm:text-xs text-muted-foreground leading-tight mt-0.5">
+                  {label}
+                </p>
+              </div>
             </div>
+          ))}
+        </div>
 
-            <GetStartedDialog
-                open={dialogOpen}
-                onOpenChange={setDialogOpen}
-            />
+      </div>
 
-            <ServicesDialog
-                open={servicesDialogOpen}
-                onOpenChange={setServicesDialogOpen}
-            />
-
-        </section>
-    );
+      <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+      <ServicesDialog
+        open={servicesDialogOpen}
+        onOpenChange={setServicesDialogOpen}
+      />
+    </Section>
+  );
 }
 
 export default HomeHeroSection;
