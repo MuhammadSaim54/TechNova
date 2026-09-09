@@ -27,6 +27,9 @@ const buttonVariants = cva(
                 destructive:
                     "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
 
+                glow:
+                    "bg-primary text-primary-foreground shadow-[0_0_20px_rgba(37,99,235,0.45)] hover:shadow-[0_0_30px_rgba(37,99,235,0.7)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300",
+
                 link:
                     "text-primary underline-offset-4 hover:underline",
             },
