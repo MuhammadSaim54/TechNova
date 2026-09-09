@@ -149,7 +149,7 @@ function HomeHeroSection() {
                         type="button"
                         onClick={() => setDialogOpen(true)}
                         className={buttonVariants({
-                            variant: "default",
+                            variant: "glow",
                             size: "lg",
                             className: "group",
                         })}
