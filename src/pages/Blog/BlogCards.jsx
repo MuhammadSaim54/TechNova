@@ -1,139 +1,110 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock, Sparkles } from "lucide-react";
 import BlogData from "./BlogData.js";
+import { Section } from "@/src/components/layout/Section";
 
-import {
-    Card,
-} from "@/src/components/ui/card.jsx";
-
+const DEFAULT_TAGS = ["Engineering", "Product Design", "Growth Strategy"];
 
 function BlogCards() {
-    return (
-        <section
-            className="
-                flex
-                justify-center
-                items-center
-                flex-wrap
+  return (
+    <Section 
+      id="blog-cards" 
+      className="py-12 md:py-16 lg:py-20 relative overflow-hidden w-full flex flex-col items-center"
+    >
+      {/* ================= Atmospheric Background Layers ================= */}
 
-                gap-5
-                m-6
-            "
-        >
-            {BlogData.map((data) => (
-                <Card
-                    key={data.id}
-                    variant="default"
-                    size="default"
-                    className="
-                        border
-                        border-(--Section-line)
+      {/* Blueprint Grid Accent */}
+      <div 
+        className="
+          absolute inset-0 
+          bg-[linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] 
+          bg-[size:4rem_4rem] 
+          opacity-[0.02] dark:opacity-[0.04]
+          [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] 
+          pointer-events-none -z-10
+        " 
+      />
 
-                        rounded-xl
-                        overflow-hidden
+      {/* Ambient Lighting Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[320px] sm:w-[500px] md:w-[650px] h-[300px] bg-primary/10 dark:bg-primary/[0.08] rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10" />
 
-                        cursor-pointer
+      {/* Centered Responsive Editorial Grid */}
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
+        {BlogData.map((data, index) => {
+          const category = data.category || DEFAULT_TAGS[index % DEFAULT_TAGS.length];
+          const readTime = data.readTime || "4 min read";
 
-                        transition-all
-                        duration-300
-                        ease-out
+          return (
+            <article
+              key={data.id || index}
+              className="
+                group relative flex flex-col justify-between
+                w-full max-w-md lg:max-w-none overflow-hidden
+                rounded-3xl p-3 sm:p-3.5
+                border border-border/60
+                bg-card/50 dark:bg-gradient-to-b dark:from-white/[0.06] dark:via-white/[0.02] dark:to-transparent
+                backdrop-blur-2xl
+                shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.14)]
+                transition-all duration-300 ease-out
+                hover:-translate-y-1.5 hover:border-primary/50
+                hover:shadow-[0_20px_40px_-15px_rgba(0,81,251,0.25)]
+                cursor-pointer
+              "
+            >
+              {/* Top Specular Border Highlight */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
 
-                        hover:border-(--Primary)
-                        hover:-translate-y-1.5
-                        hover:shadow-[0_0_10px_var(--Glow)]
-                    "
-                >
-                    {/* Image */}
+              <div>
+                {/* ================= Media Container ================= */}
+                <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl bg-muted/30 border border-border/40">
+                  
+                  {/* Category Pill Tag */}
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-lg border border-border/60 bg-background/85 dark:bg-black/60 backdrop-blur-md text-[11px] font-semibold text-foreground z-10">
+                    {category}
+                  </div>
 
-                    <img
-                        src={data.img}
-                        alt={`${data.title} blog`}
-                        loading="lazy"
-                        className="
-                            block
-                            w-full
-                            max-w-108
+                  {/* Read Time Tag */}
+                  <div className="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-lg border border-border/60 bg-background/85 dark:bg-black/60 backdrop-blur-md text-[10px] font-medium text-muted-foreground z-10">
+                    <Clock className="w-3 h-3 text-primary" />
+                    <span>{readTime}</span>
+                  </div>
 
-                            rounded-xl
-                        "
-                    />
+                  <img
+                    src={data.img}
+                    alt={`${data.title} blog cover`}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                </div>
 
+                {/* ================= Article Content ================= */}
+                <div className="pt-4 pb-2 px-2 flex flex-col items-start text-left">
+                  <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200 line-clamp-2">
+                    {data.title}
+                  </h3>
 
-                    {/* Details */}
+                  <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                    {data.description}
+                  </p>
+                </div>
+              </div>
 
-                    <div className="p-4">
+              {/* ================= Action Footer ================= */}
+              <div className="pt-4 px-2 pb-1 border-t border-border/40 flex items-center justify-between w-full">
+                <span className="text-xs font-semibold text-foreground/80 group-hover:text-primary transition-colors flex items-center gap-1">
+                  Read Full Article
+                </span>
 
-                        <h3
-                            className="
-                                font-semibold
+                <div className="flex items-center justify-center w-8 h-8 rounded-full border border-border/70 bg-muted/40 dark:bg-white/[0.04] text-primary transition-all duration-300 group-hover:border-primary group-hover:!bg-primary group-hover:text-primary-foreground group-hover:scale-110">
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                </div>
+              </div>
 
-                                max-[370px]:text-[0.85rem]
-                            "
-                        >
-                            {data.title}
-                        </h3>
-
-
-                        <p
-                            className="
-                                mt-2
-                                max-w-100
-
-                                text-[0.95rem]
-                                text-(--Text-Muted)
-
-                                max-[370px]:text-[0.75rem]
-                            "
-                        >
-                            {data.description}
-                        </p>
-
-
-                        {/* Learn More */}
-
-                        <div className="mt-4">
-
-                            <button
-                                type="button"
-                                className="
-                                    group
-
-                                    flex
-                                    justify-center
-                                    items-center
-
-                                    gap-1
-
-                                    border-0
-                                    bg-transparent
-
-                                    text-(--Primary)
-
-                                    cursor-pointer
-                                "
-                            >
-                                Learn More
-
-                                <ArrowRight
-                                    size={16}
-                                    color="#0051fb"
-                                    className="
-                                        transition-transform
-                                        duration-300
-                                        ease-out
-
-                                        group-hover:translate-x-1
-                                    "
-                                />
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </Card>
-            ))}
-        </section>
-    );
+            </article>
+          );
+        })}
+      </div>
+    </Section>
+  );
 }
 
 export default BlogCards;
