@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { 
-  ArrowUpRight, 
-  Send, 
-  CheckCircle2, 
-  Sparkles, 
-  Radio, 
-  ShieldCheck 
+import {
+  ArrowUpRight,
+  Send,
+  CheckCircle2,
+  Sparkles,
+  Radio,
+  ShieldCheck
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -32,22 +32,22 @@ function Footer() {
 
   return (
     <footer className="relative w-full border-t border-border/70 bg-background/95 dark:bg-[#060a12] backdrop-blur-3xl overflow-hidden transition-colors duration-300">
-      
+
       {/* ================= Specular Lighting & Depth Overlays ================= */}
-      
+
       {/* Top Hairline Specular Reflection */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent pointer-events-none z-20" />
 
-      {/* Blueprint Engineering Grid */}
-      <div 
+      {/* Calibrated Blueprint Grid for Both Themes */}
+      <div
         className="
-          absolute inset-0 
-          bg-[linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] 
-          bg-[size:4rem_4rem] 
-          opacity-[0.02] dark:opacity-[0.035]
-          [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_60%,transparent_100%)] 
-          pointer-events-none -z-10
-        " 
+            absolute inset-0 
+            bg-[linear-gradient(to_right,rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.06)_1px,transparent_1px)]
+            dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]
+            bg-[size:3.5rem_3.5rem] 
+            [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] 
+            pointer-events-none -z-10
+          "
       />
 
       {/* Ambient Lighting Halos */}
@@ -56,7 +56,7 @@ function Footer() {
 
       {/* ================= Master Content Container ================= */}
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 z-10">
-        
+
         {/* Top Intelligence & Newsletter Header */}
         <div className="pb-14 mb-14 border-b border-border/60 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center justify-between">
           <div className="lg:col-span-7 flex flex-col items-start text-left">
@@ -110,7 +110,7 @@ function Footer() {
 
         {/* 4-Column Structured Architecture Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 text-left">
-          
+
           {/* Brand & Corporate Overview (5 Columns) */}
           <div className="md:col-span-5 flex flex-col items-start">
             <NavLink
@@ -211,7 +211,7 @@ function Footer() {
         <div className="w-full h-px mt-16 mb-8 bg-border/60" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          
+
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-xs text-muted-foreground">
             <p>© {new Date().getFullYear()} TechNova Engineering Collective.</p>
             <span className="hidden sm:inline">•</span>
@@ -254,15 +254,15 @@ function Footer() {
 
       </div>
 
-      {/* ================= Giant Background Brand Watermark ================= */}
-      <div 
+      {/* Giant Watermark with Dual Theme Contrast */}
+      <div
         aria-hidden="true"
         className="
-          pointer-events-none select-none absolute -bottom-10 left-1/2 -translate-x-1/2 
-          text-[14vw] font-black tracking-tighter uppercase
-          text-foreground/[0.02] dark:text-white/[0.025]
-          whitespace-nowrap leading-none z-0
-        "
+    absolute -bottom-10 left-1/2 -translate-x-1/2 
+    text-[13vw] font-black tracking-tighter uppercase 
+    select-none pointer-events-none -z-10 whitespace-nowrap
+    text-black/[0.05] dark:text-white/[0.035]
+  "
       >
         TECHNOVA
       </div>

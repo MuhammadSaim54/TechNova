@@ -18,16 +18,16 @@ function AboutHeroSection() {
     >
       {/* ================= Atmospheric Background Layers ================= */}
 
-      {/* Blueprint Grid */}
-      <div 
+      {/* Calibrated Blueprint Grid for Both Themes */}
+      <div
         className="
-          absolute inset-0 
-          bg-[linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] 
-          bg-[size:3.5rem_3.5rem] 
-          opacity-[0.03] dark:opacity-[0.05]
-          [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] 
-          pointer-events-none -z-10
-        " 
+            absolute inset-0 
+            bg-[linear-gradient(to_right,rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.06)_1px,transparent_1px)]
+            dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]
+            bg-[size:3.5rem_3.5rem] 
+            [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] 
+            pointer-events-none -z-10
+          "
       />
 
       {/* Ambient Lighting */}
@@ -35,10 +35,10 @@ function AboutHeroSection() {
 
       {/* Main Grid matching Home Hero proportions */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
-        
+
         {/* ================= Left: Copy & Actions ================= */}
         <div className="md:col-span-7 flex flex-col items-start text-left">
-          
+
           {/* Eyebrow Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border/60 bg-card/60 dark:bg-white/[0.04] backdrop-blur-xl shadow-sm">
             <div className="flex items-center justify-center w-4 h-4 rounded-full bg-primary/15 text-primary">
@@ -118,13 +118,13 @@ function AboutHeroSection() {
 
         {/* ================= Right: Visual with Contained Height ================= */}
         <div className="md:col-span-5 relative flex justify-center items-center mt-6 md:mt-0">
-          
+
           {/* Backlight Glow */}
           <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-cyan-500/10 to-transparent rounded-3xl blur-2xl pointer-events-none -z-10 scale-90" />
 
           {/* Relative Wrapper */}
           <div className="relative w-full max-w-sm sm:max-w-md md:max-w-none flex justify-center items-center">
-            
+
             {/* Visual Frame */}
             <div className="w-full overflow-hidden rounded-3xl border border-border/70 bg-card/40 dark:bg-white/[0.02] p-2 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
               <div className="overflow-hidden rounded-2xl">
