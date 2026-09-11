@@ -13,7 +13,7 @@ import {
   DialogTitle,
 } from "@/src/components/ui/dialog.jsx";
 import { Button } from "@/src/components/ui/button.jsx";
-import Logo from "../navbar/TechNova-Logo.webp";
+import Logo from "../Navbar/TechNova-Logo.webp";
 import { useTheme } from "../../context/ThemeContext";
 
 function GetStartedDialog({ open, onOpenChange }) {
