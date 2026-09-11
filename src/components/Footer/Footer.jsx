@@ -3,9 +3,7 @@ import { NavLink } from "react-router-dom";
 import {
   ArrowUpRight,
   Send,
-  CheckCircle2,
   Sparkles,
-  Radio,
   ShieldCheck
 } from "lucide-react";
 import { toast } from "sonner";
@@ -31,15 +29,16 @@ function Footer() {
   };
 
   return (
-    <footer className="relative w-full border-t border-border/70 bg-background/95 dark:bg-[#060a12] backdrop-blur-3xl overflow-hidden transition-colors duration-300">
+    <footer aria-label="Site Footer" className="relative w-full border-t border-border/70 bg-background/95 dark:bg-[#060a12] backdrop-blur-3xl overflow-hidden transition-colors duration-300">
 
       {/* ================= Specular Lighting & Depth Overlays ================= */}
 
       {/* Top Hairline Specular Reflection */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent pointer-events-none z-20" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent pointer-events-none z-20" aria-hidden="true" />
 
       {/* Calibrated Blueprint Grid for Both Themes */}
       <div
+        aria-hidden="true"
         className="
             absolute inset-0 
             bg-[linear-gradient(to_right,rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.06)_1px,transparent_1px)]
@@ -51,8 +50,8 @@ function Footer() {
       />
 
       {/* Ambient Lighting Halos */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[420px] sm:w-[700px] h-[280px] bg-primary/10 dark:bg-primary/[0.08] rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute bottom-0 right-10 w-[300px] h-[300px] bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div aria-hidden="true" className="absolute -top-32 left-1/2 -translate-x-1/2 w-[420px] sm:w-[700px] h-[280px] bg-primary/10 dark:bg-primary/[0.08] rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div aria-hidden="true" className="absolute bottom-0 right-10 w-[300px] h-[300px] bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       {/* ================= Master Content Container ================= */}
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 z-10">
@@ -61,10 +60,10 @@ function Footer() {
         <div className="pb-14 mb-14 border-b border-border/60 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center justify-between">
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary text-[11px] font-mono font-semibold uppercase tracking-wider">
-              <Sparkles className="w-3 h-3" />
+              <Sparkles className="w-3 h-3" aria-hidden="true" />
               <span>Intelligence Dispatches</span>
             </div>
-            <h3 className="mt-3 text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
+            <h3 id="newsletter-heading" className="mt-3 text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
               Subscribe to Architecture & Product Briefs
             </h3>
             <p className="mt-1.5 text-xs sm:text-sm text-muted-foreground max-w-lg leading-relaxed">
@@ -74,35 +73,44 @@ function Footer() {
 
           {/* Interactive Terminal Subscribe Form */}
           <div className="lg:col-span-5 w-full">
-            <form onSubmit={handleSubscribe} className="relative flex items-center w-full max-w-md lg:ml-auto">
+            <form onSubmit={handleSubscribe} aria-labelledby="newsletter-heading" className="relative flex items-center w-full max-w-md lg:ml-auto">
+              <label htmlFor="newsletter-email" className="sr-only">
+                Work Email Address
+              </label>
               <input
+                id="newsletter-email"
                 type="email"
+                name="email"
+                autoComplete="email"
+                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="work@enterprise.com"
-                className="w-full h-12 pl-4 pr-32 rounded-2xl bg-muted/40 dark:bg-white/[0.03] border border-border/80 dark:border-white/10 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                className="w-full h-12 pl-4 pr-32 rounded-2xl bg-muted/40 dark:bg-white/[0.03] border border-border/80 dark:border-white/10 text-sm text-foreground placeholder:text-muted-foreground/60 focus-visible:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all"
               />
               <button
                 type="submit"
+                aria-label="Subscribe to newsletter"
                 className="
                   absolute right-1.5 h-9 px-4 rounded-xl
                   bg-gradient-to-r from-blue-600 to-primary
                   text-white text-xs font-semibold
                   shadow-md shadow-primary/25 hover:shadow-primary/40
                   flex items-center gap-1.5 transition-all duration-200
-                  active:scale-95
+                  hover:opacity-95 active:scale-95
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2
                 "
               >
                 <span>Subscribe</span>
-                <Send className="w-3 h-3" />
+                <Send className="w-3 h-3" aria-hidden="true" />
               </button>
             </form>
             <div className="mt-2.5 flex items-center gap-3 text-[11px] font-medium text-muted-foreground/80 lg:justify-end">
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3 h-3 text-emerald-500" />
+                <ShieldCheck className="w-3 h-3 text-emerald-500" aria-hidden="true" />
                 Confidentiality Guaranteed
               </span>
-              <span>•</span>
+              <span aria-hidden="true">•</span>
               <span>Bi-weekly Delivery</span>
             </div>
           </div>
@@ -115,7 +123,8 @@ function Footer() {
           <div className="md:col-span-5 flex flex-col items-start">
             <NavLink
               to="/"
-              className="inline-flex mb-4 transition-transform duration-300 hover:scale-[1.02]"
+              aria-label="TechNova Homepage"
+              className="inline-flex mb-4 transition-transform duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
             >
               <img
                 src={Logo}
@@ -134,11 +143,15 @@ function Footer() {
             </p>
 
             {/* Live Operational Status Telemetry Box */}
-            <div className="mt-6 flex flex-col gap-2 p-3.5 rounded-2xl border border-border/70 dark:border-white/10 bg-muted/30 dark:bg-white/[0.02] backdrop-blur-xl w-full max-w-xs">
+            <div 
+              role="status" 
+              aria-live="polite" 
+              className="mt-6 flex flex-col gap-2 p-3.5 rounded-2xl border border-border/70 dark:border-white/10 bg-muted/30 dark:bg-white/[0.02] backdrop-blur-xl w-full max-w-xs"
+            >
               <div className="flex items-center justify-between text-[11px] font-mono">
                 <span className="text-muted-foreground uppercase tracking-wider">Network Status</span>
                 <span className="flex items-center gap-1.5 text-emerald-500 font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
                   All Systems Operational
                 </span>
               </div>
@@ -151,7 +164,7 @@ function Footer() {
           </div>
 
           {/* Column 2: Navigation Links (2 Columns) */}
-          <div className="md:col-span-2 flex flex-col items-start">
+          <nav aria-label="Footer Quick Links" className="md:col-span-2 flex flex-col items-start">
             <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-primary mb-5">
               // Navigation
             </h4>
@@ -160,18 +173,18 @@ function Footer() {
                 <li key={link.id}>
                   <NavLink
                     to={link.path}
-                    className="text-muted-foreground hover:text-foreground transition-colors duration-200 inline-flex items-center gap-1 group"
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-200 inline-flex items-center gap-1 group rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                   >
                     <span>{link.title}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 text-primary" />
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 text-primary" aria-hidden="true" />
                   </NavLink>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Column 3: Capabilities (2 Columns) */}
-          <div className="md:col-span-2 flex flex-col items-start">
+          <section aria-label="Footer Capabilities" className="md:col-span-2 flex flex-col items-start">
             <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-primary mb-5">
               // Capabilities
             </h4>
@@ -184,10 +197,10 @@ function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
 
           {/* Column 4: Transmission / Coordinates (3 Columns) */}
-          <div className="md:col-span-3 flex flex-col items-start">
+          <section aria-label="Footer Contact Coordinates" className="md:col-span-3 flex flex-col items-start">
             <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-primary mb-5">
               // Transmission
             </h4>
@@ -203,22 +216,22 @@ function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
 
         </div>
 
         {/* ================= Bottom Sub-Footer ================= */}
-        <div className="w-full h-px mt-16 mb-8 bg-border/60" />
+        <div className="w-full h-px mt-16 mb-8 bg-border/60" aria-hidden="true" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
 
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-xs text-muted-foreground">
             <p>© {new Date().getFullYear()} TechNova Engineering Collective.</p>
-            <span className="hidden sm:inline">•</span>
+            <span className="hidden sm:inline" aria-hidden="true">•</span>
             <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-foreground transition-colors">Security</a>
+              <a href="#" className="hover:text-foreground transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">Privacy Policy</a>
+              <a href="#" className="hover:text-foreground transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">Terms of Service</a>
+              <a href="#" className="hover:text-foreground transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">Security</a>
             </div>
           </div>
 
@@ -231,8 +244,8 @@ function Footer() {
                   key={social.id}
                   href={social.url}
                   target="_blank"
-                  rel="noreferrer"
-                  aria-label={social.title || "Social channel"}
+                  rel="noopener noreferrer"
+                  aria-label={`${social.title || "Social channel"} (opens in new tab)`}
                   className="
                     flex items-center justify-center
                     w-8 h-8 rounded-xl
@@ -242,9 +255,10 @@ function Footer() {
                     transition-all duration-300 ease-out
                     hover:border-primary hover:!bg-primary hover:text-primary-foreground
                     hover:scale-105 hover:shadow-[0_0_12px_rgba(0,81,251,0.4)]
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
                   "
                 >
-                  <Icon className="w-3.5 h-3.5" />
+                  <Icon className="w-3.5 h-3.5" aria-hidden="true" />
                 </a>
               );
             })}
@@ -258,11 +272,11 @@ function Footer() {
       <div
         aria-hidden="true"
         className="
-    absolute -bottom-10 left-1/2 -translate-x-1/2 
-    text-[13vw] font-black tracking-tighter uppercase 
-    select-none pointer-events-none -z-10 whitespace-nowrap
-    text-black/[0.05] dark:text-white/[0.035]
-  "
+          absolute -bottom-10 left-1/2 -translate-x-1/2 
+          text-[13vw] font-black tracking-tighter uppercase 
+          select-none pointer-events-none -z-10 whitespace-nowrap
+          text-black/[0.05] dark:text-white/[0.035]
+        "
       >
         TECHNOVA
       </div>

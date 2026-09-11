@@ -82,7 +82,11 @@ export default function Chatbot({ isOpen, setIsOpen }) {
       {!isOpen && (
         <div className="relative inline-flex">
           <button
+            type="button"
             onClick={() => setIsOpen(true)}
+            aria-label="Open AI support assistant"
+            aria-haspopup="dialog"
+            aria-expanded={isOpen}
             className="
               group relative flex items-center justify-center
               h-14 w-14 rounded-full
@@ -91,16 +95,16 @@ export default function Chatbot({ isOpen, setIsOpen }) {
               shadow-[0_8px_30px_rgba(0,81,251,0.45)]
               hover:shadow-[0_12px_40px_rgba(0,81,251,0.65)]
               hover:scale-105 active:scale-95
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
               transition-all duration-300 ease-out
               border border-white/20
             "
-            aria-label="Open support chat"
           >
-            <Bot className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
+            <Bot className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
           </button>
 
           {/* Clean Status Dot Positioned Perfectly on the Rim */}
-          <span className="absolute top-0 right-0 flex h-3.5 w-3.5 pointer-events-none">
+          <span className="absolute top-0 right-0 flex h-3.5 w-3.5 pointer-events-none" aria-hidden="true">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-background shadow-xs" />
           </span>
@@ -110,6 +114,9 @@ export default function Chatbot({ isOpen, setIsOpen }) {
       {/* ================= Floating Chat Window ================= */}
       {isOpen && (
         <Card
+          role="dialog"
+          aria-modal="false"
+          aria-labelledby="chatbot-dialog-title"
           className="
             w-[calc(100vw-2.5rem)] sm:w-[390px] h-[550px]
             flex flex-col
@@ -124,48 +131,57 @@ export default function Chatbot({ isOpen, setIsOpen }) {
           "
         >
           {/* Top Hairline Specular Reflection */}
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent pointer-events-none z-20" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent pointer-events-none z-20" aria-hidden="true" />
 
           {/* ================= Header ================= */}
           <CardHeader className="px-5 py-4 border-b border-border/60 dark:border-white/[0.08] flex flex-row items-center justify-between space-y-0 shrink-0 bg-background/60 dark:bg-black/30 backdrop-blur-xl z-10">
             <div className="flex items-center gap-3">
-              <div className="relative flex items-center justify-center w-10 h-10 rounded-2xl bg-gradient-to-b from-primary to-blue-700 text-white shadow-md shadow-primary/25 border border-white/20">
+              <div className="relative flex items-center justify-center w-10 h-10 rounded-2xl bg-gradient-to-b from-primary to-blue-700 text-white shadow-md shadow-primary/25 border border-white/20" aria-hidden="true">
                 <Bot className="h-5 w-5" />
                 <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-background" />
               </div>
 
               <div className="flex flex-col text-left">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-sm font-bold text-foreground leading-tight">
+                  <h2 id="chatbot-dialog-title" className="text-sm font-bold text-foreground leading-tight m-0">
                     TechNova Assistant
-                  </span>
-                  <Sparkles className="w-3 h-3 text-primary" />
+                  </h2>
+                  <Sparkles className="w-3 h-3 text-primary" aria-hidden="true" />
                 </div>
-                <span className="text-[10px] font-mono text-muted-foreground flex items-center gap-1 mt-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[10px] font-mono text-muted-foreground flex items-center gap-1 mt-0.5" aria-label="Status: Online, average reply under 1 second">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
                   Online // Avg reply &lt; 1s
                 </span>
               </div>
             </div>
 
             <button
+              type="button"
               onClick={() => setIsOpen(false)}
+              aria-label="Close support chat"
               className="
                 flex items-center justify-center
                 w-8 h-8 rounded-xl
                 border border-border/60 dark:border-white/10
                 bg-muted/40 dark:bg-white/[0.04]
                 text-muted-foreground hover:text-foreground
-                hover:border-primary/40 transition-all duration-200
+                hover:border-primary/40
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
+                transition-all duration-200
               "
-              aria-label="Close chat"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" aria-hidden="true" />
             </button>
           </CardHeader>
 
           {/* ================= Message Feed ================= */}
-          <CardContent className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <CardContent 
+            role="log"
+            aria-live="polite"
+            aria-atomic="false"
+            aria-label="Chat messages history"
+            className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
             {messages.map((msg) => {
               const isUser = msg.sender === "user";
 
@@ -184,30 +200,39 @@ export default function Chatbot({ isOpen, setIsOpen }) {
                       }
                     `}
                   >
+                    <span className="sr-only">{isUser ? "You said: " : "Assistant said: "}</span>
                     {msg.text}
                   </div>
 
                   <div className="flex items-center gap-1 mt-1 px-1 text-[10px] font-mono text-muted-foreground/70">
                     <span>{msg.time}</span>
-                    {isUser && <CheckCheck className="w-3 h-3 text-primary ml-0.5" />}
+                    {isUser && <CheckCheck className="w-3 h-3 text-primary ml-0.5" aria-hidden="true" />}
                   </div>
                 </div>
               );
             })}
 
             {isTyping && (
-              <div className="flex items-center gap-1.5 px-4 py-3 rounded-2xl rounded-bl-xs bg-card/70 dark:bg-white/[0.04] border border-border/60 dark:border-white/[0.08] w-fit">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce [animation-delay:-0.3s]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce [animation-delay:-0.15s]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce" />
+              <div 
+                role="status" 
+                aria-live="polite" 
+                className="flex items-center gap-1.5 px-4 py-3 rounded-2xl rounded-bl-xs bg-card/70 dark:bg-white/[0.04] border border-border/60 dark:border-white/[0.08] w-fit"
+              >
+                <span className="sr-only">TechNova assistant is typing...</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce [animation-delay:-0.3s]" aria-hidden="true" />
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce [animation-delay:-0.15s]" aria-hidden="true" />
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce" aria-hidden="true" />
               </div>
             )}
 
             <div ref={messagesEndRef} />
           </CardContent>
 
-          {/* ================= Quick Action Chips (With Clean Scroll & End Padding) ================= */}
-          <div className="px-4 pb-2.5 flex items-center gap-2 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {/* ================= Quick Action Chips ================= */}
+          <nav 
+            aria-label="Suggested quick questions" 
+            className="px-4 pb-2.5 flex items-center gap-2 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
             {QUICK_PROMPTS.map((prompt) => (
               <button
                 key={prompt}
@@ -219,6 +244,7 @@ export default function Chatbot({ isOpen, setIsOpen }) {
                   bg-muted/40 dark:bg-white/[0.04]
                   text-[11px] font-medium text-muted-foreground
                   hover:text-foreground hover:border-primary/50 hover:bg-muted/70
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
                   transition-all duration-200 shrink-0
                 "
               >
@@ -227,7 +253,7 @@ export default function Chatbot({ isOpen, setIsOpen }) {
             ))}
             {/* Invisible spacer ensuring the last chip is never clipped */}
             <div className="w-2 shrink-0" aria-hidden="true" />
-          </div>
+          </nav>
 
           {/* ================= Input Dock ================= */}
           <CardFooter className="p-3 sm:p-4 border-t border-border/60 dark:border-white/[0.08] bg-background/70 dark:bg-black/40 backdrop-blur-xl shrink-0">
@@ -248,6 +274,7 @@ export default function Chatbot({ isOpen, setIsOpen }) {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about architecture, rates, timeline..."
+                aria-label="Type your message"
                 className="flex-1 border-0 shadow-none bg-transparent text-xs sm:text-sm text-foreground placeholder:text-muted-foreground/60 focus-visible:ring-0 px-0 h-9"
               />
 
@@ -262,11 +289,12 @@ export default function Chatbot({ isOpen, setIsOpen }) {
                   disabled:opacity-40 disabled:cursor-not-allowed
                   shrink-0 shadow-sm
                   hover:opacity-90 active:scale-95
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
                   transition-all duration-200
                 "
                 aria-label="Send message"
               >
-                <ArrowUp className="h-4 w-4" />
+                <ArrowUp className="h-4 w-4" aria-hidden="true" />
               </button>
             </form>
           </CardFooter>

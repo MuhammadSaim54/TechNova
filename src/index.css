@@ -414,3 +414,16 @@ body {
    --radius-3xl: calc(var(--radius) * 2.2);
    --radius-4xl: calc(var(--radius) * 2.6);
 }
+
+@layer base {
+  /* Suppress intrusive default outlines on mouse clicks */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Universal high-contrast focus ring for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+}
