@@ -2,11 +2,12 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { Section } from "@/src/components/layout/Section";
 import { buttonVariants } from "@/src/components/ui/button";
+import { Badge } from "@/src/components/ui/badge";
 
 function ServicesCTASection() {
   return (
-    <Section 
-      id="services-cta" 
+    <Section
+      id="services-cta"
       className="py-14 sm:py-18 md:py-20 lg:py-24 relative overflow-hidden w-full"
     >
       {/* ================= Premium Ambient Banner Container ================= */}
@@ -21,21 +22,27 @@ function ServicesCTASection() {
         "
       >
         {/* Specular top-edge highlight */}
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent pointer-events-none"
+        />
 
         {/* Ambient radial backdrop glow inside the card */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[320px] sm:w-[500px] h-[220px] bg-primary/15 dark:bg-primary/20 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10" />
+        <div
+          aria-hidden="true"
+          className="absolute -top-24 left-1/2 -translate-x-1/2 w-[320px] sm:w-[500px] h-[220px] bg-primary/15 dark:bg-primary/20 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10"
+        />
 
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-12">
-          
+
           {/* Content Left */}
           <div className="flex flex-col items-start text-left max-w-2xl">
-            
+
             {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border/60 bg-card/60 dark:bg-white/[0.04] backdrop-blur-xl text-primary text-xs font-semibold tracking-wider uppercase">
-              <Sparkles className="w-3.5 h-3.5" />
+            <Badge variant="brand" className="gap-1.5 px-3.5 py-1.5 text-xs">
+              <Sparkles className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
               <span>Let's Work Together</span>
-            </div>
+            </Badge>
 
             {/* Theme-Aware Headline */}
             <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-foreground via-foreground/90 to-foreground/70 dark:from-white dark:via-white/95 dark:to-white/70 leading-[1.15]">
@@ -57,13 +64,13 @@ function ServicesCTASection() {
             <NavLink
               to="/contact"
               className={buttonVariants({
-                variant: "default",
+                variant: "electric",
                 size: "lg",
-                className: "group border-none justify-center px-8 py-6 text-base font-semibold shadow-md shadow-primary/25 hover:shadow-primary/40 transition-all",
+                className: "group justify-center px-8 py-6 text-base font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all",
               })}
             >
               Get Started
-              <ArrowRight className="w-4 h-4 ml-1.5 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
+              <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-300 ease-out group-hover:translate-x-1.5" aria-hidden="true" />
             </NavLink>
           </div>
 

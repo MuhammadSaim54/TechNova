@@ -20,6 +20,7 @@ import { Textarea } from "@/src/components/ui/textarea";
 import { Label } from "@/src/components/ui/label";
 import { Checkbox } from "@/src/components/ui/checkbox";
 import { Button } from "@/src/components/ui/button";
+import { Badge } from "@/src/components/ui/badge";
 
 const SERVICES = [
   "Full-Stack Web",
@@ -118,17 +119,21 @@ export default function Contact() {
     >
       {/* Calibrated Blueprint Grid for Both Themes */}
       <div
+        aria-hidden="true"
         className="
-            absolute inset-0 
-            bg-[linear-gradient(to_right,rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.06)_1px,transparent_1px)]
-            dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]
-            bg-[size:3.5rem_3.5rem] 
-            [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] 
-            pointer-events-none -z-10
-          "
+          absolute inset-0 
+          bg-[linear-gradient(to_right,rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.06)_1px,transparent_1px)]
+          dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]
+          bg-[size:3.5rem_3.5rem] 
+          [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] 
+          pointer-events-none -z-10
+        "
       />
 
-      <div className="absolute top-1/4 left-1/4 w-[350px] sm:w-[550px] h-[350px] bg-primary/15 dark:bg-primary/[0.08] rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div 
+        aria-hidden="true" 
+        className="absolute top-1/4 left-1/4 w-[350px] sm:w-[550px] h-[350px] bg-primary/15 dark:bg-primary/[0.08] rounded-full blur-[120px] pointer-events-none -z-10" 
+      />
 
       {/* ================= 2-Column Split Console ================= */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
@@ -145,13 +150,16 @@ export default function Contact() {
             "
           >
             {/* Top Specular Rim */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+            <div 
+              aria-hidden="true" 
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" 
+            />
 
             <div className="mb-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary text-[11px] font-semibold tracking-wider uppercase">
-                <Sparkles className="w-3 h-3" />
+              <Badge variant="brand" className="gap-1.5 px-3 py-1 text-[11px]">
+                <Sparkles className="w-3 h-3 text-primary" aria-hidden="true" />
                 <span>Client Intake Console</span>
-              </div>
+              </Badge>
               <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
                 Let’s Discuss Your Next Build
               </h2>
@@ -311,13 +319,13 @@ export default function Contact() {
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Securing Transmission...
+                      <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
+                      <span>Securing Transmission...</span>
                     </>
                   ) : (
                     <>
-                      Request Engineering Scope
-                      <Send className="w-4 h-4 ml-1" />
+                      <span>Request Engineering Scope</span>
+                      <Send className="w-4 h-4 ml-1" aria-hidden="true" />
                     </>
                   )}
                 </Button>
@@ -326,15 +334,15 @@ export default function Contact() {
               {/* Trust & Retention Proof Badges */}
               <div className="pt-4 border-t border-border/40 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
                 <div className="flex items-center gap-2 text-[11px] font-medium text-muted-foreground">
-                  <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" aria-hidden="true" />
                   <span>Strict NDA Protected</span>
                 </div>
                 <div className="flex items-center gap-2 text-[11px] font-medium text-muted-foreground">
-                  <Clock className="w-4 h-4 text-primary shrink-0" />
+                  <Clock className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
                   <span>24hr Technical SOW</span>
                 </div>
                 <div className="flex items-center gap-2 text-[11px] font-medium text-muted-foreground">
-                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
                   <span>Direct Senior Engineers</span>
                 </div>
               </div>
@@ -350,9 +358,12 @@ export default function Contact() {
           <div className="relative w-full h-[320px] sm:h-[380px] lg:h-full min-h-[320px] rounded-3xl overflow-hidden border border-border/70 bg-card shadow-xl flex flex-col">
             
             {/* Top Specular Frame Reflection */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent z-10" />
+            <div 
+              aria-hidden="true" 
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent z-10" 
+            />
 
-            {/* Natural Clean Map (Uncluttered, No Muddy Filters) */}
+            {/* Natural Clean Map */}
             <iframe
               title="TechNova Global HQ"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108846.54145942475!2d74.2437599352934!3d31.520369599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
@@ -364,7 +375,10 @@ export default function Contact() {
             {/* Subtle Bottom Location Tag Over Map */}
             <div className="absolute bottom-4 left-4 right-4 z-10 p-3 rounded-2xl border border-border/80 bg-background/95 dark:bg-black/90 backdrop-blur-xl shadow-xl flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-primary-foreground shrink-0 shadow-sm">
+                <div 
+                  aria-hidden="true" 
+                  className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-primary-foreground shrink-0 shadow-sm"
+                >
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div className="flex flex-col text-left">
@@ -376,10 +390,9 @@ export default function Contact() {
                   </span>
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <Badge variant="live" className="px-2 py-0.5 text-[10px]">
                 HQ Open
-              </span>
+              </Badge>
             </div>
 
           </div>
@@ -398,7 +411,10 @@ export default function Contact() {
               "
             >
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                <div 
+                  aria-hidden="true" 
+                  className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                >
                   <Mail className="w-4 h-4" />
                 </div>
                 <div className="flex flex-col text-left">
@@ -410,7 +426,7 @@ export default function Contact() {
                   </span>
                 </div>
               </div>
-              <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
             </a>
 
             {/* Direct Phone Line */}
@@ -424,7 +440,10 @@ export default function Contact() {
               "
             >
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                <div 
+                  aria-hidden="true" 
+                  className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                >
                   <PhoneCall className="w-4 h-4" />
                 </div>
                 <div className="flex flex-col text-left">
@@ -436,7 +455,7 @@ export default function Contact() {
                   </span>
                 </div>
               </div>
-              <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
             </a>
 
           </div>

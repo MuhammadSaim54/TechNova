@@ -6,6 +6,7 @@ import {
 
 import teamdata from "./teamdata.js";
 import { Section } from "@/src/components/layout/Section";
+import { Badge } from "@/src/components/ui/badge";
 
 function TeamCardsSection() {
   return (
@@ -15,18 +16,22 @@ function TeamCardsSection() {
     >
       {/* Calibrated Blueprint Grid for Both Themes */}
       <div
+        aria-hidden="true"
         className="
-            absolute inset-0 
-            bg-[linear-gradient(to_right,rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.06)_1px,transparent_1px)]
-            dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]
-            bg-[size:3.5rem_3.5rem] 
-            [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] 
-            pointer-events-none -z-10
-          "
+          absolute inset-0 
+          bg-[linear-gradient(to_right,rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.06)_1px,transparent_1px)]
+          dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]
+          bg-[size:3.5rem_3.5rem] 
+          [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] 
+          pointer-events-none -z-10
+        "
       />
 
       {/* Ambient Lighting Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[320px] sm:w-[500px] md:w-[650px] h-[300px] bg-primary/10 dark:bg-primary/[0.08] rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10" />
+      <div 
+        aria-hidden="true" 
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[320px] sm:w-[500px] md:w-[650px] h-[300px] bg-primary/10 dark:bg-primary/[0.08] rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10" 
+      />
 
       {/* Centered Showcase Grid */}
       <div className="w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
@@ -50,13 +55,21 @@ function TeamCardsSection() {
               "
             >
               {/* Top Specular Border Highlight */}
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
+              <div 
+                aria-hidden="true" 
+                className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" 
+              />
 
               <div>
                 {/* Member Portrait Shell */}
                 <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl bg-muted/30 border border-border/40">
-                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-lg border border-border/60 bg-background/80 dark:bg-black/60 backdrop-blur-md text-[10px] font-mono font-bold text-muted-foreground z-10">
-                    MEMBER // {memberIndex}
+                  <div className="absolute top-3 right-3 z-10">
+                    <Badge 
+                      variant="outline" 
+                      className="px-2.5 py-1 rounded-lg bg-background/85 dark:bg-black/70 backdrop-blur-md text-[10px] font-mono font-bold text-muted-foreground border-border/60"
+                    >
+                      MEMBER // {memberIndex}
+                    </Badge>
                   </div>
 
                   <img
@@ -66,7 +79,10 @@ function TeamCardsSection() {
                     className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div 
+                    aria-hidden="true" 
+                    className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
+                  />
                 </div>
 
                 {/* Profile Details */}
@@ -83,7 +99,7 @@ function TeamCardsSection() {
 
               {/* Social Link Actions */}
               <div className="pt-3 px-2 pb-1 border-t border-border/40 flex items-center justify-between w-full">
-                <span className="text-[11px] font-semibold text-muted-foreground/80 uppercase tracking-wider">
+                <span className="text-[11px] font-semibold text-muted-foreground/80 uppercase tracking-wider font-mono">
                   Connect
                 </span>
 
@@ -101,7 +117,7 @@ function TeamCardsSection() {
                       hover:scale-110 hover:shadow-[0_0_12px_rgba(0,81,251,0.4)]
                     "
                   >
-                    <FaFacebook className="w-3.5 h-3.5" />
+                    <FaFacebook className="w-3.5 h-3.5" aria-hidden="true" />
                   </a>
 
                   <a
@@ -117,7 +133,7 @@ function TeamCardsSection() {
                       hover:scale-110 hover:shadow-[0_0_12px_rgba(0,81,251,0.4)]
                     "
                   >
-                    <FaGithub className="w-3.5 h-3.5" />
+                    <FaGithub className="w-3.5 h-3.5" aria-hidden="true" />
                   </a>
 
                   <a
@@ -133,7 +149,7 @@ function TeamCardsSection() {
                       hover:scale-110 hover:shadow-[0_0_12px_rgba(0,81,251,0.4)]
                     "
                   >
-                    <FaXTwitter className="w-3.5 h-3.5" />
+                    <FaXTwitter className="w-3.5 h-3.5" aria-hidden="true" />
                   </a>
                 </div>
               </div>

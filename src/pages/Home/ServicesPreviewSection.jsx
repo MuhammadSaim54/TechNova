@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import ServicesData from "./ServicesData.js";
 import { Section } from "@/src/components/layout/Section";
 import { buttonVariants } from "@/src/components/ui/button";
+import { Badge } from "@/src/components/ui/badge";
 
 // Fallback capability tags if not present in your ServicesData.js
 const DEFAULT_TAGS = {
@@ -21,13 +22,16 @@ function ServicesPreviewSection() {
       className="py-16 md:py-24 border-b border-border/40 relative overflow-hidden w-full"
     >
       {/* Responsive ambient background glow (contained to prevent mobile blowout) */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[320px] sm:w-[500px] md:w-[650px] h-[320px] bg-primary/[0.08] rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10" />
+      <div 
+        aria-hidden="true" 
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[320px] sm:w-[500px] md:w-[650px] h-[320px] bg-primary/[0.08] rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10" 
+      />
 
       {/* ================= Header ================= */}
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-        <div className="inline-flex items-center px-3.5 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary text-xs font-semibold tracking-wider uppercase">
+        <Badge variant="brand" className="px-3.5 py-1 text-xs">
           Our Services
-        </div>
+        </Badge>
 
         <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-tight">
           Services That Drive <span className="text-primary">Results</span>
@@ -49,33 +53,43 @@ function ServicesPreviewSection() {
           const serviceIndex = String(index + 1).padStart(2, "0");
 
           return (
-            <div
+            <NavLink
               key={service.id || index}
+              to={service.path || "/services"}
               className="
                 group relative flex flex-col justify-between
-                w-full
+                w-full text-left
                 rounded-3xl p-6 sm:p-8
-                border border-white/[0.08]
-                bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent
+                border border-border/70 dark:border-white/[0.08]
+                bg-card/60 dark:bg-gradient-to-b dark:from-white/[0.06] dark:via-white/[0.02] dark:to-transparent
                 backdrop-blur-2xl
-                shadow-[0_8px_30px_rgb(0,0,0,0.12)]
+                shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)]
                 transition-all duration-300 ease-out
                 hover:-translate-y-2 hover:border-primary/50
                 hover:shadow-[0_20px_40px_-15px_rgba(0,81,251,0.25)]
-                cursor-pointer
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
                 overflow-hidden
               "
             >
               {/* Top specular reflection line */}
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div 
+                aria-hidden="true" 
+                className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+              />
 
               {/* Contained hover bloom */}
-              <div className="absolute -top-16 -right-16 w-36 h-36 bg-primary/15 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div 
+                aria-hidden="true" 
+                className="absolute -top-16 -right-16 w-36 h-36 bg-primary/15 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" 
+              />
 
               <div>
                 {/* Header: Icon + Monospace Index */}
                 <div className="flex items-center justify-between w-full">
-                  <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 text-primary transition-all duration-300 group-hover:scale-105 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(0,81,251,0.4)]">
+                  <div 
+                    aria-hidden="true" 
+                    className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 text-primary transition-all duration-300 group-hover:scale-105 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(0,81,251,0.4)]"
+                  >
                     <Icon className="w-5 h-5" strokeWidth={1.75} />
                   </div>
 
@@ -98,27 +112,31 @@ function ServicesPreviewSection() {
                 {/* Capability Pills */}
                 <div className="mt-6 flex flex-wrap gap-2">
                   {tags.map((tag) => (
-                    <span
+                    <Badge
                       key={tag}
-                      className="px-2.5 py-1 text-[11px] font-medium tracking-wide rounded-md border border-white/[0.06] bg-white/[0.03] text-muted-foreground group-hover:border-primary/20 group-hover:text-foreground/90 transition-colors"
+                      variant="outline"
+                      className="px-2.5 py-1 text-[11px] font-sans font-medium rounded-md group-hover:border-primary/30 transition-colors"
                     >
                       {tag}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
               </div>
 
               {/* Card Footer */}
-              <div className="mt-8 pt-5 border-t border-white/[0.06] flex items-center justify-between">
+              <div className="mt-8 pt-5 border-t border-border/60 dark:border-white/[0.06] flex items-center justify-between">
                 <span className="text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors">
                   Explore Service
                 </span>
 
-                <div className="w-8 h-8 rounded-full border border-white/[0.1] bg-white/[0.04] flex items-center justify-center text-muted-foreground transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
+                <div 
+                  aria-hidden="true" 
+                  className="w-8 h-8 rounded-full border border-border/70 dark:border-white/[0.1] bg-muted/30 dark:bg-white/[0.04] flex items-center justify-center text-muted-foreground transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110"
+                >
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </div>
-            </div>
+            </NavLink>
           );
         })}
       </div>
@@ -134,7 +152,7 @@ function ServicesPreviewSection() {
           })}
         >
           View All Services
-          <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />
+          <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover:translate-x-1" aria-hidden="true" />
         </NavLink>
       </div>
     </Section>

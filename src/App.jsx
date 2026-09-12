@@ -1,41 +1,47 @@
-// Router
-import { Routes, Route } from 'react-router-dom'
-// Layout
-import MainLayout from './layouts/MainLayout.jsx'
-// Pages
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Portfolio from "./pages/Portfolio";
-import Team from "./pages/Team";
-import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+import { lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout.jsx';
 import { Toaster } from "./components/ui/sonner.jsx";
 import ScrollToTop from "./utils/ScrollToTop";
-// CSS
-import './App.css'
+import { TopProgressBar } from "./components/common/TopProgressBar";
+import { InitialSplashLoader } from "./components/common/InitialSplashLoader";
+import './App.css';
+
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Services = lazy(() => import("./pages/Services"));
+const Portfolio = lazy(() => import("./pages/Portfolio"));
+const Team = lazy(() => import("./pages/Team"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Contact = lazy(() => import("./pages/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
-
   return (
     <>
+      {/* 1. Initial screen blocker: covers everything until bundle is parsed */}
+      <InitialSplashLoader />
+
+      {/* 2. YouTube laser progress bar: triggers instantly on nav clicks */}
+      <TopProgressBar />
+
       <Toaster />
-      <ScrollToTop /> {/* Resets scroll on every navigation */}
+      <ScrollToTop />
+
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/about' element={<About />}></Route>
-          <Route path='/blog' element={<Blog />}></Route>
-          <Route path='/contact' element={<Contact />}></Route>
-          <Route path='/portfolio' element={<Portfolio />}></Route>
-          <Route path='/services' element={<Services />}></Route>
-          <Route path='/team' element={<Team />}></Route>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/portfolio' element={<Portfolio />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/team' element={<Team />} />
         </Route>
-        <Route path='*' element={<NotFound />}></Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
