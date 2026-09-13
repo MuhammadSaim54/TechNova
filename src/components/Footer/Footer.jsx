@@ -130,12 +130,15 @@ function Footer() {
               <img
                 src={Logo}
                 alt="TechNova Logo"
+                width="180"
+                height="50"
+                loading="lazy"
                 className={`
-                  h-14 sm:h-16 md:h-18
-                  w-auto object-contain
-                  transition-all duration-300
-                  ${theme === "dark" ? "brightness-0 invert opacity-95" : "opacity-90"}
-                `}
+                    h-14 sm:h-16 md:h-18
+                    w-auto object-contain
+                    transition-all duration-300
+                    ${theme === "dark" ? "brightness-0 invert opacity-95" : "opacity-90"}
+                  `}
               />
             </NavLink>
 
@@ -144,9 +147,9 @@ function Footer() {
             </p>
 
             {/* Live Operational Status Telemetry Box */}
-            <div 
-              role="status" 
-              aria-live="polite" 
+            <div
+              role="status"
+              aria-live="polite"
               className="mt-6 flex flex-col gap-2 p-3.5 rounded-2xl border border-border/70 dark:border-white/10 bg-muted/30 dark:bg-white/[0.02] backdrop-blur-xl w-full max-w-xs"
             >
               <div className="flex items-center justify-between text-[11px] font-mono">

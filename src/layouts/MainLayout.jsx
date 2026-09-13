@@ -1,8 +1,10 @@
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, Suspense, lazy } from 'react';
 import Navbar from '../components/Navbar/Navbar.jsx';
 import { Outlet, useLocation } from 'react-router-dom';
 import Footer from '../components/Footer/Footer.jsx';
-import Chatbot from '../components/chat/Chatbot.jsx';
+
+// Component-level Lazy Loading for Chatbot
+const Chatbot = lazy(() => import('../components/chat/Chatbot.jsx'));
 
 function MainLayout() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -23,14 +25,18 @@ function MainLayout() {
 
       <Navbar />
 
-      <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
-        <Suspense fallback={null}>
+      {/* min-h-screen container with empty placeholder so Footer doesn't snap to the top */}
+      <main id="main-content" tabIndex={-1} className="flex-1 min-h-[85vh] outline-none">
+        <Suspense fallback={<div className="min-h-[85vh] w-full" />}>
           <Outlet />
         </Suspense>
       </main>
 
       <Footer />
-      <Chatbot isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
+
+      <Suspense fallback={null}>
+        <Chatbot isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
+      </Suspense>
     </div>
   );
 }

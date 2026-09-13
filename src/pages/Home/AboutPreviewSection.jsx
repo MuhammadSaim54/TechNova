@@ -52,7 +52,10 @@ function AboutPreviewSection() {
               <img
                 src={AboutImage}
                 alt="TechNova team collaborating on digital solutions"
+                width="600"
+                height="450"
                 loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-700 ease-out hover:scale-[1.02]"
               />
             </div>
@@ -69,7 +72,6 @@ function AboutPreviewSection() {
               transition-all duration-300 hover:border-primary/50 hover:-translate-y-0.5
             "
           >
-            {/* Theme-aware 10+ text: dark foreground in light mode, bright white in dark mode */}
             <div className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-foreground via-foreground/90 to-primary dark:from-white dark:via-white/95 dark:to-primary">
               10+
             </div>

@@ -1,19 +1,27 @@
+import { lazy, Suspense } from "react";
 import HeroSection from "./HeroSection";
-import TrustedBySection from "./TrustedBySection";
-import ServicesPreviewSection from "./ServicesPreviewSection";
-import AboutPreviewSection from "./AboutPreviewSection";
-import CTASection from "./CTASection";
+
+// Below-the-fold sections are lazy loaded to free up initial main-thread execution
+const TrustedBySection = lazy(() => import("./TrustedBySection"));
+const ServicesPreviewSection = lazy(() => import("./ServicesPreviewSection"));
+const AboutPreviewSection = lazy(() => import("./AboutPreviewSection"));
+const CTASection = lazy(() => import("./CTASection"));
 
 function Home() {
-    return (
-        <>
-            <HeroSection />
-            <TrustedBySection />
-            <ServicesPreviewSection />
-            <AboutPreviewSection />
-            <CTASection />
-        </>
-    );
+  return (
+    <>
+      {/* Above-the-fold: Instant critical render */}
+      <HeroSection />
+
+      {/* Below-the-fold: Non-blocking deferred render */}
+      <Suspense fallback={<div className="min-h-[200px]" />}>
+        <TrustedBySection />
+        <ServicesPreviewSection />
+        <AboutPreviewSection />
+        <CTASection />
+      </Suspense>
+    </>
+  );
 }
 
 export default Home;

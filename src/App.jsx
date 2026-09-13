@@ -1,10 +1,9 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout.jsx';
 import { Toaster } from "./components/ui/sonner.jsx";
 import ScrollToTop from "./utils/ScrollToTop";
 import { TopProgressBar } from "./components/common/TopProgressBar";
-import { InitialSplashLoader } from "./components/common/InitialSplashLoader";
 import './App.css';
 
 const Home = lazy(() => import("./pages/Home"));
@@ -19,10 +18,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 function App() {
   return (
     <>
-      {/* 1. Initial screen blocker: covers everything until bundle is parsed */}
-      <InitialSplashLoader />
-
-      {/* 2. YouTube laser progress bar: triggers instantly on nav clicks */}
+      {/* 1. Laser progress bar: triggers instantly on nav clicks */}
       <TopProgressBar />
 
       <Toaster />
@@ -38,7 +34,14 @@ function App() {
           <Route path='/services' element={<Services />} />
           <Route path='/team' element={<Team />} />
         </Route>
-        <Route path='*' element={<NotFound />} />
+        <Route 
+          path='*' 
+          element={
+            <Suspense fallback={null}>
+              <NotFound />
+            </Suspense>
+          } 
+        />
       </Routes>
     </>
   );

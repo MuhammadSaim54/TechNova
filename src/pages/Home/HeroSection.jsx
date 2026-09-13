@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import {
   ArrowRight,
   FolderKanban,
@@ -12,8 +12,10 @@ import HeroIllustration from "../../assets/images/hero-illustration.webp";
 import { buttonVariants } from "@/src/components/ui/button";
 import { Badge } from "@/src/components/ui/badge";
 import { Section } from "@/src/components/layout/Section";
-import GetStartedDialog from "@/src/components/auth/GetStartedDialog.jsx";
-import ServicesDialog from "@/src/components/auth/ServicesDialog.jsx";
+
+// Lazy load dialogs so heavy forms and portal trees don't choke the critical initial render
+const GetStartedDialog = lazy(() => import("@/src/components/auth/GetStartedDialog.jsx"));
+const ServicesDialog = lazy(() => import("@/src/components/auth/ServicesDialog.jsx"));
 
 const STATS = [
   {
@@ -61,9 +63,9 @@ function HomeHeroSection() {
       />
 
       {/* Top Ambient Glow (Theme-adapted) */}
-      <div 
+      <div
         aria-hidden="true"
-        className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] sm:w-[500px] lg:w-[700px] h-[260px] bg-primary/15 dark:bg-primary/20 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10" 
+        className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] sm:w-[500px] lg:w-[700px] h-[260px] bg-primary/15 dark:bg-primary/20 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10"
       />
 
       <div className="w-full flex flex-col gap-10 lg:gap-12">
@@ -150,19 +152,23 @@ function HomeHeroSection() {
           {/* Right Column: Illustration */}
           <div className="md:col-span-5 relative flex justify-center items-center mt-4 md:mt-0">
             {/* Visual Backlight Glow */}
-            <div 
-              aria-hidden="true" 
-              className="absolute inset-0 bg-gradient-to-tr from-primary/15 via-cyan-500/10 to-transparent rounded-3xl blur-2xl pointer-events-none -z-10 scale-90" 
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-tr from-primary/15 via-cyan-500/10 to-transparent rounded-3xl blur-2xl pointer-events-none -z-10 scale-90"
             />
 
-            <div className="relative w-full max-w-[280px] sm:max-w-sm md:max-w-none flex justify-center items-center p-2">
+            <div className="relative w-full max-w-[280px] sm:max-w-sm md:max-w-none aspect-[4/3] flex justify-center items-center p-2">
               <img
                 src={HeroIllustration}
                 alt="TechNova digital solutions illustration"
-                className="w-full h-auto max-h-[300px] sm:max-h-[360px] lg:max-h-[400px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_20px_35px_rgba(0,0,0,0.4)] transition-transform duration-500 hover:scale-[1.01]"
+                width="550"
+                height="412"
+                fetchPriority="high"
                 loading="eager"
+                decoding="async"
+                sizes="(max-width: 640px) 100vw, 550px"
+                className="w-full h-auto max-w-[500px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_20px_35px_rgba(0,0,0,0.4)]"
               />
-
               {/* Floating Glass Badge (Top) - visible on tablet+ */}
               <div className="hidden sm:flex absolute -top-1 -left-2 z-10">
                 <Badge variant="live" className="gap-2 px-3.5 py-2 rounded-xl bg-card/85 dark:bg-[#090e18]/85 backdrop-blur-xl shadow-lg border-border/80">
@@ -222,12 +228,20 @@ function HomeHeroSection() {
 
       </div>
 
-      {/* Dialog Portals */}
-      <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
-      <ServicesDialog
-        open={servicesDialogOpen}
-        onOpenChange={setServicesDialogOpen}
-      />
+      {/* Dialog Portals - Mounted strictly on-demand */}
+      {dialogOpen && (
+        <Suspense fallback={null}>
+          <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+        </Suspense>
+      )}
+      {servicesDialogOpen && (
+        <Suspense fallback={null}>
+          <ServicesDialog
+            open={servicesDialogOpen}
+            onOpenChange={setServicesDialogOpen}
+          />
+        </Suspense>
+      )}
     </Section>
   );
 }
