@@ -161,13 +161,11 @@ function HomeHeroSection() {
               <img
                 src={HeroIllustration}
                 alt="TechNova digital solutions illustration"
-                width="550"
-                height="412"
-                fetchPriority="high"
+                width="500"
+                height="375"
                 loading="eager"
                 decoding="async"
-                sizes="(max-width: 640px) 100vw, 550px"
-                className="w-full h-auto max-w-[500px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_20px_35px_rgba(0,0,0,0.4)]"
+                className="w-full h-auto max-w-[420px] object-contain"
               />
               {/* Floating Glass Badge (Top) - visible on tablet+ */}
               <div className="hidden sm:flex absolute -top-1 -left-2 z-10">
