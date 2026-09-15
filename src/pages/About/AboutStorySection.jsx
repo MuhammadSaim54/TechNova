@@ -135,7 +135,7 @@ function AboutStorySection() {
 
       {/* Atmospheric Background Radiance */}
       <motion.div 
-        aria-hidden="true"
+        aria-hidden="true" 
         animate={{
           scale: [1, 1.15, 1],
           opacity: [0.12, 0.22, 0.12],
@@ -185,23 +185,23 @@ function AboutStorySection() {
             TechNova was founded on an uncompromised belief: engineering excellence and human-centered design must converge. We empower ambitious enterprises to build resilient cloud architectures, high-converting digital products, and sustainable technology flywheels.
           </motion.p>
 
-          {/* Live Telemetry Status Row */}
+          {/* 👉 LIVE TELEMETRY STATUS (Responsive Stack on Mobile, Single Row on Desktop) */}
           <motion.div 
             variants={leftChildVariants}
-            className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-muted-foreground font-medium p-3 px-4.5 rounded-2xl border border-border/80 dark:border-white/[0.08] bg-card/40 dark:bg-white/[0.02] backdrop-blur-xl"
+            className="mt-8 flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-4 text-xs sm:text-sm text-muted-foreground font-medium p-3.5 sm:py-3 sm:px-4.5 rounded-2xl border border-border/80 dark:border-white/[0.08] bg-card/40 dark:bg-white/[0.02] backdrop-blur-xl w-full sm:w-auto"
           >
-            <div className="flex items-center gap-2">
-              <span className="relative flex h-2 w-2">
+            <div className="flex items-center gap-2 whitespace-nowrap">
+              <span className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span className="text-foreground font-semibold">Active Client Deployments</span>
+              <span className="text-foreground dark:text-white font-semibold">Active Client Deployments</span>
             </div>
             
-            <span className="text-border/80 dark:text-white/20">•</span>
+            <span className="hidden sm:inline-block text-border/80 dark:text-white/20 select-none">•</span>
             
-            <div className="flex items-center gap-1.5 text-muted-foreground">
-              <Globe2 className="w-3.5 h-3.5 text-primary" />
+            <div className="flex items-center gap-2 text-muted-foreground whitespace-nowrap">
+              <Globe2 className="w-3.5 h-3.5 text-primary shrink-0" />
               <span>Worldwide Execution</span>
             </div>
           </motion.div>

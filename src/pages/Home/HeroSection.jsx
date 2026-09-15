@@ -38,7 +38,7 @@ const STATS = [
   },
 ];
 
-// Responsive Magnetic Wrapper (Mobile par full width, Desktop par inline)
+// Responsive Magnetic Wrapper
 function HeroMagnetic({ children, strength = 0.25 }) {
   const ref = useRef(null);
   const x = useMotionValue(0);
@@ -125,18 +125,18 @@ function HomeHeroSection() {
           {/* Left Column: Typography & Responsive CTAs */}
           <div className="md:col-span-7 flex flex-col items-start text-left w-full">
 
-            {/* Announcement Capsule */}
+            {/* Announcement Capsule (Single-Line Fixed No-Wrap Pill) */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="inline-flex flex-wrap items-center gap-2 p-1 rounded-full border border-border/70 bg-card/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-xs"
+              className="inline-flex items-center gap-1.5 sm:gap-2 p-1 rounded-full border border-border/70 bg-card/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-xs max-w-full overflow-x-auto no-scrollbar"
             >
-              <Badge variant="brand" className="gap-1.5 py-1 px-3">
+              <Badge variant="brand" className="gap-1 sm:gap-1.5 py-0.5 sm:py-1 px-2.5 sm:px-3 text-[11px] sm:text-xs whitespace-nowrap shrink-0">
                 <Sparkles className="w-3 h-3 text-primary animate-pulse" aria-hidden="true" />
                 <span>Digital Agency</span>
               </Badge>
-              <Badge variant="live" className="py-1 px-3">
+              <Badge variant="live" className="py-0.5 sm:py-1 px-2.5 sm:px-3 text-[11px] sm:text-xs whitespace-nowrap shrink-0">
                 Accepting New Projects
               </Badge>
             </motion.div>
@@ -165,7 +165,7 @@ function HomeHeroSection() {
               and resilient cloud architecture designed to elevate modern brands above the noise.
             </motion.p>
 
-            {/* Responsive Action Buttons (Mobile: Full Width | Desktop: Side by Side) */}
+            {/* Responsive Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
@@ -240,7 +240,6 @@ function HomeHeroSection() {
               }}
               className="relative w-full max-w-[280px] sm:max-w-sm md:max-w-none aspect-[4/3] flex justify-center items-center p-2"
             >
-              {/* Backlight Specular Blur */}
               <div
                 aria-hidden="true"
                 className="absolute inset-0 bg-gradient-to-tr from-primary/25 via-cyan-500/20 to-transparent rounded-3xl blur-3xl pointer-events-none -z-10 scale-95"

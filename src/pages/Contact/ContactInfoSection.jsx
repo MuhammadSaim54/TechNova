@@ -182,13 +182,14 @@ export default function Contact() {
             >
               {/* Telemetry Header */}
               <div className="mb-8 flex flex-col items-start text-left">
-                <div className="flex items-center gap-2 px-3 py-1 rounded-full border border-border/80 dark:border-white/[0.1] bg-muted/50 dark:bg-white/[0.03] backdrop-blur-xl">
-                  <span className="relative flex h-2 w-2">
+                {/* 👉 TELEMETRY BADGE (Single-Line No-Wrap Snug Pill) */}
+                <div className="inline-flex items-center gap-1.5 sm:gap-2 p-1 rounded-full border border-border/80 dark:border-white/[0.12] bg-background/80 dark:bg-white/[0.04] backdrop-blur-xl shadow-xs max-w-full overflow-x-auto no-scrollbar">
+                  <span className="relative flex h-2 w-2 shrink-0 ml-1">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                   </span>
-                  <span className="font-mono text-[11px] font-bold tracking-wider text-muted-foreground uppercase">
-                    Direct Architect Gateway // SOW_READY
+                  <span className="font-mono text-[10px] sm:text-[11px] font-bold tracking-wider text-muted-foreground uppercase whitespace-nowrap shrink-0">
+                    ARCHITECT GATEWAY // SOW_READY
                   </span>
                 </div>
 

@@ -129,19 +129,19 @@ function ServicesHeroSection() {
         variants={heroContainerVariants}
         initial="hidden"
         animate="visible"
-        className="flex flex-col items-center text-center w-full max-w-4xl mx-auto"
+        className="flex flex-col items-center text-center w-full max-w-4xl mx-auto px-4 sm:px-0"
       >
 
-        {/* Eyebrow Capsule */}
+        {/* 👉 Eyebrow Capsule (Strict Single-Line Flex Row) */}
         <motion.div 
           variants={heroChildVariants}
-          className="inline-flex flex-wrap items-center justify-center gap-2 p-1 rounded-full border border-border/70 dark:border-white/[0.1] bg-card/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-xs"
+          className="inline-flex flex-row items-center gap-1.5 p-1 rounded-full border border-border/70 dark:border-white/[0.1] bg-card/60 dark:bg-white/[0.03] backdrop-blur-xl shadow-xs whitespace-nowrap"
         >
-          <Badge variant="brand" className="gap-1.5 py-1 px-3 shadow-[0_0_15px_rgba(0,81,251,0.3)]">
-            <Sparkles className="w-3.5 h-3.5 text-primary animate-pulse" aria-hidden="true" />
+          <Badge variant="brand" className="gap-1 py-1 px-2.5 sm:px-3 text-[10px] sm:text-xs whitespace-nowrap shadow-[0_0_15px_rgba(0,81,251,0.3)]">
+            <Sparkles className="w-3 h-3 text-primary animate-pulse shrink-0" aria-hidden="true" />
             <span>Our Capabilities</span>
           </Badge>
-          <Badge variant="live" className="py-1 px-3">
+          <Badge variant="live" className="py-1 px-2.5 sm:px-3 text-[10px] sm:text-xs whitespace-nowrap">
             End-to-End Solutions
           </Badge>
         </motion.div>

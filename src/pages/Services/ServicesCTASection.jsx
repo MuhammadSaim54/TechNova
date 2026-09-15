@@ -64,11 +64,11 @@ function ServicesCTASection() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="
           group relative w-full overflow-hidden
-          rounded-[32px] p-[1.5px]
+          rounded-[28px] sm:rounded-[32px] p-[1.5px]
           shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.7)]
         "
       >
-        {/* 👉 ROTATING ELECTRIC BLUE & CYAN LASER BEAM (Chakar Lagane Wali Border Line) */}
+        {/* Rotating Electric Blue & Cyan Laser Beam */}
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
@@ -84,7 +84,7 @@ function ServicesCTASection() {
         <div
           className="
             relative w-full h-full
-            rounded-[30.5px] p-8 sm:p-12 lg:p-16
+            rounded-[26.5px] sm:rounded-[30.5px] p-6 sm:p-12 lg:p-16
             bg-card dark:bg-[#070c18]
             overflow-hidden z-10
             border border-border/80 dark:border-white/[0.08]
@@ -106,7 +106,7 @@ function ServicesCTASection() {
           <div
             aria-hidden="true"
             className="
-              pointer-events-none absolute -inset-px rounded-[30.5px] opacity-0 
+              pointer-events-none absolute -inset-px rounded-[26.5px] sm:rounded-[30.5px] opacity-0 
               transition-opacity duration-300 group-hover:opacity-100 -z-10
               bg-[radial-gradient(600px_circle_at_var(--mouse-x,0px)_var(--mouse-y,0px),rgba(0,81,251,0.22),transparent_70%)]
             "
@@ -124,37 +124,38 @@ function ServicesCTASection() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute -top-32 left-1/2 -translate-x-1/2 w-[400px] sm:w-[650px] h-[280px] bg-gradient-to-r from-primary via-cyan-500 to-indigo-600 rounded-full blur-[110px] pointer-events-none -z-10" 
+            className="absolute -top-32 left-1/2 -translate-x-1/2 w-[350px] sm:w-[650px] h-[280px] bg-gradient-to-r from-primary via-cyan-500 to-indigo-600 rounded-full blur-[110px] pointer-events-none -z-10" 
           />
 
           {/* Top Hairline Specular Reflection */}
           <div 
             aria-hidden="true" 
-            className="absolute inset-x-16 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent pointer-events-none z-20" 
+            className="absolute inset-x-12 sm:inset-x-16 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent pointer-events-none z-20" 
           />
 
           <div className="relative z-20 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-14">
             
             {/* Content Left */}
-            <div className="flex flex-col items-start text-left max-w-2xl">
+            <div className="flex flex-col items-start text-left max-w-2xl w-full">
               
-              {/* Eyebrow Badge with Live Telemetry Ping */}
-              <div className="inline-flex items-center gap-2 p-1 rounded-full border border-border/90 dark:border-white/[0.12] bg-background/80 dark:bg-white/[0.04] backdrop-blur-xl shadow-xs">
-                <Badge variant="brand" className="gap-1.5 py-1 px-3 shadow-[0_0_18px_rgba(0,81,251,0.4)]">
-                  <Sparkles className="w-3.5 h-3.5 text-primary animate-pulse" aria-hidden="true" />
+              {/* Eyebrow Badge (Single-Line No-Wrap Snug Pill) */}
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 p-1 rounded-full border border-border/80 dark:border-white/[0.12] bg-background/80 dark:bg-white/[0.04] backdrop-blur-xl shadow-xs max-w-full overflow-x-auto no-scrollbar">
+                <Badge variant="brand" className="gap-1 sm:gap-1.5 py-0.5 sm:py-1 px-2.5 sm:px-3 text-[11px] sm:text-xs whitespace-nowrap shrink-0 shadow-[0_0_15px_rgba(0,81,251,0.35)]">
+                  <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary animate-pulse" aria-hidden="true" />
                   <span>Let's Work Together</span>
                 </Badge>
-                <div className="flex items-center gap-1.5 px-2.5 py-0.5 text-[11px] font-mono font-medium text-muted-foreground">
-                  <span className="relative flex h-2 w-2">
+
+                <div className="flex items-center gap-1.5 pr-2.5 pl-1 py-0.5 text-[10px] sm:text-[11px] font-mono font-medium text-muted-foreground whitespace-nowrap shrink-0">
+                  <span className="relative flex h-2 w-2 shrink-0">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                   </span>
-                  <span>Deploying Modern Architectures</span>
+                  <span>Modern Architectures</span>
                 </div>
               </div>
 
               {/* Headline */}
-              <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-foreground via-foreground/95 to-foreground/75 dark:from-white dark:via-white/95 dark:to-white/70 leading-[1.12]">
+              <h2 className="mt-4 sm:mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-foreground via-foreground/95 to-foreground/75 dark:from-white dark:via-white/95 dark:to-white/70 leading-[1.14]">
                 Ready to take your business to the{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 dark:from-blue-400 dark:via-indigo-300 dark:to-cyan-400">
                   Next Level?
@@ -162,14 +163,14 @@ function ServicesCTASection() {
               </h2>
 
               {/* Description */}
-              <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl font-normal">
+              <p className="mt-3.5 sm:mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl font-normal">
                 Let's build something extraordinary together. Our team of senior designers
                 and engineers is prepared to deliver modern solutions customized to your business goals.
               </p>
             </div>
 
             {/* Action Right: Magnetic CTA Cluster */}
-            <div className="w-full sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 shrink-0">
+            <div className="w-full sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 shrink-0">
               
               {/* Primary Magnetic Electric Button */}
               <MagneticPull strength={0.35}>
@@ -177,14 +178,14 @@ function ServicesCTASection() {
                   to="/contact"
                   className="
                     group relative inline-flex items-center justify-center gap-2
-                    px-8 py-4 sm:py-4.5 rounded-full
+                    w-full sm:w-auto px-8 py-3.5 sm:py-4.5 rounded-full
                     bg-gradient-to-r from-blue-600 via-primary to-indigo-600
                     text-white text-sm sm:text-base font-semibold tracking-wide
                     shadow-[0_4px_25px_rgba(0,81,251,0.45)]
                     hover:shadow-[0_6px_35px_rgba(0,81,251,0.7)]
                     active:scale-95
                     transition-all duration-300 ease-out
-                    overflow-hidden cursor-pointer w-full sm:w-auto
+                    overflow-hidden cursor-pointer
                   "
                 >
                   {/* Specular Liquid Shimmer Reflection */}
@@ -216,15 +217,15 @@ function ServicesCTASection() {
                   to="/contact"
                   className="
                     group relative inline-flex items-center justify-center gap-2
-                    px-7 py-4 sm:py-4.5 rounded-full
+                    w-full sm:w-auto px-7 py-3.5 sm:py-4.5 rounded-full
                     border border-border/80 dark:border-white/[0.14]
                     bg-muted/40 dark:bg-white/[0.04]
                     backdrop-blur-xl
-                    text-foreground text-sm sm:text-base font-medium
+                    text-foreground dark:text-white text-sm sm:text-base font-medium
                     hover:border-primary/50 hover:bg-muted/60 dark:hover:bg-white/[0.08]
                     active:scale-95
                     transition-all duration-300 ease-out
-                    cursor-pointer w-full sm:w-auto
+                    cursor-pointer
                   "
                 >
                   <MessageSquare className="w-4 h-4 text-primary transition-transform duration-300 group-hover:scale-110" />
