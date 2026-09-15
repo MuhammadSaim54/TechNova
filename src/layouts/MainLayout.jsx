@@ -2,9 +2,34 @@ import { useState, useEffect, Suspense, lazy } from 'react';
 import Navbar from '../components/Navbar/Navbar.jsx';
 import { Outlet, useLocation } from 'react-router-dom';
 import Footer from '../components/Footer/Footer.jsx';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Component-level Lazy Loading for Chatbot
 const Chatbot = lazy(() => import('../components/chat/Chatbot.jsx'));
+
+// Pure Stationary Blur Cross-Fade (Zero Position Shift)
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    filter: "blur(8px)",
+  },
+  animate: {
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.28,
+      ease: "easeOut",
+    },
+  },
+  exit: {
+    opacity: 0,
+    filter: "blur(6px)",
+    transition: {
+      duration: 0.18,
+      ease: "easeIn",
+    },
+  },
+};
 
 function MainLayout() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -25,11 +50,22 @@ function MainLayout() {
 
       <Navbar />
 
-      {/* min-h-screen container with empty placeholder so Footer doesn't snap to the top */}
-      <main id="main-content" tabIndex={-1} className="flex-1 min-h-[85vh] outline-none">
-        <Suspense fallback={<div className="min-h-[85vh] w-full" />}>
-          <Outlet />
-        </Suspense>
+      <main id="main-content" tabIndex={-1} className="flex-1 min-h-[85vh] outline-none flex flex-col">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={location.pathname}
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            style={{ willChange: "opacity, filter" }}
+            className="w-full flex-1 flex flex-col"
+          >
+            <Suspense fallback={<div className="min-h-[85vh] w-full" />}>
+              <Outlet />
+            </Suspense>
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       <Footer />
